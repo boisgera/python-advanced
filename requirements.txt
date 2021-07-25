@@ -4,6 +4,7 @@
 #
 jupyter
 jupytext
+jupyter-book
 ipykernel
 ipywidgets
 nbautoeval

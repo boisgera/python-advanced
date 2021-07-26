@@ -1,3 +1,4 @@
-.ipynb_checkpoints
-*.egg-info
-__*
+notebooks/_build
+*.pyc
+temporaire*
+islice.txt

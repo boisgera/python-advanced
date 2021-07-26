@@ -21,8 +21,8 @@ autograd
 
 # jupyter extensions
 #
-#rise
-#jupyter-contrib-nbextensions
+rise
+jupyter-contrib-nbextensions
 
 # this part is for readthedocs
 #

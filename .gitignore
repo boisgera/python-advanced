@@ -1,4 +1,5 @@
 notebooks/_build
 *.pyc
 temporaire*
+*checkpoint*
 islice.txt

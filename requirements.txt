@@ -18,6 +18,7 @@ chart_studio
 bokeh
 k3d
 autograd
+line_profiler
 
 # jupyter extensions
 #

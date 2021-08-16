@@ -1,0 +1,903 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>les librairies disponibles &#8212; Python Avancé</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="boucle d’événements asyncio" href="b-s6-av-event-loops.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Avancé</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-01-snake.html">
+   UE12 - Python avancé
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  types de base
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-01-numbers.html">
+   les nombres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-02-containers-1.html">
+   les containers (1/2)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-03-strings.html">
+   chaines et binaire (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     str
+    </span>
+   </code>
+   et
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     bytes
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-04-files.html">
+   les fichiers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-05-containers-2.html">
+   les containers (2/2)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  présentation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-11-pep008.html">
+   présentation du code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  itérations
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-11-iterations-1.html">
+   les itérations en Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-12-iterations-2.html">
+   les itérations - suite
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  classes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-11-classes.html">
+   classes : rappels (1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-12-dunder-specials.html">
+   classes : rappels (2)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  fonctions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-00-intro.html">
+   cours 6/9 : fonctions
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  regexps
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-10-regexps.html">
+   expressions régulières
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  générateurs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-20-generators.html">
+   les générateurs
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  héritage
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-30-inheritance.html">
+   POO &amp; héritage
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  organisation des sources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="8-10-imports-sources.html">
+   Imports et organisation du code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  divers
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-10-argparse.html">
+   écrire un lanceur / point d’entrée
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-11-properties.html">
+   properties
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  notebooks interactifs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-a1-profiling.html">
+   étude de performances
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-b1-linting.html">
+   Qualité du code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c3-notebooks-interactifs.html">
+   Notebooks interactifs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c4-animations-matplotlib.html">
+   Animations interactives avec
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c5-bokeh-et-al.html">
+   Autres bibliothèques de visualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c6-fourier-k3d.html">
+   Application à la transformée de Fourier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x1-taylor.html">
+   Le théorème de Taylor illustré
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x2-coronavirus.html">
+   Coronavirus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x3-potentials.html">
+   Tracés de champs de vitesses
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python asynchrone
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-01-os-basics.html">
+   rappels
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s1-programmation-asynchrone.html">
+   programmation asynchrone
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s1-z1-thread-safety.html">
+   Pourquoi les
+   <em>
+    threads
+   </em>
+   c’est délicat ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s2-examples.html">
+   premiers exemples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s3-ecosysteme.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     asyncio
+    </span>
+   </code>
+   : historique et écosystème
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s4-async-with-for.html">
+   extensions asynchrones du langage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s6-av-event-loops.html">
+   boucle d’événements
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     asyncio
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   les librairies disponibles
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/b-s7-libraries.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/b-s7-libraries.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ue12/python-advanced"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ue12/python-advanced/issues/new?title=Issue%20on%20page%20%2Fb-s7-libraries.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ue12/python-advanced/edit/main/notebooks/b-s7-libraries.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ue12/python-advanced/main?urlpath=tree/notebooks/b-s7-libraries.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#asyncio">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     asyncio
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#autres">
+   autres
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#queue">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Queue
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reseau">
+   réseau
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#serveur-tcp">
+     serveur TCP
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#client">
+     client
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#et-plus">
+   et plus…
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><span style="float:left;">Licence CC BY-NC-ND</span><span style="float:right;">Thierry Parmentelat<img alt="_images/inria-25-alpha.png" src="_images/inria-25-alpha.png" /></span><br/></p>
+<div class="section" id="les-librairies-disponibles">
+<h1>les librairies disponibles<a class="headerlink" href="#les-librairies-disponibles" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>à ce stade vous avez les bases pour pouvoir utiliser les parties vraiment utiles de la librairie <code class="docutils literal notranslate"><span class="pre">asyncio</span></code>, ainsi d’ailleurs que tout l’écosystème qui s’est construit autour</p>
+<div class="section" id="asyncio">
+<h2><code class="docutils literal notranslate"><span class="pre">asyncio</span></code><a class="headerlink" href="#asyncio" title="Permalink to this headline">¶</a></h2>
+<p>Le contenu de la <code class="docutils literal notranslate"><span class="pre">asyncio</span></code> est assez hétérogène en fait, car on y trouve</p>
+<ul class="simple">
+<li><p>la boucle d’événements dont a parlé dans la séquence précédente</p></li>
+<li><p>un objet du type ‘Queue’ pour gérer les accès concurrents</p></li>
+<li><p>mais aussi - heureusement - des outils qui adressent spécifiquement des interactions avec le système d’exploitation, notamment en ce qui concerne</p>
+<ul>
+<li><p>la gestion des sous-processus</p></li>
+<li><p>le réseau, notamment seulement les couches basses (TCP/IP)</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="autres">
+<h2>autres<a class="headerlink" href="#autres" title="Permalink to this headline">¶</a></h2>
+<p>Pour tous usages de plus haut niveau - par exemple si vous voulez faire du HTTP, ou du SSH, ou tout autre - il vous faudra installer des librairies supplémentaires comme par exemple</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">oifiles</span></code> pour accéder aux fichiers de l’ordinateur d’une façon compatible avec le paradigme qu’on étudie</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aiohttp</span></code> qu’on a utilisée pour nos premiers exemples</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">asyncssh</span></code> pour contrôler plein de machines en même temps avec une seule connexion ssh</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">asyncpg</span></code> pour dialoguer de façon asynchrone avec une base de données postgresql,</p></li>
+<li><p>…</p></li>
+</ul>
+</div>
+<div class="section" id="queue">
+<h2><code class="docutils literal notranslate"><span class="pre">Queue</span></code><a class="headerlink" href="#queue" title="Permalink to this headline">¶</a></h2>
+<p>Pour montrer un petit exemple d’utilisation de la classe <code class="docutils literal notranslate"><span class="pre">Queue</span></code>, on va implémenter un mécanisme de ‘throttle’ qui permet de limiter le nombre de trucs qui tournent en même temps</p>
+<p>Comme toujours je prends un exemple bidon; chaque tâche appelle notre utilitaire <code class="docutils literal notranslate"><span class="pre">sequence</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">asynchelpers</span> <span class="kn">import</span> <span class="n">start_timer</span><span class="p">,</span> <span class="n">show_timer</span><span class="p">,</span> <span class="n">sequence</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">job</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">await</span> <span class="n">sequence</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Imaginons maintenant que j’ai plein de jobs de ce genre</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># lancer n jobs indentiques en parallèle</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">hurd</span><span class="p">(</span><span class="n">nbjobs</span><span class="p">):</span>
+    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">job</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;job #</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">:</span><span class="s2">03d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nbjobs</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Qaudn je les lance tous ensemble, ça donne ceci</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_timer</span><span class="p">()</span>
+<span class="k">await</span> <span class="n">hurd</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>---------- zero
+0s + 000ms &gt;&gt;&gt; job #001
+0s + 000ms &gt;&gt;&gt; job #002
+0s + 001ms &gt;&gt;&gt; job #003
+0s + 001ms &gt;&gt;&gt; job #004
+0s + 002ms &gt;&gt;&gt; job #005
+0s + 002ms &gt;&gt;&gt; job #006
+0s + 002ms &gt;&gt;&gt; job #007
+0s + 003ms &gt;&gt;&gt; job #008
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2s + 001ms &lt;&lt;&lt; job #001
+2s + 001ms &lt;&lt;&lt; job #002
+2s + 002ms &lt;&lt;&lt; job #003
+2s + 003ms &lt;&lt;&lt; job #004
+2s + 003ms &lt;&lt;&lt; job #005
+2s + 003ms &lt;&lt;&lt; job #006
+2s + 004ms &lt;&lt;&lt; job #007
+2s + 004ms &lt;&lt;&lt; job #008
+</pre></div>
+</div>
+</div>
+</div>
+<p>OK; maintenant disons que je veux limiter le nombre de jobs actifs à un instant t</p>
+<p>Pour ne pas devoir faire une arithmétique compliquée, je vais juste utiliser une queue</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># l&#39;objet queue s&#39;ssure qu&#39;il n&#39;y a pas plus de n jetons pris à un instant t</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">job2</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">queue</span><span class="p">):</span>
+    <span class="c1"># j&#39;occupe une place dans la queue</span>
+    <span class="k">await</span> <span class="n">queue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">await</span> <span class="n">sequence</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c1"># je la libère</span>
+    <span class="k">await</span> <span class="n">queue</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># maintenant il me suffit de créer la queue avec la taille qui va bien</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">hurd2</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">throttle</span><span class="p">):</span>
+    <span class="n">queue</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">Queue</span><span class="p">(</span><span class="n">throttle</span><span class="p">)</span>
+    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">job2</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;job #</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">:</span><span class="s2">03d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">queue</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># et maintenant je n&#39;ai que &#39;throttle&#39; jobs qui tournent en même temps</span>
+<span class="n">start_timer</span><span class="p">()</span>
+<span class="k">await</span> <span class="n">hurd2</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>---------- zero
+0s + 000ms &gt;&gt;&gt; job #001
+0s + 000ms &gt;&gt;&gt; job #002
+0s + 000ms &gt;&gt;&gt; job #003
+0s + 000ms &gt;&gt;&gt; job #004
+0s + 000ms &gt;&gt;&gt; job #005
+0s + 000ms &gt;&gt;&gt; job #006
+0s + 000ms &gt;&gt;&gt; job #007
+0s + 000ms &gt;&gt;&gt; job #008
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2s + 003ms &lt;&lt;&lt; job #001
+2s + 003ms &lt;&lt;&lt; job #002
+2s + 004ms &lt;&lt;&lt; job #003
+2s + 004ms &lt;&lt;&lt; job #004
+2s + 004ms &lt;&lt;&lt; job #005
+2s + 004ms &lt;&lt;&lt; job #006
+2s + 004ms &lt;&lt;&lt; job #007
+2s + 004ms &lt;&lt;&lt; job #008
+2s + 004ms &gt;&gt;&gt; job #009
+2s + 004ms &gt;&gt;&gt; job #010
+2s + 004ms &gt;&gt;&gt; job #011
+2s + 005ms &gt;&gt;&gt; job #012
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4s + 007ms &lt;&lt;&lt; job #009
+4s + 007ms &lt;&lt;&lt; job #010
+4s + 007ms &lt;&lt;&lt; job #011
+4s + 009ms &lt;&lt;&lt; job #012
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="reseau">
+<h2>réseau<a class="headerlink" href="#reseau" title="Permalink to this headline">¶</a></h2>
+<p>je tire cet exemple de la doc Python ici
+https://docs.python.org/3/library/asyncio-stream.html#tcp-echo-client-using-streams</p>
+<p>ça devrait résonner par rapport au dernier cours de Basile Marchand…</p>
+<div class="section" id="serveur-tcp">
+<h3>serveur TCP<a class="headerlink" href="#serveur-tcp" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">handle_echo</span><span class="p">(</span><span class="n">reader</span><span class="p">,</span> <span class="n">writer</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">reader</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+    <span class="n">addr</span> <span class="o">=</span> <span class="n">writer</span><span class="o">.</span><span class="n">get_extra_info</span><span class="p">(</span><span class="s1">&#39;peername&#39;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;server Received </span><span class="si">{</span><span class="n">message</span><span class="si">!r}</span><span class="s2"> from </span><span class="si">{</span><span class="n">addr</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># simulate a small delay</span>
+    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;server Send: </span><span class="si">{</span><span class="n">message</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">await</span> <span class="n">writer</span><span class="o">.</span><span class="n">drain</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;server Close the connection&quot;</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">server_mainloop</span><span class="p">(</span><span class="n">port</span><span class="p">):</span>
+    <span class="n">server</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">start_server</span><span class="p">(</span>
+        <span class="n">handle_echo</span><span class="p">,</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
+
+    <span class="n">addr</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="n">sockets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">getsockname</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Serving on </span><span class="si">{</span><span class="n">addr</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">with</span> <span class="n">server</span><span class="p">:</span>
+        <span class="k">await</span> <span class="n">server</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">server_task</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">server_mainloop</span><span class="p">(</span><span class="mi">8080</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># comme on l&#39;a vu, si ça se passe mal on n&#39;a pas de retour</span>
+<span class="k">if</span> <span class="n">server_task</span><span class="o">.</span><span class="n">done</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">server_task</span><span class="o">.</span><span class="n">exception</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Serving on (&#39;127.0.0.1&#39;, 8080)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pour arrêter le serveur</span>
+<span class="c1"># server_task.cancel()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="client">
+<h3>client<a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h3>
+<p>maintenant que le serveur tourne je peux lancer des clients</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">tcp_echo_client</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="n">reader</span><span class="p">,</span> <span class="n">writer</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">open_connection</span><span class="p">(</span>
+        <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;client Send: </span><span class="si">{</span><span class="n">message</span><span class="si">!r}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">reader</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;client Received: </span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="si">!r}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Close the connection&#39;</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># un seul client </span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">tcp_echo_client</span><span class="p">(</span><span class="mi">8080</span><span class="p">,</span> <span class="s2">&quot;Hey&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Task pending name=&#39;Task-27&#39; coro=&lt;tcp_echo_client() running at /tmp/ipykernel_2301/2125229441.py:3&gt;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">hurd</span><span class="p">(</span><span class="n">nb_clients</span><span class="p">):</span>
+    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">tcp_echo_client</span><span class="p">(</span><span class="mi">8080</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;client#</span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s2">03d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_clients</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>client Send: &#39;Hey&#39;
+server Received &#39;Hey&#39; from (&#39;127.0.0.1&#39;, 58268)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">client_task</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">hurd</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="et-plus">
+<h2>et plus…<a class="headerlink" href="#et-plus" title="Permalink to this headline">¶</a></h2>
+<p>Pour ceux qui voudraient en savoir plus, je vous invite à consulter la semaine 8 du MOOC Python sur fun-mooc.fr, et notamment</p>
+<ul class="simple">
+<li><p>la séquence 8 où on montre un exemple de gestion de sous-processus</p></li>
+<li><p>pour les geeks la séquence 5 où j’explique la mécanique interne de la boucle d’événements</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="b-s6-av-event-loops.html" title="previous page">boucle d’événements <code class="docutils literal notranslate"><span class="pre">asyncio</span></code></a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thierry Parmentelat<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

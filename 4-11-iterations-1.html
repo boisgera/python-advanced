@@ -1,0 +1,2057 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>les itérations en Python &#8212; Python Avancé</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="les itérations - suite" href="4-12-iterations-2.html" />
+    <link rel="prev" title="présentation du code" href="3-11-pep008.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Avancé</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-01-snake.html">
+   UE12 - Python avancé
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  types de base
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-01-numbers.html">
+   les nombres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-02-containers-1.html">
+   les containers (1/2)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-03-strings.html">
+   chaines et binaire (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     str
+    </span>
+   </code>
+   et
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     bytes
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-04-files.html">
+   les fichiers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-05-containers-2.html">
+   les containers (2/2)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  présentation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-11-pep008.html">
+   présentation du code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  itérations
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   les itérations en Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-12-iterations-2.html">
+   les itérations - suite
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  classes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-11-classes.html">
+   classes : rappels (1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-12-dunder-specials.html">
+   classes : rappels (2)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  fonctions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-00-intro.html">
+   cours 6/9 : fonctions
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  regexps
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-10-regexps.html">
+   expressions régulières
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  générateurs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-20-generators.html">
+   les générateurs
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  héritage
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-30-inheritance.html">
+   POO &amp; héritage
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  organisation des sources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="8-10-imports-sources.html">
+   Imports et organisation du code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  divers
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-10-argparse.html">
+   écrire un lanceur / point d’entrée
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-11-properties.html">
+   properties
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  notebooks interactifs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-a1-profiling.html">
+   étude de performances
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-b1-linting.html">
+   Qualité du code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c3-notebooks-interactifs.html">
+   Notebooks interactifs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c4-animations-matplotlib.html">
+   Animations interactives avec
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c5-bokeh-et-al.html">
+   Autres bibliothèques de visualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c6-fourier-k3d.html">
+   Application à la transformée de Fourier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x1-taylor.html">
+   Le théorème de Taylor illustré
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x2-coronavirus.html">
+   Coronavirus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x3-potentials.html">
+   Tracés de champs de vitesses
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python asynchrone
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-01-os-basics.html">
+   rappels
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s1-programmation-asynchrone.html">
+   programmation asynchrone
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s1-z1-thread-safety.html">
+   Pourquoi les
+   <em>
+    threads
+   </em>
+   c’est délicat ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s2-examples.html">
+   premiers exemples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s3-ecosysteme.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     asyncio
+    </span>
+   </code>
+   : historique et écosystème
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s4-async-with-for.html">
+   extensions asynchrones du langage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s6-av-event-loops.html">
+   boucle d’événements
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     asyncio
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s7-libraries.html">
+   les librairies disponibles
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/4-11-iterations-1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/4-11-iterations-1.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ue12/python-advanced"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ue12/python-advanced/issues/new?title=Issue%20on%20page%20%2F4-11-iterations-1.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ue12/python-advanced/edit/main/notebooks/4-11-iterations-1.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ue12/python-advanced/main?urlpath=tree/notebooks/4-11-iterations-1.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#la-boucle-for">
+   la boucle
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#break-et-continue">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       break
+      </span>
+     </code>
+     et
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       continue
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-else">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+      <span class="pre">
+       ..
+      </span>
+      <span class="pre">
+       else
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-i-in-range-len-truc">
+     ~~
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+      <span class="pre">
+       i
+      </span>
+      <span class="pre">
+       in
+      </span>
+      <span class="pre">
+       range(len(truc))
+      </span>
+     </code>
+     ~~
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boucle-for-sur-un-dictionnaire">
+     boucle
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     sur un dictionnaire
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       boucle
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         for
+        </span>
+       </code>
+       sur un dictionnaire
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-de-boucle">
+     exemple de boucle
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boucles-for-limite-importante">
+     boucles
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     : limite importante
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boucles-pythoniques-ou-pas">
+     boucles pythoniques ou pas
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#soyez-explicite">
+       soyez explicite
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iterables-et-iterateurs">
+   itérables et itérateurs
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#c-est-quoi-un-iterable">
+     c’est quoi un itérable ?
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#la-boucle-for-mais-pas-que">
+       la boucle
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         for
+        </span>
+       </code>
+       , mais pas que
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iterateurs">
+     itérateurs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creation-d-iterateurs">
+     création d’itérateurs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#range">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       range
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#un-range-n-est-pas-une-liste">
+     un
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       range
+      </span>
+     </code>
+     n’est
+     <strong>
+      pas une liste
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#count-un-iterateur-infini">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       count
+      </span>
+     </code>
+     : un itérateur infini
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#enumerate">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       enumerate
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         enumerate()
+        </span>
+       </code>
+       …
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#zip">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       zip
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         zip
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#enumerate-zip-count">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       enumerate
+      </span>
+      <span class="pre">
+       =
+      </span>
+      <span class="pre">
+       zip
+      </span>
+      <span class="pre">
+       +
+      </span>
+      <span class="pre">
+       count
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#un-iterateur-s-epuise">
+     un itérateur s’épuise
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#le-module-itertools-assemblage-d-iterables">
+   le module
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     itertools
+    </span>
+   </code>
+   - assemblage d’itérables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chain-cycle-et-repeat">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       chain
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       cycle
+      </span>
+     </code>
+     et
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       repeat
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#islice">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       islice
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#itertools-combinatoires">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       itertools
+      </span>
+     </code>
+     &amp; combinatoires
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemple-avec-product">
+       exemple avec
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         product
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sous-le-capot">
+   sous le capot
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comment-marche-la-boucle-for">
+     comment marche la boucle
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quel-objet-est-iterable">
+     quel objet est itérable ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quel-objet-est-un-iterateur">
+     quel objet est un itérateur ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#par-exemple">
+     par exemple
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="licence">
+<span>Licence CC BY-NC-ND</span>
+<span>Thierry Parmentelat</span>
+<span><img src="media/inria-25-alpha.png" /></span>
+</div><div class="section" id="les-iterations-en-python">
+<h1>les itérations en Python<a class="headerlink" href="#les-iterations-en-python" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>la boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> est la méthode <strong>préférée</strong><br />
+pour itérer sur un ensemble de valeurs</p></li>
+<li><p>en général préférable au <code class="docutils literal notranslate"><span class="pre">while</span></code> en Python</p>
+<ul>
+<li><p>on peut faire un <code class="docutils literal notranslate"><span class="pre">for</span></code> sur n’importe quel itérable</p></li>
+<li><p>ce n’est pas le cas pour le <code class="docutils literal notranslate"><span class="pre">while</span></code></p></li>
+<li><p>avec <code class="docutils literal notranslate"><span class="pre">for</span></code> c’est l’itérable qui se charge de la logique</p></li>
+</ul>
+</li>
+<li><p>de nombreuses techniques pour itérer de manière optimisée</p>
+<ul>
+<li><p>compréhensions</p></li>
+<li><p>itérateurs</p></li>
+<li><p>expressions génératrices</p></li>
+<li><p>générateurs (encore appelées fonctions génératrices)</p></li>
+<li><p>(rappel : avec numpy, pas de <code class="docutils literal notranslate"><span class="pre">for</span></code>, programmation vectorielle)</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="la-boucle-for">
+<h2>la boucle <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#la-boucle-for" title="Permalink to this headline">¶</a></h2>
+<p>une instruction <code class="docutils literal notranslate"><span class="pre">for</span></code> ressemble à ceci :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
+    <span class="n">bloc</span>
+    <span class="n">aligné</span>
+    <span class="n">d_instructions</span>
+</pre></div>
+</div>
+<div class="section" id="break-et-continue">
+<h3><code class="docutils literal notranslate"><span class="pre">break</span></code> et <code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#break-et-continue" title="Permalink to this headline">¶</a></h3>
+<p>comme dans beaucoup d’autres langages :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">break</span></code> sort complètement de la boucle</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">continue</span></code> termine abruptement l’itération courante et passe à la suivante</p></li>
+<li><p>on parle toujours de la boucle <strong>la plus imbriquée</strong></p></li>
+</ul>
+<p>l’instruction <code class="docutils literal notranslate"><span class="pre">else</span></code> attachée à un <code class="docutils literal notranslate"><span class="pre">for</span></code> est d’un usage plutôt rare en pratique</p>
+</div>
+<div class="section" id="for-else">
+<h3><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">..</span> <span class="pre">else</span></code><a class="headerlink" href="#for-else" title="Permalink to this headline">¶</a></h3>
+<p>en fait la forme générale de la boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> c’est</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
+    <span class="n">bloc</span>
+    <span class="n">aligné</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">bloc</span>     <span class="c1"># exécuté lorsque la boucle sort &quot;proprement&quot;</span>
+    <span class="n">aligné</span>   <span class="c1"># c&#39;est-à-dire pas avec un break</span>
+</pre></div>
+</div>
+<p>mais c’est d’un usage assez rare</p>
+</div>
+<div class="section" id="for-i-in-range-len-truc">
+<h3>~~<code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(len(truc))</span></code>~~<a class="headerlink" href="#for-i-in-range-len-truc" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">120</span><span class="p">]</span>
+
+<span class="c1"># la bonne façon de faire un for</span>
+
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 20 40 80 120 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># et **non pas** cette</span>
+<span class="c1"># horrible périphrase !</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)):</span>
+    <span class="n">item</span> <span class="o">=</span> <span class="n">liste</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 20 40 80 120 
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>voir <a class="reference external" href="http://sametmax.com/revue-de-code-publique/">une revue de code intéressante ici</a></p></li>
+</ul>
+</div>
+<div class="section" id="boucle-for-sur-un-dictionnaire">
+<h3>boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> sur un dictionnaire<a class="headerlink" href="#boucle-for-sur-un-dictionnaire" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>on peut facilement itérer sur un dictionnaire</p></li>
+<li><p>mais il faut choisir si on veut le faire</p>
+<ul>
+<li><p>sur les clés,</p></li>
+<li><p>sur les valeurs,</p></li>
+<li><p>ou sur les deux</p></li>
+</ul>
+</li>
+<li><p>c’est à ça que servent les méthodes</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">keys()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">values()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">items()</span></code></p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="id1">
+<h4>boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> sur un dictionnaire<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agenda</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;paul&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> 
+    <span class="s1">&#39;pierre&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="s1">&#39;jean&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># l&#39;unpacking permet d&#39;écrire </span>
+<span class="c1"># un code élégant</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">agenda</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> → </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>paul → 12
+pierre → 14
+jean → 16
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># un raccourci</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">agenda</span><span class="p">:</span>      <span class="c1"># ou agenda.keys()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>paul pierre jean 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">agenda</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12 14 16 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exemple-de-boucle">
+<h3>exemple de boucle<a class="headerlink" href="#exemple-de-boucle" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pour illustrer break, et for .. else</span>
+
+
+<span class="c1"># boucle (1)</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="c1"># boucle (2)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">p</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> x </span><span class="si">{</span><span class="n">p</span><span class="o">//</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="c1"># on sort de la boucle (2)</span>
+            <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2"> est un nombre premier&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2 est un nombre premier
+3 est un nombre premier
+4 = 2 x 2
+5 est un nombre premier
+6 = 2 x 3
+7 est un nombre premier
+8 = 2 x 4
+9 = 3 x 3
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="boucles-for-limite-importante">
+<h3>boucles <code class="docutils literal notranslate"><span class="pre">for</span></code> : limite importante<a class="headerlink" href="#boucles-for-limite-importante" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>règle très importante:</strong> à l’intérieur d’une boucle</p></li>
+<li><p>il ne faut <strong>pas modifier l’objet</strong> sur lequel on itère</p></li>
+<li><p>on peut, par contre, en faire une copie</p></li>
+</ul>
+<p>ce code-ci provoquerait une boucle infinie</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span>
+        <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># il suffit de prendre la précaution</span>
+<span class="c1"># de faire une (shallow) copie</span>
+<span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span> <span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">L</span><span class="p">[:]:</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span>
+        <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="n">L</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;c&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="boucles-pythoniques-ou-pas">
+<h3>boucles pythoniques ou pas<a class="headerlink" href="#boucles-pythoniques-ou-pas" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="soyez-explicite">
+<h4>soyez explicite<a class="headerlink" href="#soyez-explicite" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;alice&#39;</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span>
+    <span class="s1">&#39;bob&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+    <span class="s1">&#39;charlie&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1"># pas pythonique (implicite)</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">D</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>         
+    <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>alice 35
+bob 9
+charlie 6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pythonique (explicite)</span>
+
+<span class="k">for</span> <span class="n">nom</span><span class="p">,</span> <span class="n">age</span> <span class="ow">in</span> <span class="n">D</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nom</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>alice 35
+bob 9
+charlie 6
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="iterables-et-iterateurs">
+<h2>itérables et itérateurs<a class="headerlink" href="#iterables-et-iterateurs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="c-est-quoi-un-iterable">
+<h3>c’est quoi un itérable ?<a class="headerlink" href="#c-est-quoi-un-iterable" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>par définition, c’est un objet .. sur lequel on peut faire un <code class="docutils literal notranslate"><span class="pre">for</span></code></p></li>
+<li><p>notamment avec les séquences natives : chaînes, listes, tuples, ensembles</p></li>
+<li><p>et aussi dictionnaires, et des tas d’autres objets, mais patience</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># une chaine est un itérable</span>
+
+<span class="n">chaine</span> <span class="o">=</span> <span class="s2">&quot;un été&quot;</span>
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">chaine</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>u n   é t é 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># un ensemble aussi</span>
+
+<span class="n">ensemble</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">80</span><span class="p">}</span> 
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">ensemble</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40 10 80 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="la-boucle-for-mais-pas-que">
+<h4>la boucle <code class="docutils literal notranslate"><span class="pre">for</span></code>, mais pas que<a class="headerlink" href="#la-boucle-for-mais-pas-que" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>on a défini les itérables par rapport à la boucle <code class="docutils literal notranslate"><span class="pre">for</span></code></p></li>
+<li><p>mais plusieurs fonctions acceptent en argument des itérables</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sum</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code>, <code class="docutils literal notranslate"><span class="pre">min</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code></p></li>
+<li><p>etc…</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+
+<span class="nb">min</span><span class="p">(</span><span class="n">L</span><span class="p">),</span> <span class="nb">sum</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 138)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="iterateurs">
+<h3>itérateurs<a class="headerlink" href="#iterateurs" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>les <strong>itérateurs</strong> sont une sous-famille des itérables</p></li>
+<li><p>qui présentent la particularité de <strong>consommer peu de mémoire</strong></p></li>
+<li><p>en fait un objet itérateur capture uniquement<br />
+<strong>la logique de l’itération</strong>, mais pas les données</p></li>
+<li><p>c’est-à-dire où on en est, et comment passer au suivant</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="c1"># l&#39;exemple le plus simple </span>
+<span class="c1"># d&#39;itérateur est range()</span>
+<span class="n">R</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>48
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8056
+</pre></div>
+</div>
+</div>
+</div>
+<p>cette boucle Python</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100_000</span><span class="p">):</span>
+    <span class="c1"># do stuff</span>
+</pre></div>
+</div>
+<p>est comparable à ceci en C</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="mi">100000</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="cm">/* do stuff */</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>on ne veut <strong>pas devoir allouer</strong> une liste de 100.000 éléments<br />
+juste pour pouvoir faire cette boucle</p>
+</div>
+<div class="section" id="creation-d-iterateurs">
+<h3>création d’itérateurs<a class="headerlink" href="#creation-d-iterateurs" title="Permalink to this headline">¶</a></h3>
+<p>Python propose des outils pour <strong>créer</strong> et <strong>combiner</strong> les itérables:</p>
+<ul class="simple">
+<li><p>fonctions natives <em>builtin</em> qui créent des itérateurs:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">range</span></code>, <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>, et <code class="docutils literal notranslate"><span class="pre">zip</span></code></p></li>
+</ul>
+</li>
+<li><p>dans un module dédié <code class="docutils literal notranslate"><span class="pre">itertools</span></code>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">chain</span></code>, <code class="docutils literal notranslate"><span class="pre">cycle</span></code>, <code class="docutils literal notranslate"><span class="pre">islice</span></code>, …</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="range">
+<h3><code class="docutils literal notranslate"><span class="pre">range</span></code><a class="headerlink" href="#range" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">range</span></code> crée un itérateur qui itère sur un intervalle de nombres entiers</p></li>
+<li><p>arguments : même logique que le slicing</p>
+<ul>
+<li><p>début (inclus), fin (exclus), pas</p></li>
+<li><p><strong>sauf</strong> (curiosité) : si un seul argument, c’est <strong>la fin</strong></p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># les nombres pairs de 10 à 20</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 12 14 16 18 20 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># le début par défaut est 0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 1 2 3 4 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="un-range-n-est-pas-une-liste">
+<h3>un <code class="docutils literal notranslate"><span class="pre">range</span></code> n’est <strong>pas une liste</strong><a class="headerlink" href="#un-range-n-est-pas-une-liste" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>l’objet retourné par <code class="docutils literal notranslate"><span class="pre">range</span></code> <strong>n’est pas une liste</strong></p></li>
+<li><p>au contraire il crée un objet tout petit, un <strong>itérateur</strong></p></li>
+<li><p>qui contient seulement la logique de l’itération</p></li>
+<li><p>la preuve:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 10**20 c&#39;est 100 millions de Tera</span>
+
+<span class="n">iterateur</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">iterateur</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>range(0, 100000000000000000000)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterateur</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">item</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 1 2 3 4 
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>exercice</strong>: comment créer <strong>une vraie liste</strong> des entiers de 1 à 10 ?</p>
+<p><strong>réponse</strong> avec</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>où le type <code class="docutils literal notranslate"><span class="pre">list</span></code> se comporte, comme tous les types, comme une usine à fabriquer des listes</p>
+</div>
+<div class="section" id="count-un-iterateur-infini">
+<h3><code class="docutils literal notranslate"><span class="pre">count</span></code> : un itérateur infini<a class="headerlink" href="#count-un-iterateur-infini" title="Permalink to this headline">¶</a></h3>
+<p>du coup un itérateur peut même .. ne jamais terminer :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># count fait partie du module itertools</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">count</span>
+count<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># si on n&#39;arrête pas la boucle nous mêmes</span>
+<span class="c1"># ce fragment va boucler sans fin</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">count</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 1 2 3 4 5 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="enumerate">
+<h3><code class="docutils literal notranslate"><span class="pre">enumerate</span></code><a class="headerlink" href="#enumerate" title="Permalink to this headline">¶</a></h3>
+<p>on a dit qu’on ne faisait jamais</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)):</span>
+    <span class="n">item</span> <span class="o">=</span> <span class="n">liste</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>comment faire alors si on a vraiment besoin de l’index <code class="docutils literal notranslate"><span class="pre">i</span></code> ?</p>
+<p>→ il suffit d’utiliser la <em>builtin</em> <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0: 1
+1: 10
+2: 100
+3: 1000
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="" src="_images/iter-enumerate.png" /></p>
+<div class="section" id="id2">
+<h4><code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> …<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>typiquement utile sur un fichier</p></li>
+<li><p>pour avoir le numéro de ligne</p></li>
+<li><p>remarquez le deuxième argument de <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> pour commencer à 1</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data/une-charogne.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">feed</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">lineno</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">feed</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lineno</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">line</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1:Rappelez-vous l&#39;objet que nous vîmes, mon âme,
+2:Ce beau matin d&#39;été si doux:
+3:Au détour d&#39;un sentier une charogne infâme
+4:Sur un lit semé de cailloux,
+5:
+6:Les jambes en l&#39;air, comme une femme lubrique,
+7:Brûlante et suant les poisons,
+8:Ouvrait d&#39;une façon nonchalante et cynique
+9:Son ventre plein d&#39;exhalaisons.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="zip">
+<h3><code class="docutils literal notranslate"><span class="pre">zip</span></code><a class="headerlink" href="#zip" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">zip</span></code> fonctionne un peu comme <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> mais entre deux itérables:</p>
+<p><img alt="" src="_images/iter-zip.png" /></p>
+<div class="section" id="id3">
+<h4><code class="docutils literal notranslate"><span class="pre">zip</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+<span class="n">liste2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">liste1</span><span class="p">,</span> <span class="n">liste2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">x</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10x100 20x200 30x300 
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>NOTES</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">zip</span></code> fonctionne avec autant d’arguments qu’on veut</p></li>
+<li><p>elle s’arrête dès que l’entrée la plus courte est épuisée</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="enumerate-zip-count">
+<h3><code class="docutils literal notranslate"><span class="pre">enumerate</span> <span class="pre">=</span> <span class="pre">zip</span> <span class="pre">+</span> <span class="pre">count</span></code><a class="headerlink" href="#enumerate-zip-count" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># par exemple on peut récrire enumerate</span>
+<span class="c1"># à base de zip et count</span>
+<span class="n">L</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 10, 100, 1000]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># zip s&#39;arrête dès que </span>
+<span class="c1"># l&#39;un de ses morceaux s&#39;arrête</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">count</span><span class="p">(),</span> <span class="n">L</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 1
+1 10
+2 100
+3 1000
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="" src="_images/iter-zip-count.png" /></p>
+</div>
+<div class="section" id="un-iterateur-s-epuise">
+<h3>un itérateur s’épuise<a class="headerlink" href="#un-iterateur-s-epuise" title="Permalink to this headline">¶</a></h3>
+<p><strong>ATTENTION</strong> il y a toutefois une limite lorsqu’on utilise un itérateur</p>
+<ul class="simple">
+<li><p>une fois que l’itérateur est arrivé à sa fin</p></li>
+<li><p>il est “épuisé” et on ne peut plus boucler dessus</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pass 1&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pass 2&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pass 1
+1
+2
+pass 2
+1
+2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># iter() permet de construire</span>
+<span class="c1"># un itérateur sur un itérable</span>
+<span class="n">R</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pass 1&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">R</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pass 2&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">R</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pass 1
+1
+2
+pass 2
+</pre></div>
+</div>
+</div>
+</div>
+<p>du coup par exemple,<br />
+<strong>ne pas essayer d’itérer deux fois</strong> sur un <code class="docutils literal notranslate"><span class="pre">zip()</span></code> ou un <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Z</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pass 1&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">Z</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pass 2&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">Z</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pass 1
+0 4
+1 5
+2 6
+pass 2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E</span> <span class="o">=</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pass 1&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">E</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pass 2&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">E</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pass 1
+0 1
+1 2
+pass 2
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>NB</strong> il suffit de faire e.g. <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">a,</span> <span class="pre">b</span> <span class="pre">in</span> <span class="pre">enumerate(L)</span></code> pour se débarrasser du problème</p>
+</div>
+</div>
+<div class="section" id="le-module-itertools-assemblage-d-iterables">
+<h2>le module <code class="docutils literal notranslate"><span class="pre">itertools</span></code> - assemblage d’itérables<a class="headerlink" href="#le-module-itertools-assemblage-d-iterables" title="Permalink to this headline">¶</a></h2>
+<p>on trouve dans le module <code class="docutils literal notranslate"><span class="pre">itertools</span></code> plusieurs utilitaires très pratiques :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">count</span></code> pour énumérer les entiers (un <code class="docutils literal notranslate"><span class="pre">range</span></code> sans borne)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chain</span></code> pour chainer plusieurs itérables</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cycle</span></code> pour rejouer un itérable en boucle</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">repeat</span></code> pour énumérer plusieurs fois le même objet</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">islice</span></code> pour n’énumérer que certains morceaux</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">zip_longest</span></code> fonctionne comme <code class="docutils literal notranslate"><span class="pre">zip</span></code> mais s’arrête au morceau le plus long</p></li>
+</ul>
+<div class="section" id="chain-cycle-et-repeat">
+<h3><code class="docutils literal notranslate"><span class="pre">chain</span></code>, <code class="docutils literal notranslate"><span class="pre">cycle</span></code> et <code class="docutils literal notranslate"><span class="pre">repeat</span></code><a class="headerlink" href="#chain-cycle-et-repeat" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">chain</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">repeat</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># chain()</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">chain</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">x</span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0x10 1x20
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 2x30 3x100 4x200 5x300 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cycle() ne termine jamais non plus</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cycle</span><span class="p">(</span><span class="n">data1</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">x</span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0x10 1x20 2x30 3x10 4x20 5x30 6x10 7x20 8x30 9x10 10x20 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># repeat()</span>
+<span class="n">padding</span> <span class="o">=</span> <span class="n">repeat</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">chain</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">padding</span><span class="p">,</span> <span class="n">data2</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">x</span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0x10 1x20 2x30 3x1000 4x1000 5x1000 6x100 7x200 8x300 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="islice">
+<h3><code class="docutils literal notranslate"><span class="pre">islice</span></code><a class="headerlink" href="#islice" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># avec islice on peut par exemple </span>
+<span class="c1"># sauter une ligne sur deux dans un fichier</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="c1"># on crée un fichier </span>
+<span class="k">with</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;islice.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">**2 = </span><span class="si">{</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pour ne relire qu&#39;une ligne sur deux</span>
+
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">islice</span>
+
+<span class="k">with</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;islice.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">()</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">islice</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0**2 = 0
+2**2 = 4
+4**2 = 16
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ou zapper les 3 premières</span>
+
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">islice</span>
+
+<span class="k">with</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;islice.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">()</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">islice</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3**2 = 9
+4**2 = 16
+5**2 = 25
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ou ne garder que les 3 premières</span>
+
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">islice</span>
+
+<span class="k">with</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;islice.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">()</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">islice</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0**2 = 0
+1**2 = 1
+2**2 = 4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">zip_longest</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">zip_longest</span><span class="p">(</span>
+        <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span> <span class="n">L</span><span class="p">,</span> <span class="n">fillvalue</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 1
+1 2
+2 X
+3 X
+4 X
+5 X
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="" src="_images/iter-zip-longest.png" /></p>
+</div>
+<div class="section" id="itertools-combinatoires">
+<h3><code class="docutils literal notranslate"><span class="pre">itertools</span></code> &amp; combinatoires<a class="headerlink" href="#itertools-combinatoires" title="Permalink to this headline">¶</a></h3>
+<p>Le module <code class="docutils literal notranslate"><span class="pre">itertools</span></code> propose aussi quelques combinatoires usuelles:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">product</span></code>: produit cartésien de deux itérables</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">permutations</span></code>: les permutations ($n!$)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">combinations</span></code>: <em>p parmi n</em></p></li>
+<li><p>et d’autres…</p></li>
+<li><p>https://docs.python.org/3/library/itertools.html</p></li>
+</ul>
+<div class="section" id="exemple-avec-product">
+<h4>exemple avec <code class="docutils literal notranslate"><span class="pre">product</span></code><a class="headerlink" href="#exemple-avec-product" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">product</span>
+
+<span class="n">dim1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">dim2</span> <span class="o">=</span> <span class="s1">&#39;♡♢♤&#39;</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">product</span><span class="p">(</span><span class="n">dim1</span><span class="p">,</span> <span class="n">dim2</span><span class="p">),</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;i=</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">, d1=</span><span class="si">{</span><span class="n">d1</span><span class="si">}</span><span class="s2"> d2=</span><span class="si">{</span><span class="n">d2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>i=1, d1=1 d2=♡
+i=2, d1=1 d2=♢
+i=3, d1=1 d2=♤
+i=4, d1=2 d2=♡
+i=5, d1=2 d2=♢
+i=6, d1=2 d2=♤
+i=7, d1=3 d2=♡
+i=8, d1=3 d2=♢
+i=9, d1=3 d2=♤
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>exercices</strong> (voir notebook séparé)</p>
+<ul class="simple">
+<li><p>vigenere</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="sous-le-capot">
+<h2>sous le capot<a class="headerlink" href="#sous-le-capot" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="comment-marche-la-boucle-for">
+<h3>comment marche la boucle <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#comment-marche-la-boucle-for" title="Permalink to this headline">¶</a></h3>
+<p>lorsqu’on itère sur un itérable</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iterable</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>sous le capot, la boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> va faire:</p>
+<ul class="simple">
+<li><p>créer un itérateur en appelant <code class="docutils literal notranslate"><span class="pre">iter(iterable)</span></code></p></li>
+<li><p>appeler <code class="docutils literal notranslate"><span class="pre">next()</span></code> sur cet itérateur</p></li>
+<li><p>jusqu’à obtenir l’exception <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code></p></li>
+</ul>
+<p>voici un équivalent approximatif</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cette boucle for </span>
+
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+20
+30
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># est en gros équivalente</span>
+<span class="c1"># à ce fragment</span>
+
+<span class="n">iterateur</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">iterateur</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+        <span class="c1"># print(&quot;fin&quot;)</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+20
+30
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="quel-objet-est-iterable">
+<h3>quel objet est itérable ?<a class="headerlink" href="#quel-objet-est-iterable" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>il existe beaucoup d’objets itérables en python</p>
+<ul>
+<li><p>tous les objets séquence: listes, tuples, chaînes, etc.</p></li>
+<li><p>les sets, les dictionnaires</p></li>
+<li><p>les vues (dict.keys(), dict.values()), etc.</p></li>
+<li><p>les fichiers</p></li>
+<li><p>les générateurs</p></li>
+</ul>
+</li>
+<li><p>il faut les utiliser, c’est le plus rapide et le plus lisible</p></li>
+</ul>
+</div>
+<div class="section" id="quel-objet-est-un-iterateur">
+<h3>quel objet est un itérateur ?<a class="headerlink" href="#quel-objet-est-un-iterateur" title="Permalink to this headline">¶</a></h3>
+<p>pour savoir si un objet est un itérateur<br />
+tester si<br />
+<code class="docutils literal notranslate"><span class="pre">iter(obj)</span> <span class="pre">is</span> <span class="pre">obj</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_iterator</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="ow">is</span> <span class="n">obj</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="par-exemple">
+<h3>par exemple<a class="headerlink" href="#par-exemple" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>une liste <strong>n’est pas</strong> son propre itérateur</p></li>
+<li><p>un fichier <strong>est</strong> son propre itérateur</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># un fichier est son propre itérateur</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data/une-charogne.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">F</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">is_iterator</span><span class="p">(</span><span class="n">F</span><span class="p">)</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>is_iterator(F)=True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># la liste non</span>
+<span class="n">L</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">is_iterator</span><span class="p">(</span><span class="n">L</span><span class="p">)</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>is_iterator(L)=False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cycle en est un</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">cycle</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">is_iterator</span><span class="p">(</span><span class="n">C</span><span class="p">)</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>is_iterator(C)=True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># un zip() est un itérateur</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">L</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">is_iterator</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>is_iterator(Z)=True
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Bien se souvenir : <strong>un itérateur s’épuise</strong><br />
+de manière générale, un objet qui est un itérateur<br />
+ne peut être itéré qu’une seule fois</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="3-11-pep008.html" title="previous page">présentation du code</a>
+    <a class='right-next' id="next-link" href="4-12-iterations-2.html" title="next page">les itérations - suite</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thierry Parmentelat<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

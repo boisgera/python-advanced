@@ -1,0 +1,750 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rappels &#8212; Python Avancé</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="programmation asynchrone" href="b-s1-programmation-asynchrone.html" />
+    <link rel="prev" title="Tracés de champs de vitesses" href="a-x3-potentials.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Avancé</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-01-snake.html">
+   UE12 - Python avancé
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  types de base
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-01-numbers.html">
+   les nombres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-02-containers-1.html">
+   les containers (1/2)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-03-strings.html">
+   chaines et binaire (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     str
+    </span>
+   </code>
+   et
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     bytes
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-04-files.html">
+   les fichiers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-05-containers-2.html">
+   les containers (2/2)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  présentation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-11-pep008.html">
+   présentation du code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  itérations
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-11-iterations-1.html">
+   les itérations en Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-12-iterations-2.html">
+   les itérations - suite
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  classes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-11-classes.html">
+   classes : rappels (1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-12-dunder-specials.html">
+   classes : rappels (2)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  fonctions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-00-intro.html">
+   cours 6/9 : fonctions
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  regexps
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-10-regexps.html">
+   expressions régulières
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  générateurs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-20-generators.html">
+   les générateurs
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  héritage
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-30-inheritance.html">
+   POO &amp; héritage
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  organisation des sources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="8-10-imports-sources.html">
+   Imports et organisation du code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  divers
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-10-argparse.html">
+   écrire un lanceur / point d’entrée
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-11-properties.html">
+   properties
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  notebooks interactifs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-a1-profiling.html">
+   étude de performances
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-b1-linting.html">
+   Qualité du code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c3-notebooks-interactifs.html">
+   Notebooks interactifs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c4-animations-matplotlib.html">
+   Animations interactives avec
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c5-bokeh-et-al.html">
+   Autres bibliothèques de visualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c6-fourier-k3d.html">
+   Application à la transformée de Fourier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x1-taylor.html">
+   Le théorème de Taylor illustré
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x2-coronavirus.html">
+   Coronavirus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x3-potentials.html">
+   Tracés de champs de vitesses
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python asynchrone
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   rappels
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s1-programmation-asynchrone.html">
+   programmation asynchrone
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s1-z1-thread-safety.html">
+   Pourquoi les
+   <em>
+    threads
+   </em>
+   c’est délicat ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s2-examples.html">
+   premiers exemples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s3-ecosysteme.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     asyncio
+    </span>
+   </code>
+   : historique et écosystème
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s4-async-with-for.html">
+   extensions asynchrones du langage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s6-av-event-loops.html">
+   boucle d’événements
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     asyncio
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s7-libraries.html">
+   les librairies disponibles
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/b-01-os-basics.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/b-01-os-basics.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ue12/python-advanced"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ue12/python-advanced/issues/new?title=Issue%20on%20page%20%2Fb-01-os-basics.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ue12/python-advanced/edit/main/notebooks/b-01-os-basics.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ue12/python-advanced/main?urlpath=tree/notebooks/b-01-os-basics.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#le-coeur-de-l-ordi">
+   le coeur de l’ordi
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#donnees-persistentes">
+   données persistentes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#le-terme-entrees-sorties">
+     le terme ‘entrées-sorties’
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#un-peu-de-calcul-mental">
+     un peu de calcul mental
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#digression-la-notion-de-cache-buffer">
+   digression : la notion de
+   <em>
+    cache/buffer
+   </em>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-memoire-cache">
+     la mémoire cache
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#les-acces-au-disque-dur">
+     les accès au disque dur
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#autres">
+     autres
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#temps-d-acces-bande-passante">
+     temps d’accès + bande passante
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="rappels">
+<h1>rappels<a class="headerlink" href="#rappels" title="Permalink to this headline">¶</a></h1>
+<p>pour remettre tout ça en perspective, voyons un peu le temps d’accès moyen aux différentes parties de l’ordi</p>
+<div class="section" id="le-coeur-de-l-ordi">
+<h2>le coeur de l’ordi<a class="headerlink" href="#le-coeur-de-l-ordi" title="Permalink to this headline">¶</a></h2>
+<p>au coeur de l’ordi se trouve le CPU; typiquement actuellement la fréquence d’horloge est de l’ordre de 1 GHz, donc une opération - on dit un cycle - dure de l’ordre de 1 ns</p>
+<p>mais bon c’est bien beau de faire une multiplication en 1ns, mais (un processeur possède en propre très peu de mémoire) il faut aussi que les données (les opérandes) soient là</p>
+<p>pour aller chercher les données et les apporter au CPU pour qu’il puisse en faire quelque chose, on peut avoir en tête les ordres de grandeur suivants</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mémoire</p></th>
+<th class="text-align:center head"><p>Temps d’accès</p></th>
+<th class="text-align:left head"><p>Capacité</p></th>
+<th class="head"><p>Prix</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Registre</p></td>
+<td class="text-align:center"><p>1 ns</p></td>
+<td class="text-align:left"><p>&lt; 1 ko (kilo-octet)</p></td>
+<td><p>super chers</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cache</p></td>
+<td class="text-align:center"><p>~2 ns</p></td>
+<td class="text-align:left"><p>4 Mo (Méga-octet)</p></td>
+<td><p>très cher</p></td>
+</tr>
+<tr class="row-even"><td><p>RAM</p></td>
+<td class="text-align:center"><p>~10 ns</p></td>
+<td class="text-align:left"><p>4-16 Go (Giga-octet)</p></td>
+<td><p>cher</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="donnees-persistentes">
+<h2>données persistentes<a class="headerlink" href="#donnees-persistentes" title="Permalink to this headline">¶</a></h2>
+<p>et si on veut que le stockage soit persistent, on doit utiliser des technologies différentes :</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Autres</p></th>
+<th class="text-align:center head"><p>Temps d’accès</p></th>
+<th class="text-align:left head"><p>Capacité</p></th>
+<th class="head"><p>Prix</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SSD (Solid State)</p></td>
+<td class="text-align:center"><p>50 μs</p></td>
+<td class="text-align:left"><p>1 To</p></td>
+<td><p>peu cher</p></td>
+</tr>
+<tr class="row-odd"><td><p>HDD (Hard Disk)</p></td>
+<td class="text-align:center"><p>10 ms</p></td>
+<td class="text-align:left"><p>1 To (Tera-octet)</p></td>
+<td><p>peu cher</p></td>
+</tr>
+<tr class="row-even"><td><p>Internet</p></td>
+<td class="text-align:center"><p>1s ou +</p></td>
+<td class="text-align:left"><p><em>infinie</em></p></td>
+<td><p><em>gratuit</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="le-terme-entrees-sorties">
+<h3>le terme ‘entrées-sorties’<a class="headerlink" href="#le-terme-entrees-sorties" title="Permalink to this headline">¶</a></h3>
+<p>toutes les opérations qui sortent du cercle fermé CPU-mémoire s’appellent de manière générique les <strong>entrées-sorties</strong><br />
+en anglais <em>input/output</em>, encore abrégé <strong>sous le terme <em>I/O</em></strong><br />
+ça désigne donc toutes les opérations <strong>relativement lentes</strong> par rapport à la cadence du processeur</p>
+</div>
+<div class="section" id="un-peu-de-calcul-mental">
+<h3>un peu de calcul mental<a class="headerlink" href="#un-peu-de-calcul-mental" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>avec un <strong>disque dur</strong> (encore pas complètement dépassé), la tête de lecture glisse le long d’un rayon fixe du disque; du coup le temps d’accès moyen à une donnée est lié à la vitesse de rotation; disque rapide = 15 krpm, d’où un temps d’accès moyen de l’ordre de la milliseconde au mieux<br />
+c’est pourquoi aujourd’hui on privilégie la technologie SSD (pas de mécanique), mais les temps d’accès restent plusieurs ordres de magnitude plus lents</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/hard-drive.png"><img alt="_images/hard-drive.png" src="_images/hard-drive.png" style="width: 150px;" /></a>
+<ul class="simple">
+<li><p>vous avez sans doute l’habitude de mesurer votre ping (durée d’un aller-retour), mais bien sûr ça dépend aussi de la localisation du serveur - à la vitesse de la lumière il faut ~3 ms pour faire 1000 km;<br />
+et ce qui apparaît comme une opération élémentaire pour l’application (genre, ouvrir une connexion) met typiquement en jeu <strong>plusieurs aller-retours</strong>, avec à chaque fois des délais (traitement par l’OS); du coup les délais ici sont encore plus longs, ça peut aller depuis quelques millisecondes à plusieurs centaines de millisecondes avec des conditions réseau dégradées</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="digression-la-notion-de-cache-buffer">
+<h2>digression : la notion de <em>cache/buffer</em><a class="headerlink" href="#digression-la-notion-de-cache-buffer" title="Permalink to this headline">¶</a></h2>
+<p>un grand nombre de problèmes classique de bas niveau, adressés par l’OS, ont un rapport plus ou moins direct avec <strong>cette différence entre les ordres de grandeurs</strong> présentées ci-dessus</p>
+<p>on va voir ça sur plusieurs exemples</p>
+<div class="section" id="la-memoire-cache">
+<h3>la mémoire cache<a class="headerlink" href="#la-memoire-cache" title="Permalink to this headline">¶</a></h3>
+<p>la mémoire cache, c’est une mémoire plus rapide (donc plus chère) que la RAM, qui sert en quelque sorte à lisser la différence de cadence entre le CPU et la RAM</p>
+<a class="reference internal image-reference" href="_images/cores-caches-ram.png"><img alt="_images/cores-caches-ram.png" src="_images/cores-caches-ram.png" style="width: 400px;" /></a>
+<p>lorsque vous regardez le descriptif d’un ordinateur, on vous met</p>
+<ul class="simple">
+<li><p>combien il y a de CPUs et de coeurs (par ex. bi-proc dual-core 2.7 GHz) -&gt; en tout 4 coeurs</p></li>
+<li><p>combien il y a de RAM (par ex. 4Go)</p></li>
+<li><p>combien il y a de disque, hdd ou ssd (par ex. 500 Go)</p></li>
+<li><p>et parfois on vous dit la taille de la mémoire cache</p></li>
+</ul>
+<p><img alt="" src="_images/memory-list.png" /></p>
+</div>
+<div class="section" id="les-acces-au-disque-dur">
+<h3>les accès au disque dur<a class="headerlink" href="#les-acces-au-disque-dur" title="Permalink to this headline">¶</a></h3>
+<p>vous entendrez dire parfois que “les entrées-sorties sont bufferisées”; ca signifie simplement que lorsqu’on écrit ou qu’on lit sur le disque dur, on ne le fait <strong>jamais un octet à la fois</strong>, on fait des économie d’échelle en faisant l’opération pour un <strong>grand nombre d’octets à la fois</strong>;</p>
+<p>pour cette raison lorsque vous écrivez sur le disque, les données transitent par une zone intermédiaire (toujours en mémoire), qu’on appelle <em>un buffer</em>, et c’est seulement lorsque cette zone est pleine qu’on écrit son contenu sur le disque (et pareil en lecture)</p>
+<p>donc si vous avez 1 Mo à écrire (relativement petit) sur disque où le temps d’accès est de 10ms</p>
+<ul class="simple">
+<li><p>si vous écrivez un octet à la fois, vous en avez pour $10^6 * 10^{-2}$ = $10^4$s ~ 2h46 !</p></li>
+<li><p>si vous vous arrangez pour écrire en un coup 4k (dans le même secteur: la tête du disque au même endroit, le disque tourné de la même façon) alors vous faites la même chose dans les 4000 fois plus vite, c’est intéressant !</p></li>
+</ul>
+<p>les écarts sont moins énormes avec un SSD, mais la logique est la même, et bien sûr les accès se font aussi sur un mode bufferisé</p>
+</div>
+<div class="section" id="autres">
+<h3>autres<a class="headerlink" href="#autres" title="Permalink to this headline">¶</a></h3>
+<p>c’est le même principe qui est adopté pour tout le reste des équipements de l’ordi, pour les accès réseau bien sûr, et aussi par exemple pour la carte graphique</p>
+<p>si vous vous souvenez de l’exercice du snake, on avait utilisé <code class="docutils literal notranslate"><span class="pre">pygame</span></code> qui nous offrait une API du genre de</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">screen.fill(BACKGROUND_COLOR)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rect</span> <span class="pre">=</span> <span class="pre">pg.Rect(x*W,</span> <span class="pre">y*H,</span> <span class="pre">W,</span> <span class="pre">H)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pg.draw.rect(screen,</span> <span class="pre">SNAKE_COLOR,</span> <span class="pre">rect)</span></code></p></li>
+<li><p>…</p></li>
+</ul>
+<p>tout ceci se fait <strong>en mémoire</strong>, et ce n’est que lorsqu’on appelle</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pg.display.update()</span></code></p></li>
+</ul>
+<p>que la mémoire se fait copier vers la carte graphique, qui est un dispositif séparé, et qui communique avec le coeur via un bus d’extension (le bus PCI-express en l’occurrence), certes assez rapide mais moins que le bus</p>
+</div>
+<div class="section" id="temps-d-acces-bande-passante">
+<h3>temps d’accès + bande passante<a class="headerlink" href="#temps-d-acces-bande-passante" title="Permalink to this headline">¶</a></h3>
+<p>donc pour résumer</p>
+<ul class="simple">
+<li><p>les échanges d’info se font entre des mondes qui opèrent à des cadences différentes</p></li>
+<li><p>du coup on a souvent recours à la technique qui consiste à grouper les échanges en demandant non pas un octet ou un mot, mais un gros paquet à la fois</p></li>
+</ul>
+<p>du coup pour caractériser un médium on a besoin de 2 nombres qui sont</p>
+<ul class="simple">
+<li><p>le temps d’accès (<em>latency</em>) - combien on doit attendre avant d’avoir le premier morceau de la réponse</p></li>
+<li><p>la bande passante (<em>bandwidth</em>) - combien d’info on peut espérer avoir par seconde lorsqu’on fait une demande groupée</p></li>
+</ul>
+<p>et de là on peut calculer un temps d’accès moyen par octet, si on fait une demande groupée de N octets</p>
+<p>$avgtime = \frac{latency + \frac{N}{bandwidth}}{N} = \frac{1}{bandwidth} + \frac{latency}{N}$</p>
+<p>qui peut se résumer comme ceci :</p>
+<ul class="simple">
+<li><p>si on fait les accès un par un, c’est la latency qui compte</p></li>
+<li><p>si on fait les accès en grand nombre au contraire, c’est la bandwidth qui compte</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="a-x3-potentials.html" title="previous page">Tracés de champs de vitesses</a>
+    <a class='right-next' id="next-link" href="b-s1-programmation-asynchrone.html" title="next page">programmation asynchrone</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thierry Parmentelat<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

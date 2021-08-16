@@ -1,0 +1,1225 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>les fichiers &#8212; Python Avancé</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="les containers (2/2)" href="2-05-containers-2.html" />
+    <link rel="prev" title="chaines et binaire (str et bytes)" href="2-03-strings.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Avancé</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-01-snake.html">
+   UE12 - Python avancé
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  types de base
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-01-numbers.html">
+   les nombres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-02-containers-1.html">
+   les containers (1/2)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-03-strings.html">
+   chaines et binaire (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     str
+    </span>
+   </code>
+   et
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     bytes
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   les fichiers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-05-containers-2.html">
+   les containers (2/2)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  présentation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-11-pep008.html">
+   présentation du code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  itérations
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-11-iterations-1.html">
+   les itérations en Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-12-iterations-2.html">
+   les itérations - suite
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  classes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-11-classes.html">
+   classes : rappels (1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-12-dunder-specials.html">
+   classes : rappels (2)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  fonctions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-00-intro.html">
+   cours 6/9 : fonctions
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  regexps
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-10-regexps.html">
+   expressions régulières
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  générateurs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-20-generators.html">
+   les générateurs
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  héritage
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-30-inheritance.html">
+   POO &amp; héritage
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  organisation des sources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="8-10-imports-sources.html">
+   Imports et organisation du code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  divers
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-10-argparse.html">
+   écrire un lanceur / point d’entrée
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-11-properties.html">
+   properties
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  notebooks interactifs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-a1-profiling.html">
+   étude de performances
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-b1-linting.html">
+   Qualité du code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c3-notebooks-interactifs.html">
+   Notebooks interactifs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c4-animations-matplotlib.html">
+   Animations interactives avec
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c5-bokeh-et-al.html">
+   Autres bibliothèques de visualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c6-fourier-k3d.html">
+   Application à la transformée de Fourier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x1-taylor.html">
+   Le théorème de Taylor illustré
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x2-coronavirus.html">
+   Coronavirus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x3-potentials.html">
+   Tracés de champs de vitesses
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python asynchrone
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-01-os-basics.html">
+   rappels
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s1-programmation-asynchrone.html">
+   programmation asynchrone
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s1-z1-thread-safety.html">
+   Pourquoi les
+   <em>
+    threads
+   </em>
+   c’est délicat ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s2-examples.html">
+   premiers exemples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s3-ecosysteme.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     asyncio
+    </span>
+   </code>
+   : historique et écosystème
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s4-async-with-for.html">
+   extensions asynchrones du langage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s6-av-event-loops.html">
+   boucle d’événements
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     asyncio
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s7-libraries.html">
+   les librairies disponibles
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/2-04-files.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/2-04-files.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ue12/python-advanced"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ue12/python-advanced/issues/new?title=Issue%20on%20page%20%2F2-04-files.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ue12/python-advanced/edit/main/notebooks/2-04-files.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ue12/python-advanced/main?urlpath=tree/notebooks/2-04-files.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#utilisez-un-with">
+   utilisez un
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     with
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lecture-avec-for">
+   lecture avec
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fichiers-texte-ou-binaire">
+   fichiers texte ou binaire
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#le-module-pathlib">
+   le module
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pathlib
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objectifs">
+     objectifs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#un-exemple">
+     un exemple
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#construire-un-objet-path">
+     construire un objet
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Path
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#l-operateur">
+     l’opérateur
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       /
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculs-sur-les-chemins">
+     calculs sur les chemins
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pattern-matching">
+     pattern-matching
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pattern-matching-suite">
+       pattern-matching - suite
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="licence">
+<span>Licence CC BY-NC-ND</span>
+<span>Thierry Parmentelat</span>
+<span><img src="media/inria-25-alpha.png" /></span>
+</div><div class="section" id="les-fichiers">
+<h1>les fichiers<a class="headerlink" href="#les-fichiers" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>lire et écrire un fichier est très facile en Python</p></li>
+<li><p>ouvrir un fichier pour créer un objet “fichier”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">open('mon_fichier.txt',</span> <span class="pre">'r')</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">'r'</span></code> ouvre le fichier en lecture (défaut),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">‘w’</span></code> en écriture,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">‘a’</span></code> en écriture à la suite (<em>append</em>),</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="utilisez-un-with">
+<h2>utilisez un <code class="docutils literal notranslate"><span class="pre">with</span></code><a class="headerlink" href="#utilisez-un-with" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>prenez l’habitude de <strong>toujours utiliser un context manager</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># on n&#39;a pas encore étudié l&#39;instruction with</span>
+<span class="c1"># mais je vous conseille de toujours procéder comme ceci</span>
+
+<span class="c1"># avec with on n&#39;a pas besoin de fermer le fichier</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;temporaire.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># on triche un peu pour regarder le contenu</span>
+<span class="c1"># du fichier qu&#39;on vient de créer</span>
+
+<span class="o">!</span>cat temporaire.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 100
+20 400
+30 900
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="lecture-avec-for">
+<h2>lecture avec <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#lecture-avec-for" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>l’objet fichier est un <strong>itérable</strong> lui-même</p></li>
+<li><p>on peut faire un <code class="docutils literal notranslate"><span class="pre">for</span></code> dessus</p></li>
+<li><p><strong>attention</strong> toutefois, les lignes vont contenir un caractère <code class="docutils literal notranslate"><span class="pre">&quot;\n&quot;</span></code> de fin de ligne</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># lire un fichier texte </span>
+<span class="c1"># ligne par ligne</span>
+<span class="c1"># difficile de faire</span>
+<span class="c1"># plus compact et lisible !</span>
+
+<span class="c1"># remarquez aussi:</span>
+<span class="c1"># open() sans le mode ⇔ open(&#39;r&#39;)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;temporaire.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;-- </span><span class="si">{</span><span class="n">line</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-- 10 100
+-- 20 400
+-- 30 900
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># si on ne fait rien</span>
+<span class="c1"># on obtient 2 fins de ligne</span>
+<span class="c1"># (i.e. une ligne blanche)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;temporaire.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;-- </span><span class="si">{</span><span class="n">line</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-- 10 100
+
+-- 20 400
+
+-- 30 900
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Précision</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">print(...)</span></code> ajoute une fin de ligne</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print(...,</span> <span class="pre">end=&quot;&quot;)</span></code> évite cet ajout automatique</p></li>
+</ul>
+</div>
+<div class="section" id="fichiers-texte-ou-binaire">
+<h2>fichiers texte ou binaire<a class="headerlink" href="#fichiers-texte-ou-binaire" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>parfois utile d’ouvrir un fichier en binaire<br />
+par ex. un exécutable, un fichier dans un format propriétaire</p></li>
+<li><p>ajouter <code class="docutils literal notranslate"><span class="pre">'b'</span></code> au mode pour ouvrir <strong>en binaire</strong></p>
+<ul>
+<li><p>pas de décodage</p></li>
+<li><p>travaille alors à base de <strong><code class="docutils literal notranslate"><span class="pre">bytes</span></code></strong> et non de <code class="docutils literal notranslate"><span class="pre">str</span></code></p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># on part d&#39;une chaine avec des accents</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;noël en été</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+<span class="c1"># rappelez vous la section sur Unicode</span>
+<span class="c1"># j&#39;ai besoin d&#39;un objet bytes</span>
+<span class="c1"># j&#39;encode mon str en un bytes</span>
+<span class="n">binaire</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+
+<span class="n">binaire</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b&#39;no\xc3\xabl en \xc3\xa9t\xc3\xa9\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># remarquez le &#39;b&#39; dans le mode d&#39;ouverture</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;temporaire.bin&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">out_file</span><span class="p">:</span>
+    <span class="c1"># je peux du coup écrire un objet bytes</span>
+    <span class="n">out_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">binaire</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat temporaire.bin
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>noël en été
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pareil en lecture, le mode avec un &#39;b&#39;</span>
+<span class="c1"># va faire que read() retourne un objet bytes</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;temporaire.bin&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">in_file</span><span class="p">:</span>
+    <span class="n">binaire2</span> <span class="o">=</span> <span class="n">in_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># et donc on retombe bien sur nos pieds</span>
+<span class="n">binaire2</span> <span class="o">==</span> <span class="n">binaire</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># on aurait pu aussi bien faire</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;temporaire.bin&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">feed</span><span class="p">:</span>
+    <span class="n">text2</span> <span class="o">=</span> <span class="n">feed</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    
+<span class="n">text2</span> <span class="o">==</span> <span class="n">text</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="le-module-pathlib">
+<h2>le module <code class="docutils literal notranslate"><span class="pre">pathlib</span></code><a class="headerlink" href="#le-module-pathlib" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="objectifs">
+<h3>objectifs<a class="headerlink" href="#objectifs" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>simplifier la gestion des noms de fichier</p>
+<ul>
+<li><p>pour rendre le code plus concis</p></li>
+<li><p>et donc plus lisible</p></li>
+<li><p>sous-titre: <em>object-oriented filesystem paths</em></p></li>
+</ul>
+</li>
+<li><p>capable de</p>
+<ul>
+<li><p>ouvrir les fichiers</p></li>
+<li><p>savoir si le fichier existe, si c’est un dossier…</p></li>
+<li><p>accéder aux métadata (taille, date)</p></li>
+<li><p>parcourir un dossier par pattern-matching</p></li>
+<li><p>…</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="un-exemple">
+<h3>un exemple<a class="headerlink" href="#un-exemple" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># savoir si un chemin correspond à un dossier</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="n">tmp</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;temporaire.txt&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">tmp</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;c&#39;est un fichier&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c&#39;est un fichier
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># donc on peut l&#39;ouvrir</span>
+
+<span class="k">with</span> <span class="n">tmp</span><span class="o">.</span><span class="n">open</span><span class="p">()</span> <span class="k">as</span> <span class="n">feed</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">feed</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 100
+20 400
+30 900
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="construire-un-objet-path">
+<h3>construire un objet <code class="docutils literal notranslate"><span class="pre">Path</span></code><a class="headerlink" href="#construire-un-objet-path" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># un chemin absolu</span>
+<span class="n">prefix</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/etc&quot;</span><span class="p">)</span>
+
+<span class="c1"># le chemin absolu du directory courant</span>
+<span class="n">dot</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span>
+
+<span class="c1"># ou du homedir</span>
+<span class="n">home</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span>
+
+<span class="c1"># un nom de ficher</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;apache&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># par exemple le répertoire courant est</span>
+
+<span class="n">dot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/home/runner/work/python-advanced/python-advanced/notebooks&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="l-operateur">
+<h3>l’opérateur <code class="docutils literal notranslate"><span class="pre">/</span></code><a class="headerlink" href="#l-operateur" title="Permalink to this headline">¶</a></h3>
+<p>un exemple intéressant de surcharge d’opérateur - ici <code class="docutils literal notranslate"><span class="pre">/</span></code><br />
+selon le type de ses opérandes, <code class="docutils literal notranslate"><span class="pre">/</span></code> fait .. ce qu’il faut<br />
+par exemple ici on ne fait pas une division !</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Path / Path -&gt; Path bien sûr</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">prefix</span> <span class="o">/</span> <span class="n">filename</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pathlib.PosixPath
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Path / str -&gt; Path</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">prefix</span> <span class="o">/</span> <span class="s2">&quot;apache2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pathlib.PosixPath
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># str / Path -&gt; Path</span>
+<span class="nb">type</span><span class="p">(</span><span class="s2">&quot;/etc&quot;</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;apache2&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pathlib.PosixPath
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mais bien sûr str / str -&gt; TypeError</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="s2">&quot;/etc&quot;</span> <span class="o">/</span> <span class="s2">&quot;apache2&quot;</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;OOPS&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OOPS unsupported operand type(s) for /: &#39;str&#39; and &#39;str&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="calculs-sur-les-chemins">
+<h3>calculs sur les chemins<a class="headerlink" href="#calculs-sur-les-chemins" title="Permalink to this headline">¶</a></h3>
+<p>j’ai créé un petite hiérarchie de fichiers dans un dossier <code class="docutils literal notranslate"><span class="pre">filepath-globbing</span></code> qui ressemble à ceci</p>
+<p><img alt="" src="_images/filepath-globbing.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># voilà comment on peut d&#39;abord trouver son chemin absolu</span>
+
+<span class="n">globbing</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;filepath-globbing&quot;</span><span class="p">)</span>
+<span class="n">absolute</span> <span class="o">=</span> <span class="n">globbing</span><span class="o">.</span><span class="n">absolute</span><span class="p">()</span>
+<span class="n">absolute</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/home/runner/work/python-advanced/python-advanced/notebooks/filepath-globbing&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># si on a besoin d&#39;un str, comme toujours il suffit de faire</span>
+<span class="nb">str</span><span class="p">(</span><span class="n">absolute</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/runner/work/python-advanced/python-advanced/notebooks/filepath-globbing&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># les différents morceaux de ce chemin absolu</span>
+<span class="n">absolute</span><span class="o">.</span><span class="n">parts</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;/&#39;,
+ &#39;home&#39;,
+ &#39;runner&#39;,
+ &#39;work&#39;,
+ &#39;python-advanced&#39;,
+ &#39;python-advanced&#39;,
+ &#39;notebooks&#39;,
+ &#39;filepath-globbing&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># juste le nom du fichier, sans le chemin</span>
+<span class="n">absolute</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;filepath-globbing&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># le chemin, sans le nom du fichier</span>
+<span class="n">absolute</span><span class="o">.</span><span class="n">parent</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/home/runner/work/python-advanced/python-advanced/notebooks&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tous les dossiers parent</span>
+
+<span class="nb">list</span><span class="p">(</span><span class="n">absolute</span><span class="o">.</span><span class="n">parents</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;/home/runner/work/python-advanced/python-advanced/notebooks&#39;),
+ PosixPath(&#39;/home/runner/work/python-advanced/python-advanced&#39;),
+ PosixPath(&#39;/home/runner/work/python-advanced&#39;),
+ PosixPath(&#39;/home/runner/work&#39;),
+ PosixPath(&#39;/home/runner&#39;),
+ PosixPath(&#39;/home&#39;),
+ PosixPath(&#39;/&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="pattern-matching">
+<h3>pattern-matching<a class="headerlink" href="#pattern-matching" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># est-ce que le nom de mon objet Path </span>
+<span class="c1"># a une certaine forme ?</span>
+
+<span class="n">absolute</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;**/notebooks/*&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">absolute</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;**/*globbing*&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="pattern-matching-suite">
+<h4>pattern-matching - suite<a class="headerlink" href="#pattern-matching-suite" title="Permalink to this headline">¶</a></h4>
+<p>recherche dans un répertoire</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># un répertoire qui contient quelques fichiers</span>
+<span class="o">!</span>ls filepath-globbing/**
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>filepath-globbing/a1
+
+filepath-globbing/b:
+b2
+
+filepath-globbing/c:
+c1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># à présent c&#39;est plus intéressant</span>
+<span class="c1"># avec des chemins relatifs</span>
+<span class="n">globbing</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;filepath-globbing&quot;</span><span class="p">)</span>
+
+<span class="nb">list</span><span class="p">(</span><span class="n">globbing</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;filepath-globbing/c&#39;),
+ PosixPath(&#39;filepath-globbing/b&#39;),
+ PosixPath(&#39;filepath-globbing/a1&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">globbing</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*[0-9]&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;filepath-globbing/a1&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">globbing</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;**&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;filepath-globbing&#39;),
+ PosixPath(&#39;filepath-globbing/c&#39;),
+ PosixPath(&#39;filepath-globbing/c/c1&#39;),
+ PosixPath(&#39;filepath-globbing/b&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">globbing</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;**/*[0-9]&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;filepath-globbing/a1&#39;),
+ PosixPath(&#39;filepath-globbing/c/c1&#39;),
+ PosixPath(&#39;filepath-globbing/c/c1/c2&#39;),
+ PosixPath(&#39;filepath-globbing/b/b2&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="n">globbing</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;filepath-globbing&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="2-03-strings.html" title="previous page">chaines et binaire (<code class="docutils literal notranslate"><span class="pre">str</span></code> et <code class="docutils literal notranslate"><span class="pre">bytes</span></code>)</a>
+    <a class='right-next' id="next-link" href="2-05-containers-2.html" title="next page">les containers (2/2)</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thierry Parmentelat<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

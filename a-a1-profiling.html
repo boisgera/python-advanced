@@ -1,0 +1,791 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>étude de performances &#8212; Python Avancé</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Qualité du code" href="a-b1-linting.html" />
+    <link rel="prev" title="properties" href="9-11-properties.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Avancé</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-01-snake.html">
+   UE12 - Python avancé
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  types de base
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-01-numbers.html">
+   les nombres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-02-containers-1.html">
+   les containers (1/2)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-03-strings.html">
+   chaines et binaire (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     str
+    </span>
+   </code>
+   et
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     bytes
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-04-files.html">
+   les fichiers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-05-containers-2.html">
+   les containers (2/2)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  présentation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-11-pep008.html">
+   présentation du code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  itérations
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-11-iterations-1.html">
+   les itérations en Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-12-iterations-2.html">
+   les itérations - suite
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  classes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-11-classes.html">
+   classes : rappels (1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-12-dunder-specials.html">
+   classes : rappels (2)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  fonctions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-00-intro.html">
+   cours 6/9 : fonctions
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  regexps
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-10-regexps.html">
+   expressions régulières
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  générateurs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-20-generators.html">
+   les générateurs
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  héritage
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-30-inheritance.html">
+   POO &amp; héritage
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  organisation des sources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="8-10-imports-sources.html">
+   Imports et organisation du code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  divers
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-10-argparse.html">
+   écrire un lanceur / point d’entrée
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-11-properties.html">
+   properties
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  notebooks interactifs
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   étude de performances
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-b1-linting.html">
+   Qualité du code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c3-notebooks-interactifs.html">
+   Notebooks interactifs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c4-animations-matplotlib.html">
+   Animations interactives avec
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c5-bokeh-et-al.html">
+   Autres bibliothèques de visualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c6-fourier-k3d.html">
+   Application à la transformée de Fourier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x1-taylor.html">
+   Le théorème de Taylor illustré
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x2-coronavirus.html">
+   Coronavirus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x3-potentials.html">
+   Tracés de champs de vitesses
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python asynchrone
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-01-os-basics.html">
+   rappels
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s1-programmation-asynchrone.html">
+   programmation asynchrone
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s1-z1-thread-safety.html">
+   Pourquoi les
+   <em>
+    threads
+   </em>
+   c’est délicat ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s2-examples.html">
+   premiers exemples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s3-ecosysteme.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     asyncio
+    </span>
+   </code>
+   : historique et écosystème
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s4-async-with-for.html">
+   extensions asynchrones du langage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s6-av-event-loops.html">
+   boucle d’événements
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     asyncio
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s7-libraries.html">
+   les librairies disponibles
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/a-a1-profiling.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/a-a1-profiling.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ue12/python-advanced"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ue12/python-advanced/issues/new?title=Issue%20on%20page%20%2Fa-a1-profiling.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ue12/python-advanced/edit/main/notebooks/a-a1-profiling.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ue12/python-advanced/main?urlpath=tree/notebooks/a-a1-profiling.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#c-est-quoi-le-profiling">
+   c’est quoi le
+   <em>
+    profiling
+   </em>
+   ?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#en-pratique-cprofile">
+   en pratique :
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cProfile
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lancer-en-mode-profiling">
+     lancer en mode
+     <em>
+      profiling
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comment-lire-le-resultat">
+     comment lire le résultat
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#trier-le-resultat">
+     trier le résultat
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comment-s-en-servir">
+     comment s’en servir
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice">
+   <strong>
+    exercice
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#right-tool-for-the-job">
+   <em>
+    right tool for the job
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#see-also">
+   <em>
+    see also
+   </em>
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="etude-de-performances">
+<h1>étude de performances<a class="headerlink" href="#etude-de-performances" title="Permalink to this headline">¶</a></h1>
+<p>imaginons que vous venez d’écrire un code magnifique pour résoudre le Rubik’s cube ou calculer la quadrature de la Tour Eiffel, ou peu importe</p>
+<p>bon, le code marche, il retourne bien les bonnes valeurs; sauf que c’est mou, le programme se traîne et n’en finit pas de mouliner, alors que vous avez le sentiment que ça devrait aller beaucoup plus vite que ça</p>
+<p>dans ces cas-là, le premier réflexe, c’est de commencer par une petite analyse introspective</p>
+<ul class="simple">
+<li><p><strong>ça devrait être quoi en principe la complexité ?</strong><br />
+ça vaut toujours la peine de s’arrêter 5 minutes pour ré-évaluer, sur le code présent et non pas sur la version d’il y a deux semaines, la complexité théorique du code<br />
+en n’oubliant pas de prendre en compte les spécificités des types de données qu’on a choisies; rappelez-vous le cours, et regardez bien toutes les fois où vous balayez toute une liste (on vous bassine depuis le début du cours sur le fait que les recherches dans une liste sont en O(n)); assurez-vous de bien utiliser des ensembles si vous avez beaucoup de recherches à faire, ce genre de choses</p></li>
+<li><p><strong>est-ce que cette complexité théorique est bien confirmée par l’expérience ?</strong><br />
+par exemple si vous attendez à un algo quadratique, est-ce que de multiplier la taille des entrées par 3 ou par 10, ça provoque un allongement dans un rapport 9 ou 100 ?</p></li>
+</ul>
+<p>c’est important de faire cette analyse, et de ne pas se jeter immédiatement dans le profiling</p>
+<p>mais clairement avec juste un cerveau ça n’est pas forcément trivial de tout prendre en compte, surtout lorsqu’on utilise des librairies tierces qui fonctionnent on ne sait pas toujours exactement comment</p>
+<div class="section" id="c-est-quoi-le-profiling">
+<h2>c’est quoi le <em>profiling</em> ?<a class="headerlink" href="#c-est-quoi-le-profiling" title="Permalink to this headline">¶</a></h2>
+<p>du coup, pour pouvoir faire une analyse basée sur des faits objectifs, il existe une technique, le <em>profiling</em> donc, qui repose sur une idée relativement simple.</p>
+<p>dans le cas de Python, le code est interprété; ça signifie que c’est l’interpréteur qui se charge de faire avancer le programme; et si on lui demande gentiment, on peut faire en sorte qu’il enregistre les événements du type <em>appel de fonction</em>, avec l’instant où ça se passe.</p>
+<p>pour information, on appelle cette méthode le <em>profiling</em> déterministe, car tous les événements sont pris en compte;
+avec les langages compilés comme C++, on est obligé d’utiliser une approche statistique, qui consiste à échantillonner à intervalle régulier l’état de la pile d’exécution; mais peu importe..</p>
+</div>
+<div class="section" id="en-pratique-cprofile">
+<h2>en pratique : <code class="docutils literal notranslate"><span class="pre">cProfile</span></code><a class="headerlink" href="#en-pratique-cprofile" title="Permalink to this headline">¶</a></h2>
+<p>pour commencer on va utiliser un script simplissime qui est celui-ci<br />
+(souvenez-vous que les commandes avec un <code class="docutils literal notranslate"><span class="pre">!</span></code> sont à destination <strong>du terminal</strong> et pas de Python)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span> cat fibo.py
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>def fibo(n):
+    unused = 10
+    if n &lt;= 1:
+        return 1
+    return fibo(n-1) + fibo(n-2)
+
+def main():
+    import sys
+    print(fibo(int(sys.argv[1])))
+
+main()
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="lancer-en-mode-profiling">
+<h3>lancer en mode <em>profiling</em><a class="headerlink" href="#lancer-en-mode-profiling" title="Permalink to this headline">¶</a></h3>
+<p>si vous devez ne retenir qu’une chose pour la mise en pratique, c’est que pour un programme qui se lance comme ceci</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span> python fibo.py <span class="m">32</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3524578
+</pre></div>
+</div>
+</div>
+</div>
+<p>alors vous pouvez le lancer en mode profiling en invoquant le module <code class="docutils literal notranslate"><span class="pre">cProfile</span></code> comme ceci</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># il suffit d&#39;ajouter le &#39;-m cProfile&#39; </span>
+
+<span class="o">!</span> python -m cProfile fibo.py <span class="m">32</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3524578
+         7049160 function calls (6 primitive calls) in 1.842 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    1.842    1.842 fibo.py:1(&lt;module&gt;)
+7049155/1    1.842    0.000    1.842    1.842 fibo.py:1(fibo)
+        1    0.000    0.000    1.842    1.842 fibo.py:7(main)
+        1    0.000    0.000    1.842    1.842 {built-in method builtins.exec}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method &#39;disable&#39; of &#39;_lsprof.Profiler&#39; objects}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="comment-lire-le-resultat">
+<h3>comment lire le résultat<a class="headerlink" href="#comment-lire-le-resultat" title="Permalink to this headline">¶</a></h3>
+<p>en gros, on y trouve une ligne par fonction appelée dans le programme</p>
+<p>dans notre premier exemple trivialissime, nous n’avons défini que deux fonctions <code class="docutils literal notranslate"><span class="pre">fibo</span></code> et <code class="docutils literal notranslate"><span class="pre">main</span></code>; (il y a toujours un peu de bruit, des fonctions appelées par l’interpréteur, à ignorer)</p>
+<p>pour chaque fonction on va trouver</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ncalls</span></code> : le nombre de fois que la fonction a été appelée</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tottime</span></code> : le <strong>temps CPU</strong> pendant laquelle <strong>la fonction a eu le CPU</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cumtime</span></code> : le <strong>temps CPU</strong> pendant laquelle <strong>la fonction ou une fonction appelée par elle</strong>, a eu le CPU</p></li>
+</ul>
+<p>ainsi dans notre exemple, la fonction <code class="docutils literal notranslate"><span class="pre">main</span></code> a un <code class="docutils literal notranslate"><span class="pre">cumtime</span></code> quasi égal
+à celui de <code class="docutils literal notranslate"><span class="pre">fibo</span></code> (parce que pendant tout le temps on est dans <code class="docutils literal notranslate"><span class="pre">fibo</span></code>,
+on est aussi indirectement dans <code class="docutils literal notranslate"><span class="pre">main</span></code>) , mais un temps “en propre”
+quasi nul</p>
+<p>notez la subtilité, ici on <strong>parle de temps CPU, pas de temps ressenti</strong></p>
+<p>c’est quoi la différence, me direz-vous ?</p>
+<p>imaginez une fonction qui attend un paquet en provenance du réseau</p>
+<p>le temps ressenti (en anglais on parle de <em>wallclock time</em>) c’est basé sur l’heure usuelle; on va mesurer le temps ressenti comme la différence entre l’heure à laquelle la fonction commence son travail et celle où elle le finit; si le paquet réseau met 1 s à arriver, le temps ressenti pour exécuter la fonction c’est 1s</p>
+<p>le temps CPU au contraire, c’est lié au nombre de cycles pendant lesquels la fonction a le CPU, et dans notre cas ça va être plutôt quelque chose d’un ordre de grandeur largement inférieur à la milliseconde</p>
+</div>
+<div class="section" id="trier-le-resultat">
+<h3>trier le résultat<a class="headerlink" href="#trier-le-resultat" title="Permalink to this headline">¶</a></h3>
+<p>pour trier selon une colonne, on ajoute encore l’option <code class="docutils literal notranslate"><span class="pre">-s</span></code>, (s comme
+<em>sort</em> évidemment)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pour trier selon le nombre d&#39;appels - la colonne &#39;ncalls&#39; </span>
+
+<span class="o">!</span> python -m cProfile -s ncalls fibo.py <span class="m">32</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3524578
+         7049160 function calls (6 primitive calls) in 1.784 seconds
+
+   Ordered by: call count
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+7049155/1    1.784    0.000    1.784    1.784 fibo.py:1(fibo)
+        1    0.000    0.000    1.784    1.784 {built-in method builtins.exec}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    1.784    1.784 fibo.py:7(main)
+        1    0.000    0.000    1.784    1.784 fibo.py:1(&lt;module&gt;)
+        1    0.000    0.000    0.000    0.000 {method &#39;disable&#39; of &#39;_lsprof.Profiler&#39; objects}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="comment-s-en-servir">
+<h3>comment s’en servir<a class="headerlink" href="#comment-s-en-servir" title="Permalink to this headline">¶</a></h3>
+<p>dans un cas réel, ce n’est pas <code class="docutils literal notranslate"><span class="pre">ncalls</span></code> qui nous intéresse le plus, et souvent la découverte la plus intéressante est faite en triant selon la colonne <code class="docutils literal notranslate"><span class="pre">tottime</span></code>, la fonction qui mange le plus de CPU</p>
+</div>
+</div>
+<div class="section" id="exercice">
+<h2><strong>exercice</strong><a class="headerlink" href="#exercice" title="Permalink to this headline">¶</a></h2>
+<p>reprenez un de vos codes - par exemple le taquin, sujet qui se prête particulièremente bien ici</p>
+<ul class="simple">
+<li><p>utilisez le profiler pour trouver la fonction qui consomme le plus de CPU</p></li>
+<li><p>comparez ça par rapport au temps total d’exécution du programme</p></li>
+<li><p>si le gagnant consomme plus de 20% du temps total, il y a matière à agir</p></li>
+</ul>
+<p>faites une ou deux itérations d’optimisation, tout en utilisant le profiler</p>
+</div>
+<div class="section" id="right-tool-for-the-job">
+<h2><em>right tool for the job</em><a class="headerlink" href="#right-tool-for-the-job" title="Permalink to this headline">¶</a></h2>
+<p>juste pour bien préciser le vocabulaire, on a vu pendant le cours plusieurs techniques qui sont bien distinctes, qu’il faut savoir utiliser à bon escient</p>
+<ul>
+<li><p>le <em><strong>debugging</strong></em> c’est l’art de passer d’un premier jet à un code qui marche vraiment; dit autrement, il s’agit  de trouver où et/ou pourquoi un programme ne fait pas tout à fait exactement ce qu’on voudrait<br />
+pour cette phase, on peut soit a) instrumenter manuellement le code en ajoutant des <code class="docutils literal notranslate"><span class="pre">print()</span></code>, ou b) faire tourner le programme sous un debugger - par exemple sous vs-code - qui au prix d’un peu de setup et d’apprentissage, est un outil bien plus puissant pour gérer les <em>breakpoint</em> à la souris, exécuter le programme pas à pas tout en inspectant la valeur des variables, etc…</p></li>
+<li><p>le <em><strong>benchmarking</strong></em>, qui consiste à mesurer très finement le temps d’exécution d’un fragment de code<br />
+pour ça on a rencontré déjà le module <code class="docutils literal notranslate"><span class="pre">timeit</span></code>, avec comme compagnons les <em>magic</em> Jupyter en <code class="docutils literal notranslate"><span class="pre">%timeit</span></code> et <code class="docutils literal notranslate"><span class="pre">%%timeit</span></code></p></li>
+<li><p>le <em><strong>profiling</strong></em>, qui consiste à observer le programme en cours d’exécution, pour créer des statistiques, et ultimement déterminer la partie de code la plus sollicitée, en vue d’optimiser le code<br />
+pour ça on utilise les outils vus plus haut, comme <code class="docutils literal notranslate"><span class="pre">cProfile</span></code></p></li>
+<li><p>le <em><strong>test</strong></em> : on veut avoir une info de synthèse sur le bon comportement du code dans idéalement un grand nombre de situtations - <em>the more the better</em></p>
+<p>pour ça on utilise des outils comme <code class="docutils literal notranslate"><span class="pre">pytest</span></code>; l’objectif ici étant de donner <strong>une synthèse</strong> sur le plus grand nombre possible de tests, ces outils sont <em>mal adaptés</em> au debugging; dit autrement, lorsqu’un test échoue on est censé retourner à la case <em>debug</em></p>
+</li>
+</ul>
+</div>
+<div class="section" id="see-also">
+<h2><em>see also</em><a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>la documentation standard Python <a class="reference external" href="https://docs.python.org/3/library/profile.html">sur le profiling</a><br />
+il y a notamment toute une API pour utiliser le profiler</p>
+<p>cet article très intéressant vous parle des alternatives à <code class="docutils literal notranslate"><span class="pre">cProfile</span></code></p>
+<p>https://pythonspeed.com/articles/beyond-cprofile/</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="9-11-properties.html" title="previous page">properties</a>
+    <a class='right-next' id="next-link" href="a-b1-linting.html" title="next page">Qualité du code</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thierry Parmentelat<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -1,0 +1,1115 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>boucle d’événements asyncio &#8212; Python Avancé</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="les librairies disponibles" href="b-s7-libraries.html" />
+    <link rel="prev" title="extensions asynchrones du langage" href="b-s4-async-with-for.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Avancé</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-01-snake.html">
+   UE12 - Python avancé
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  types de base
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-01-numbers.html">
+   les nombres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-02-containers-1.html">
+   les containers (1/2)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-03-strings.html">
+   chaines et binaire (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     str
+    </span>
+   </code>
+   et
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     bytes
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-04-files.html">
+   les fichiers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-05-containers-2.html">
+   les containers (2/2)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  présentation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-11-pep008.html">
+   présentation du code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  itérations
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-11-iterations-1.html">
+   les itérations en Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-12-iterations-2.html">
+   les itérations - suite
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  classes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-11-classes.html">
+   classes : rappels (1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-12-dunder-specials.html">
+   classes : rappels (2)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  fonctions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-00-intro.html">
+   cours 6/9 : fonctions
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  regexps
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-10-regexps.html">
+   expressions régulières
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  générateurs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-20-generators.html">
+   les générateurs
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  héritage
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-30-inheritance.html">
+   POO &amp; héritage
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  organisation des sources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="8-10-imports-sources.html">
+   Imports et organisation du code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  divers
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-10-argparse.html">
+   écrire un lanceur / point d’entrée
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-11-properties.html">
+   properties
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  notebooks interactifs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-a1-profiling.html">
+   étude de performances
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-b1-linting.html">
+   Qualité du code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c3-notebooks-interactifs.html">
+   Notebooks interactifs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c4-animations-matplotlib.html">
+   Animations interactives avec
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c5-bokeh-et-al.html">
+   Autres bibliothèques de visualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c6-fourier-k3d.html">
+   Application à la transformée de Fourier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x1-taylor.html">
+   Le théorème de Taylor illustré
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x2-coronavirus.html">
+   Coronavirus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x3-potentials.html">
+   Tracés de champs de vitesses
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python asynchrone
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-01-os-basics.html">
+   rappels
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s1-programmation-asynchrone.html">
+   programmation asynchrone
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s1-z1-thread-safety.html">
+   Pourquoi les
+   <em>
+    threads
+   </em>
+   c’est délicat ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s2-examples.html">
+   premiers exemples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s3-ecosysteme.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     asyncio
+    </span>
+   </code>
+   : historique et écosystème
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s4-async-with-for.html">
+   extensions asynchrones du langage
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   boucle d’événements
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     asyncio
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s7-libraries.html">
+   les librairies disponibles
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/b-s6-av-event-loops.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/b-s6-av-event-loops.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ue12/python-advanced"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ue12/python-advanced/issues/new?title=Issue%20on%20page%20%2Fb-s6-av-event-loops.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ue12/python-advanced/edit/main/notebooks/b-s6-av-event-loops.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ue12/python-advanced/main?urlpath=tree/notebooks/b-s6-av-event-loops.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#utilitaire">
+   utilitaire
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creer-une-boucle-d-evenements">
+   créer une boucle d’événements
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#le-notebook-ne-se-prete-pas-bien-a-cette-partie">
+     le notebook ne se prête pas bien à cette partie
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#new-event-loop-et-run-until-complete">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       new_event_loop()
+      </span>
+     </code>
+     et
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       run_until_complete()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#injecter-un-peu-d-asynchrone-dans-du-code-synchrone">
+     injecter un peu d’asynchrone dans du code synchrone
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ajout-de-traitements">
+   ajout de traitements
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#asyncio-ensure-future">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       asyncio.ensure_future()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loop-run-forever">
+     loop.run_forever()
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#petite-remarque-sur-la-boucle-courante">
+     petite remarque sur la boucle courante
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loop-stop">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     loop.stop()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-until-complete-sur-une-boucle-non-vide">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     run_until_complete
+    </span>
+   </code>
+   sur une boucle non-vide
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-until-complete-vs-run-forever">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     run_until_complete
+    </span>
+   </code>
+   vs
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     run_forever
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-resultats-et-exceptions">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Task
+    </span>
+   </code>
+   , résultats et exceptions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#retouver-les-resultats-des-calculs">
+     retouver les résultats des calculs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exceptions">
+     exceptions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resume">
+   résumé
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><span style="float:left;">Licence CC BY-NC-ND</span><span style="float:right;">Thierry Parmentelat<img alt="_images/inria-25-alpha.png" src="_images/inria-25-alpha.png" /></span><br/></p>
+<div class="section" id="boucle-d-evenements-asyncio">
+<h1>boucle d’événements <code class="docutils literal notranslate"><span class="pre">asyncio</span></code><a class="headerlink" href="#boucle-d-evenements-asyncio" title="Permalink to this headline">¶</a></h1>
+<p>Maintenant qu’on a vu les extensions asynchrones du langage, nous allons pouvoir nous
+intéresser d’un peu plus près aux boucles d’événements.</p>
+<p>Jusqu’ici nous avons toujours utilisé nos boucles en utilisant <code class="docutils literal notranslate"><span class="pre">await</span></code> depuis le <em>toplevel</em> du notebook.</p>
+<p>Bon d’abord il faut redire que cette méthode <strong>ne marche pas dans du “vrai” code Python</strong>, puisqu’on a vu qu’on n’avait <strong>pas le droit de faire <code class="docutils literal notranslate"><span class="pre">await</span></code> depuis du code synchrone</strong>.</p>
+<p>Avec <code class="docutils literal notranslate"><span class="pre">await</span></code> on peut “lancer” <strong>une</strong> coroutine; du coup nous avons
+utilisé <code class="docutils literal notranslate"><span class="pre">gather</span></code> pour montrer des exemples avec des traitements concurrents.</p>
+<p>Mais bon, on ne peut pas toujours faire ça aussi simplement; il y a des cas bien entendu
+où il faut <strong>ajouter des traitements à la volée</strong>, et voyons comment ça se présente alors.</p>
+<p>Bref, on va voir maintenant comment faire pour faire de l’asynchrone dans un vrai code
+Python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="utilitaire">
+<h2>utilitaire<a class="headerlink" href="#utilitaire" title="Permalink to this headline">¶</a></h2>
+<p>Mais avant ça on va regarder un petit utilitaire que j’ai écrit juste pour ce cours, c’est extrêment simple on a deux fonctions, ce sont des <strong>fonctions synchrones</strong> (normales, pas des <code class="docutils literal notranslate"><span class="pre">async</span></code>), et voici ce qu’elles font:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">asynchelpers</span> <span class="kn">import</span> <span class="n">start_timer</span><span class="p">,</span> <span class="n">show_timer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># start_timer() ça mémorise l&#39;heure courante</span>
+<span class="c1"># et pour qu&#39;on le voie bien ça écrit &#39;zéro&#39;</span>
+<span class="n">start_timer</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># et ensuite j&#39;appelle show_timer</span>
+<span class="c1"># ça s&#39;utilise comme print en fait</span>
+<span class="c1"># sauf qu&#39;en plus ça dit combien de temps </span>
+<span class="c1"># s&#39;est écoulé depuis le start_time()</span>
+
+<span class="n">show_timer</span><span class="p">(</span><span class="s1">&#39;un message&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>bref pour faire simple, on veut juste pouvoir utiliser <code class="docutils literal notranslate"><span class="pre">show_timer(...)</span></code> comme <code class="docutils literal notranslate"><span class="pre">print()</span></code>, mais que ça affiche en plus où on en est (le temps écoulé) dans le scénario</p>
+</div>
+<div class="section" id="creer-une-boucle-d-evenements">
+<h2>créer une boucle d’événements<a class="headerlink" href="#creer-une-boucle-d-evenements" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="le-notebook-ne-se-prete-pas-bien-a-cette-partie">
+<h3>le notebook ne se prête pas bien à cette partie<a class="headerlink" href="#le-notebook-ne-se-prete-pas-bien-a-cette-partie" title="Permalink to this headline">¶</a></h3>
+<p>il y a quelques contraintes supplémentaires par rapport à ce qu’on a vu jusqu’ici, notamment on ne peut <strong>pas avoir plus d’une boucle d’événements active par thread</strong></p>
+<p>ça se comprend si on réalise que c’est la boucle d’événements qui contrôle tout se qui se passe dans le thread à un moment donné (il faudrait sinon une espèce de système de <em>nested loops</em>, mais c’est déjà assez compliqué comme ça)</p>
+<p><strong>MAIS</strong> il se trouve que dans le serveur Jupyter, il y a <strong>déja une boucle d’événements</strong>; ça aussi ça se comprend car par essence, les fonctionnalités de Jupyter sont très asynchrones si vous considérez qu’il faut</p>
+<ul class="simple">
+<li><p>créer le kernel Python, et lire ses sorties (pour les afficher dans le <code class="docutils literal notranslate"><span class="pre">Out[]</span></code> correspondant)</p></li>
+<li><p>et en même temps réagir aux actions de l’utilisateur, notamment réagir aux ‘Shift Enter’ que vous tapez dans les cellules de code…</p></li>
+</ul>
+<p>Donc naturellement, le code du serveur Jupyter est .. écrit en code asynchrone, et donc il y a déjà une boucle d’événements qui est présente</p>
+<p>cer qui induit certaines limitations sur ce qu’on peut faire dans le notebook quand on aborde cette partie du cours</p>
+<p>C’est pourquoi on va faire le plus gros directement avec l’interpréteur Python</p>
+</div>
+<div class="section" id="new-event-loop-et-run-until-complete">
+<h3><code class="docutils literal notranslate"><span class="pre">new_event_loop()</span></code> et <code class="docutils literal notranslate"><span class="pre">run_until_complete()</span></code><a class="headerlink" href="#new-event-loop-et-run-until-complete" title="Permalink to this headline">¶</a></h3>
+<p>Pour créer une boucle d’événements on peut appeler <code class="docutils literal notranslate"><span class="pre">asyncio.new_event_loop()</span></code></p>
+<p>Et ensuite lui envoyer la méthode <code class="docutils literal notranslate"><span class="pre">run_until_complete()</span></code> qui</p>
+<ul class="simple">
+<li><p>prend en paramètre un <em>awaitable</em> - pour l’instant, on va dire un objet coroutine</p></li>
+<li><p>et le fait tourner, et garde le contrôle jusqu’à que son exécution termine</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!cat exo1-simple-loop.py
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!python exo1-simple-loop.py
+</pre></div>
+</div>
+</div>
+</div>
+<p>OK, donc du coup cette formule magique</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">new_event_loop</span><span class="p">()</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">both</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>remplace le <code class="docutils literal notranslate"><span class="pre">await</span> <span class="pre">both()</span></code> qu’on aurait fait si on avait été sous Jupyter; c’est vrai quand même que c’est plus pratique de faire juste <code class="docutils literal notranslate"><span class="pre">await</span></code> …</p>
+<p><strong>Remarque</strong></p>
+<p>Quand c’est aussi simple que ça, on peut aussi faire plus simplement</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">both</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>qui est également plus simple que notre formule magique; et c’est ça qu’on trouve d’ailleurs dans la plupart des petits exemples; je vous encourage à l’utiliser quand c’est possible, mais disons qu’avec notre version on comprend miexu ce qui se passe vraiment derrière la scène.</p>
+</div>
+<div class="section" id="injecter-un-peu-d-asynchrone-dans-du-code-synchrone">
+<h3>injecter un peu d’asynchrone dans du code synchrone<a class="headerlink" href="#injecter-un-peu-d-asynchrone-dans-du-code-synchrone" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">run_until_complete()</span></code> c’est pratique pour des petits essais comme ça; c’est aussi utile lorsque vous avez une application qui est majoritairement synchrone, et que vous voulez juste injecter un tout petit peu de parallèlisme dedans.</p>
+<p>Mettons que votre appli, qui n’a pas un gramme d’asynchrone dedans, a besoin de downloaded 4 URLs de manière efficace, vous pouvez tout à fait insérer le code de la séquence précédente pour passer de ceci</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mon_code_synchrone</span><span class="p">():</span>
+    <span class="c1"># le corps d&#39;une fonction synchrone</span>
+    <span class="c1"># qui a besoin ICI de 4 URLS</span>
+    <span class="n">remotes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">:</span>
+        <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="n">remotes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="c1"># avant de continuer</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>à ceci,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mon_code_un_peu_asynchrone</span><span class="p">():</span>
+    <span class="c1"># la fonction reste synchrone</span>
+    <span class="c1"># mais elle sous-traite juste cette partie</span>
+    <span class="c1"># à une boucle d&#39;événements</span>
+    <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">new_event_loop</span><span class="p">()</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+        <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="o">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+            <span class="k">async</span> <span class="k">with</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
+                <span class="k">return</span> <span class="k">await</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">remotes</span> <span class="o">=</span> <span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span>
+        <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">fetch</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">)))</span>
+    <span class="c1"># ici on repasse dans le mode purement synchrone</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>qui va aller beaucoup plus vite, comme on l’a vu, mais sans changer fondamentalement la logique de l’application; remarquez que dans les deux versions la fonction qui nous intéresse est une fonction <strong>synchrone</strong> (normale quoi) définie sans <code class="docutils literal notranslate"><span class="pre">async</span></code></p>
+</div>
+</div>
+<div class="section" id="ajout-de-traitements">
+<h2>ajout de traitements<a class="headerlink" href="#ajout-de-traitements" title="Permalink to this headline">¶</a></h2>
+<p>Quand on commence à ajouter comme ça de l’asynchrone, assez vite on se retrouve à avoir<strong>une seule boucle d’événements</strong> dans laquelle on ajoute au fil de l’eau des trucs à faire - comme le serveur Jupyter par exemple.</p>
+<p>Pour ce genre d’usages-là, la librairie propose deux autres
+mécanismes de base qui sont</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ensure_future</span></code>, pour ajouter un
+traitement dans la boucle, avant ou
+après qu’elle a commencé</p></li>
+<li><p>et aussi <code class="docutils literal notranslate"><span class="pre">run_forever</span></code>, qui fait tourner
+une boucle d’événements indéfiniment;
+cette méthode sur les boucles ne prend
+aucun argument, ce qui suppose qu’on a
+donc rempli la boucle au préalable
+avec, justement, <code class="docutils literal notranslate"><span class="pre">ensure_future</span></code></p></li>
+</ul>
+<div class="section" id="asyncio-ensure-future">
+<h3><code class="docutils literal notranslate"><span class="pre">asyncio.ensure_future()</span></code><a class="headerlink" href="#asyncio-ensure-future" title="Permalink to this headline">¶</a></h3>
+<p>et pour illustrer <code class="docutils literal notranslate"><span class="pre">ensure_future</span></code>, le plus simple c’est cette fois .. dans le notebook Jupyter; on a vu qu’il y a déjà une boucle d’événements active :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># dans le notebook on a déjà une boucle d&#39;événements !</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>et comme j’ai cette boucle active, je peux y ajouter par exemple un objet coroutine</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">loop1</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">show_timer</span><span class="p">(</span><span class="s1">&#39;tick1&#39;</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">loop2</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+        <span class="n">show_timer</span><span class="p">(</span><span class="s1">&#39;tick2&#39;</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">both</span><span class="p">():</span>
+    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="n">loop1</span><span class="p">(),</span> <span class="n">loop2</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">both</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="loop-run-forever">
+<h3>loop.run_forever()<a class="headerlink" href="#loop-run-forever" title="Permalink to this headline">¶</a></h3>
+<p>cette méthode ne prend pas d’argument, elle va juste faire tourner la boucle jusqu’à la fin des temps (on verra après comment l’arrêter, si besoin)</p>
+<p>je vais l’utiliser pour implémenter un workflow comme celui de la figure;
+le point ici c’est qu’au départ on ne sait pas le nombre de tâches à faire en parallèle, et que donc il ous faut apprendre comment ajouter des <em>trucs à faire</em> au fil de l’eau.</p>
+<p><img alt="figure fork" src="_images/w8-s6-av-fig1.png" /></p>
+<p>remarquez le <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[*]</span></code> qui reste affiché tant que le programme n’est pas terminé</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!cat exo2-fork.py
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># à ce stade on n&#39;a rien prévu dans le code pour terminer la boucle, 
+# attention à bien interrompre après quelques secondes
+# avec Kernel -&gt; Interrupt  (raccourci clavier : 2 fois la touche &#39;i&#39; )
+
+!python exo2-fork.py
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="petite-remarque-sur-la-boucle-courante">
+<h3>petite remarque sur la boucle courante<a class="headerlink" href="#petite-remarque-sur-la-boucle-courante" title="Permalink to this headline">¶</a></h3>
+<p>à la fin du code précédent,
+au lieu de</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">new_event_loop</span><span class="p">()</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">c1</span><span class="p">(),</span> <span class="n">loop</span><span class="o">=</span><span class="n">loop</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>on aurait pu aussi bien écrire ceci</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">c1</span><span class="p">())</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_forever</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>c’est vrai que c’est un petit peu plus simple, mais ça utilise la notion de boucle courante (<code class="docutils literal notranslate"><span class="pre">get_event_loop()</span></code>) qui est à mon avis un peu plus dangereuse car elle dépend d’un état qu’on ne contrôle pas toujours; bref c’est une question de goût…</p>
+<p>sachez pour conclure dans cette rubrique qu’il existe aussi une fonction pour choisir la boucle courante</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">asyncio</span><span class="o">.</span><span class="n">set_event_loop</span><span class="p">(</span><span class="n">loop</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>si bien qu’on peut faire en quelque sorte un reset en faisant ceci</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">asyncio</span><span class="o">.</span><span class="n">set_event_loop</span><span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">new_event_loop</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>mais tout ça est plutôt de second ordre…</p>
+</div>
+</div>
+<div class="section" id="loop-stop">
+<h2><code class="docutils literal notranslate"><span class="pre">loop.stop()</span></code><a class="headerlink" href="#loop-stop" title="Permalink to this headline">¶</a></h2>
+<p>on peut arrêter une boucle avec une fonction (synchrone)
+voici une version quasiment identique de l’exo précédent mais qui s’arrête toute seule à la fin du scénario</p>
+<p>question subsidiaire: pourquoi est-ce que c’est une fonction synchrone ?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># essentiellement on a juste ajouté une ligne 
+
+!diff exo2-fork.py exo3-fork-and-stop.py
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># cette fois-ci ça s&#39;arrête tout seul..
+
+!python exo3-fork-and-stop.py
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="run-until-complete-sur-une-boucle-non-vide">
+<h2><code class="docutils literal notranslate"><span class="pre">run_until_complete</span></code> sur une boucle non-vide<a class="headerlink" href="#run-until-complete-sur-une-boucle-non-vide" title="Permalink to this headline">¶</a></h2>
+<p>Ce qu’il faut bien comprendre c’est que la boucle d’événements peut très bien être suspendue avant la fin; dans ce cas lorsqu’on la relance ces ‘arriérés’ sont exécutés quand même</p>
+<p>pour illustrer ça j’utilise une fonction <code class="docutils literal notranslate"><span class="pre">sequence</span></code> dans <code class="docutils literal notranslate"><span class="pre">asynchelpers</span></code> qui fonctionne comme ceci</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">asynchelpers</span> <span class="kn">import</span> <span class="n">sequence</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># juste une fonction qui dure un certain temps et qui imprime avant et après.</span>
+<span class="k">await</span> <span class="n">sequence</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!cat exo4-until-complete+forever.py
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># à nouveau ici il faudra interrompre le kernel car le programme boucle sans fin
+
+!python exo4-until-complete+forever.py
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="run-until-complete-vs-run-forever">
+<h2><code class="docutils literal notranslate"><span class="pre">run_until_complete</span></code> vs <code class="docutils literal notranslate"><span class="pre">run_forever</span></code><a class="headerlink" href="#run-until-complete-vs-run-forever" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">run_until_complete</span></code></p>
+<ul>
+<li><p>prend exactement un argument</p></li>
+<li><p>retourne la valeur</p></li>
+<li><p>insérer un fragment asynchrone au milieu d’un code synchrone</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">run_forever</span></code></p>
+<ul>
+<li><p>ne prend pas d’argument</p></li>
+<li><p>ne retourne pas (sauf en cas de <code class="docutils literal notranslate"><span class="pre">stop()</span></code>)</p></li>
+<li><p>orienté traitement massivement asynchrone</p></li>
+</ul>
+</li>
+</ul>
+<p>Si on se met à aller plus loin dans le parallèlisme, on va devoir convertir de plus en plus de fonctions de synchrone en asynchrone (c’est pour ça qu’on dit que le paradigme est contagieux)</p>
+</div>
+<div class="section" id="task-resultats-et-exceptions">
+<h2><code class="docutils literal notranslate"><span class="pre">Task</span></code>, résultats et exceptions<a class="headerlink" href="#task-resultats-et-exceptions" title="Permalink to this headline">¶</a></h2>
+<p>Pour compléter le tableau, il nous faut dire un mot sur les résultats</p>
+<p>Quand on met des <em>trucs à faire</em> dans la boucle, ce serait bien qu’on arrive à savoir (après coup, mais pas que) si ces bouts de calcul ont <strong>retourné quelque chose</strong>, ou si quelque chose <strong>est allé de travers</strong>; pour ça il y a le type <code class="docutils literal notranslate"><span class="pre">Task</span></code></p>
+<p>En fait la méthode <code class="docutils literal notranslate"><span class="pre">ensure_future()</span></code> retourne un objet de type <code class="docutils literal notranslate"><span class="pre">Task</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">task_ok</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">sequence</span><span class="p">(</span><span class="s1">&#39;dummy&#39;</span><span class="p">,</span> <span class="n">delay</span> <span class="o">=</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">task_ok</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="retouver-les-resultats-des-calculs">
+<h3>retouver les résultats des calculs<a class="headerlink" href="#retouver-les-resultats-des-calculs" title="Permalink to this headline">¶</a></h3>
+<p>il se trouve que - c’est exprès pour pour cet exemple-ci - la coroutine <code class="docutils literal notranslate"><span class="pre">sequence</span></code> retourne <code class="docutils literal notranslate"><span class="pre">10*delay</span></code></p>
+<p>et l’objet <code class="docutils literal notranslate"><span class="pre">Task</span></code> est intéressant parce qu’il nous permet de <strong>récupérer le résultat</strong> de la coroutine:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># je peux retrouver après coup le résultat de la coroutine</span>
+<span class="c1"># que j&#39;avais soumise avec ensure_future un peu plus haut</span>
+
+<span class="c1"># attention il faut bien sûr qu&#39;elle soit terminée</span>
+
+<span class="n">task_ok</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exceptions">
+<h3>exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h3>
+<p>Et alors que se passe-t-il avec les exceptions ?</p>
+<p>Lorsqu’une exception est levée dans le code asynchrone, tout se passe comme d’habitude, on <strong>recherche dans la pile</strong> (parce que chacune des coroutines a sa propre pile) mais <strong>on se limite au code asynchrone</strong> bien entendu.</p>
+<p>Il faut distinguer deux cas de figure:</p>
+<ul class="simple">
+<li><p>soit l’exception est attrapée dans le code asynchrone, dans ce cas-la pas de lézard, la coroutine continue à cet <code class="docutils literal notranslate"><span class="pre">except</span></code> et pour la boucle d’événements, c’est comme s’il ne s’était rien passé</p></li>
+<li><p>soit au contraire l’exception remonte jusqu’au fond de la pile (asynchrone); là c’est plus compliqué. Pour ne pas avoir à interrompre <strong>tout le système</strong>, ce que fait la boucle dans ce cas-là, c’est de ranger l’exception dans l’objet <code class="docutils literal notranslate"><span class="pre">Task</span></code>, et de considérer que cette tâche là est terminée.</p></li>
+</ul>
+<p>Dans ce dernier cas, on peut retrouver l’information dans l’objet <code class="docutils literal notranslate"><span class="pre">Task</span></code> avec la méthode <code class="docutils literal notranslate"><span class="pre">exception()</span></code>; voyons tout de suite un exemple</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">boom</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;running boom(</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;boom&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">await</span> <span class="n">boom</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># on la fait tourner</span>
+
+<span class="n">task_ko</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">boom</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Entre parenthèse, remarquez que c’est heureux que l’exception n’ait pas été propagée au delà de la boucle d’événements; parce qu’en l’occurrence ici, c’est .. la boucle du serveur Jupyter; et donc si elle s’était arrêtée, je n’aurais plus de notebook…</p>
+<p>Mais quand même, ça <strong>pose un gros problème</strong> ! ça veut dire en gros qu’une exception peut se déclencher et ensuite <strong>passer complètement inaperçue !!</strong></p>
+<p>Et pour éviter ça, ce qui se passe c’est que</p>
+<ul class="simple">
+<li><p>donc comme on l’a dit plus haut on <strong>peut</strong> accéder à l’exception des tâches</p></li>
+<li><p>et en plus Python va <strong>s’assurer que toutes les exceptions ont bien été lues</strong><br />
+dit autrement on <strong>doit</strong> lire l’exception de toutes les tâches qui sont lancées et qui ont planté à cause d’une exception</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ici en lisant l&#39;exception je signifie que j&#39;ai vu qu&#39;il y avait un souci</span>
+
+<span class="n">task_ko</span><span class="o">.</span><span class="n">exception</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>C’est important de bien comprendre ce point; dès que vous allez commencer à écrire du vrai code asynchrone, vous allez constater assez souvent que</p>
+<ul class="simple">
+<li><p>certains trucs ne se passent pas comme prévu</p></li>
+<li><p>et <strong>bien longtemps après</strong> vous allez recevoir des tas de message parlant d’exception non traitées</p></li>
+</ul>
+<p>Il faut penser à faire le lien entre les deux; c’est parce que c’est compliqué pour la boucle de savoir à quel moment elle doit se plaindre que l’exception d’une tâche n’a pas été lue, elle a des heuristiques mais bon rien n’est parfait dans ce domaine.</p>
+<p>Et c’est le moment justement de parler des bonnes pratiques pour le debug, qui sont détaillées ici</p>
+<p>https://docs.python.org/3/library/asyncio-dev.html</p>
+<p>où vous trouverez entre autres la recette à savoir absolument pour activer le debugging, qui est de définir la variable d’environnement <code class="docutils literal notranslate"><span class="pre">PYTHONASYNCIODEBUG</span></code> - et pour ça lancez dans le terminal (bash)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">PYTHONASYNCIODEBUG</span><span class="o">=</span><span class="m">1</span> python votre-script.py
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="resume">
+<h2>résumé<a class="headerlink" href="#resume" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ensure_future()</span></code> pour ajouter des <em>trucs à faire</em> (des tâches)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">run_until_complete()</span></code> et <code class="docutils literal notranslate"><span class="pre">run_forever()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">loop.stop()</span></code></p></li>
+<li><p>le type <code class="docutils literal notranslate"><span class="pre">Task</span></code> pour inspecter une tâche *(en train de tourner ? résultat ? exception ?)</p></li>
+<li><p>être attentif aux exceptions qui ont tendance à être signifiées bien après qu’elles se produisent</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="b-s4-async-with-for.html" title="previous page">extensions asynchrones du langage</a>
+    <a class='right-next' id="next-link" href="b-s7-libraries.html" title="next page">les librairies disponibles</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thierry Parmentelat<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -1,0 +1,1814 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POO &amp; héritage &#8212; Python Avancé</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Imports et organisation du code" href="8-10-imports-sources.html" />
+    <link rel="prev" title="les générateurs" href="7-20-generators.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Avancé</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-01-snake.html">
+   UE12 - Python avancé
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  types de base
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-01-numbers.html">
+   les nombres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-02-containers-1.html">
+   les containers (1/2)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-03-strings.html">
+   chaines et binaire (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     str
+    </span>
+   </code>
+   et
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     bytes
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-04-files.html">
+   les fichiers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-05-containers-2.html">
+   les containers (2/2)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  présentation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-11-pep008.html">
+   présentation du code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  itérations
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-11-iterations-1.html">
+   les itérations en Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-12-iterations-2.html">
+   les itérations - suite
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  classes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-11-classes.html">
+   classes : rappels (1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-12-dunder-specials.html">
+   classes : rappels (2)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  fonctions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-00-intro.html">
+   cours 6/9 : fonctions
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  regexps
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-10-regexps.html">
+   expressions régulières
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  générateurs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-20-generators.html">
+   les générateurs
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  héritage
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   POO &amp; héritage
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  organisation des sources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="8-10-imports-sources.html">
+   Imports et organisation du code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  divers
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-10-argparse.html">
+   écrire un lanceur / point d’entrée
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-11-properties.html">
+   properties
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  notebooks interactifs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-a1-profiling.html">
+   étude de performances
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-b1-linting.html">
+   Qualité du code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c3-notebooks-interactifs.html">
+   Notebooks interactifs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c4-animations-matplotlib.html">
+   Animations interactives avec
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c5-bokeh-et-al.html">
+   Autres bibliothèques de visualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c6-fourier-k3d.html">
+   Application à la transformée de Fourier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x1-taylor.html">
+   Le théorème de Taylor illustré
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x2-coronavirus.html">
+   Coronavirus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x3-potentials.html">
+   Tracés de champs de vitesses
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python asynchrone
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-01-os-basics.html">
+   rappels
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s1-programmation-asynchrone.html">
+   programmation asynchrone
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s1-z1-thread-safety.html">
+   Pourquoi les
+   <em>
+    threads
+   </em>
+   c’est délicat ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s2-examples.html">
+   premiers exemples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s3-ecosysteme.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     asyncio
+    </span>
+   </code>
+   : historique et écosystème
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s4-async-with-for.html">
+   extensions asynchrones du langage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s6-av-event-loops.html">
+   boucle d’événements
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     asyncio
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s7-libraries.html">
+   les librairies disponibles
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/7-30-inheritance.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/7-30-inheritance.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ue12/python-advanced"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ue12/python-advanced/issues/new?title=Issue%20on%20page%20%2F7-30-inheritance.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ue12/python-advanced/edit/main/notebooks/7-30-inheritance.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ue12/python-advanced/main?urlpath=tree/notebooks/7-30-inheritance.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pour-reutiliser-du-code-en-python">
+   pour réutiliser du code en python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#programmation-orientee-objet">
+     programmation orientée objet
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#deux-objectifs">
+       deux objectifs
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#deux-moyens">
+       deux moyens
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modularite-reutilisabilite">
+     modularité &amp; réutilisabilité
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#espaces-de-nom">
+   espaces de nom
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#espaces-de-nom-pourquoi">
+     espaces de nom - pourquoi
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#espaces-de-nom-variables-et-attributs">
+     espaces de nom - variables et attributs
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#deux-mondes-etanches">
+       deux mondes étanches
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#se-melangent">
+       se mélangent
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#variables-statiques-attributs-dynamiques">
+       variables statiques / attributs dynamiques
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#resolution-des-variables">
+         résolution des
+         <strong>
+          variables
+         </strong>
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#resolution-des-attributs">
+         résolution des
+         <strong>
+          attributs
+         </strong>
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resolution-d-attribut">
+   résolution d’attribut
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ex-une-classe-et-une-instance">
+     ex: une classe et une instance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#espaces-de-nommage">
+     2 espaces de nommage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#digression-l-attribut-special-dict">
+     digression : l’attribut spécial
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       __dict__
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deux-espaces-de-nom-classe-et-instance-fin">
+     deux espaces de nom (classe et instance) - fin
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recherche-de-bas-en-haut">
+     recherche de bas en haut
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ex-de-resolution-d-attribut">
+   ex. de résolution d’attribut
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     espaces de nom
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-avec-heritage">
+     exemple avec héritage
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#remarque-importante-lecture-ecriture">
+   <strong>
+    remarque importante
+   </strong>
+   : lecture ≠ écriture
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lecture-ecriture-discussion">
+     lecture ≠ écriture - discussion
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lecture-vs-ecriture">
+     lecture
+     <em>
+      vs
+     </em>
+     écriture
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#heritage">
+   héritage
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graphe-d-heritage">
+     graphe d’héritage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recherche-dans-larbre-dheritage">
+     recherche dans l’arbre d’héritage
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#isinstance-et-issubclass">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     isinstance()
+    </span>
+   </code>
+   et
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     issubclass()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#attributs-de-classe">
+   attributs de classe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#super">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     super()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resume">
+   résumé
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="licence">
+<span>Licence CC BY-NC-ND</span>
+<span>Thierry Parmentelat</span>
+</div>
+<style>
+.smaller {font-size: smaller}
+</style><div class="section" id="poo-heritage">
+<h1>POO &amp; héritage<a class="headerlink" href="#poo-heritage" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="pour-reutiliser-du-code-en-python">
+<h2>pour réutiliser du code en python<a class="headerlink" href="#pour-reutiliser-du-code-en-python" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>fonctions</p>
+<ul>
+<li><p>pas d’état après exécution</p></li>
+</ul>
+</li>
+<li><p>modules</p>
+<ul>
+<li><p>garde l’état</p></li>
+<li><p>une seule instance par programme</p></li>
+</ul>
+</li>
+<li><p><strong>classes</strong></p>
+<ul>
+<li><p><strong>instances multiples</strong></p></li>
+<li><p><strong>chacune garde l’état</strong></p></li>
+<li><p><strong>héritage</strong></p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="programmation-orientee-objet">
+<h3>programmation orientée objet<a class="headerlink" href="#programmation-orientee-objet" title="Permalink to this headline">¶</a></h3>
+<p>pourquoi et comment ?</p>
+<div class="section" id="deux-objectifs">
+<h4>deux objectifs<a class="headerlink" href="#deux-objectifs" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>modularité</p></li>
+<li><p>réutilisabilité</p></li>
+</ul>
+</div>
+<div class="section" id="deux-moyens">
+<h4>deux moyens<a class="headerlink" href="#deux-moyens" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>espaces de nom</p></li>
+<li><p>héritage</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="modularite-reutilisabilite">
+<h3>modularité &amp; réutilisabilité<a class="headerlink" href="#modularite-reutilisabilite" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>du code modulaire</p>
+<ul>
+<li><p>grouper le code dans une classe</p></li>
+<li><p>grouper les données dans un objet</p></li>
+</ul>
+</li>
+<li><p>plus on découpe en petits morceaux</p>
+<ul>
+<li><p>plus on a de chances de pouvoir réutiliser</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>DRY <em>don’t repeat yourself</em></p>
+<ul>
+<li><p><em>cut’n paste is evil</em></p></li>
+</ul>
+</li>
+<li><p>code générique</p>
+<ul>
+<li><p>ex: un simulateur fait “avancer” une collection d’objets</p></li>
+<li><p>dès qu’un objet explique comment il avance</p></li>
+<li><p>il peut faire partie de la simulation</p></li>
+</ul>
+</li>
+<li><p>c’est là qu’intervient l’héritage</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="espaces-de-nom">
+<h2>espaces de nom<a class="headerlink" href="#espaces-de-nom" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>tous les objets qui sont</p>
+<ul>
+<li><p>un package</p></li>
+<li><p>un module</p></li>
+<li><p>une classe</p></li>
+<li><p>une instance (sauf des classes <em>builtin</em>)</p></li>
+</ul>
+</li>
+<li><p>constituent chacun <strong>un espace de nom</strong></p>
+<ul>
+<li><p>i.e. une association <em>attribut</em> → <em>objet</em></p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="espaces-de-nom-pourquoi">
+<h3>espaces de nom - pourquoi<a class="headerlink" href="#espaces-de-nom-pourquoi" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>permet de lever l’ambigüité en cas d’homonymie</p>
+<ul>
+<li><p>si 2 modules utilisent tous les 2 une globale <code class="docutils literal notranslate"><span class="pre">truc</span></code></p></li>
+<li><p>elles peuvent coexister sans souci</p></li>
+</ul>
+</li>
+<li><p>les espaces de nom sont imbriqués (<em>nested</em>)</p>
+<ul>
+<li><p>ex. <code class="docutils literal notranslate"><span class="pre">package.module.classe.methode</span></code></p></li>
+</ul>
+</li>
+<li><p>on peut accéder à tous les objets</p>
+<ul>
+<li><p>dès qu’on sait le faire partir d’une variable</p></li>
+<li><p>par exemple un module importé</p></li>
+</ul>
+</li>
+<li><p>l’héritage rend cela dynamique</p>
+<ul>
+<li><p>i.e. la résolution des attributs <strong>est faite à <em>runtime</em></strong></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="espaces-de-nom-variables-et-attributs">
+<h3>espaces de nom - variables et attributs<a class="headerlink" href="#espaces-de-nom-variables-et-attributs" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="deux-mondes-etanches">
+<h4>deux mondes étanches<a class="headerlink" href="#deux-mondes-etanches" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>variables</p></li>
+<li><p>attributs</p></li>
+</ul>
+</div>
+<div class="section" id="se-melangent">
+<h4>se mélangent<a class="headerlink" href="#se-melangent" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>apparemment seulement</p></li>
+<li><p>apprenez à bien lire</p></li>
+</ul>
+<p>typiquement dans une expression comme <code class="docutils literal notranslate"><span class="pre">a.b.c.d</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> est une <strong>variable</strong></p></li>
+</ul>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">c</span></code> et <code class="docutils literal notranslate"><span class="pre">d</span></code> sont des <strong>attributs</strong></p></li>
+</ul>
+</div>
+<div class="section" id="variables-statiques-attributs-dynamiques">
+<h4>variables statiques / attributs dynamiques<a class="headerlink" href="#variables-statiques-attributs-dynamiques" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="resolution-des-variables">
+<h5>résolution des <strong>variables</strong><a class="headerlink" href="#resolution-des-variables" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>entièrement <strong>lexical</strong></p></li>
+<li><p>en remontant dans le code</p></li>
+<li><p>avec les règles LEGB<br />
+local, englobant, global, <em>builtin</em></p></li>
+</ul>
+</div>
+<div class="section" id="resolution-des-attributs">
+<h5>résolution des <strong>attributs</strong><a class="headerlink" href="#resolution-des-attributs" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>dans le monde des <strong>objets</strong></p></li>
+<li><p>en remontant les espaces de nom</p></li>
+<li><p>essentiellement <strong>dynamique</strong><br />
+<em>i.e.</em> à <em>runtime</em></p></li>
+</ul>
+<p><em>par ex</em> dans <code class="docutils literal notranslate"><span class="pre">a.b.c.d</span></code></p>
+<ul class="simple">
+<li><p>la variable <code class="docutils literal notranslate"><span class="pre">a</span></code> est identifiée lexicalement<br />
+(variable locale, paramètre de fonction,<br />
+souvenez-vous par exemple des clôtures)</p></li>
+<li><p>la variable référence un objet</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">b</span></code> est cherché comme un attribut à partir de cet objet</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="resolution-d-attribut">
+<h2>résolution d’attribut<a class="headerlink" href="#resolution-d-attribut" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>la <strong>résolution des attributs</strong></p></li>
+<li><p>fournit la <strong>mécanique de base</strong> de la POO</p></li>
+<li><p>et sous-tend notamment (mais pas que)<br />
+la mécanique de l’héritage</p></li>
+</ul>
+<div class="section" id="ex-une-classe-et-une-instance">
+<h3>ex: une classe et une instance<a class="headerlink" href="#ex-une-classe-et-une-instance" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># une classe sans heritage</span>
+<span class="c1"># et juste un constructeur</span>
+<span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># comme toujours, la classe </span>
+<span class="c1"># est une usine à objets</span>
+
+<span class="n">point</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">point</span><span class="o">.</span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="espaces-de-nommage">
+<h3>2 espaces de nommage<a class="headerlink" href="#espaces-de-nommage" title="Permalink to this headline">¶</a></h3>
+<p><strong>à ce stade nous avons deux espaces de nom</strong></p>
+<ul class="simple">
+<li><p>la classe <code class="docutils literal notranslate"><span class="pre">Point</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Point.__init__</span></code> : la méthode</p></li>
+</ul>
+</li>
+<li><p>l’instance</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">point.x</span></code> : 2 pour cette instance</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">point.y</span></code></p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># on va voir ça</span>
+<span class="c1"># dans pythontutor</span>
+<span class="o">%</span><span class="k">load_ext</span> ipythontutor
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>la classe et l’instance: deux espaces de nom distinct</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ipythontutor</span> width=1000 height=450
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+point = Point(2, 3)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "de7f2201c8e1428295298662d4f4973f", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+</div>
+<div class="section" id="digression-l-attribut-special-dict">
+<h3>digression : l’attribut spécial <code class="docutils literal notranslate"><span class="pre">__dict__</span></code><a class="headerlink" href="#digression-l-attribut-special-dict" title="Permalink to this headline">¶</a></h3>
+<p>les (objets qui sont des) espaces de nom</p>
+<ul class="simple">
+<li><p>ont un <strong>attribut spécial</strong></p></li>
+<li><p>qui s’appelle <code class="docutils literal notranslate"><span class="pre">__dict__</span></code></p></li>
+<li><p>qui permet d’inspecter un espace de nom</p></li>
+</ul>
+<p>ce n’est pas une notion à retenir,<br />
+mais on va s’en servir dans la suite<br />
+pour regarder le contenu des espaces de nom</p>
+<div class="cell tag_level_intermediate docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># quand on n&#39;a pas pythontutor</span>
+<span class="c1"># on peut simplement regarder __dict__</span>
+
+<span class="n">point</span><span class="o">.</span><span class="vm">__dict__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;x&#39;: 2, &#39;y&#39;: 3}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="deux-espaces-de-nom-classe-et-instance-fin">
+<h3>deux espaces de nom (classe et instance) - fin<a class="headerlink" href="#deux-espaces-de-nom-classe-et-instance-fin" title="Permalink to this headline">¶</a></h3>
+<p>on l’a bien vu sous pythontutor, mais redisons les choses</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># la classe possède</span>
+<span class="c1"># l&#39;attribut &#39;__init__&#39;</span>
+<span class="s1">&#39;__init__&#39;</span> <span class="ow">in</span> <span class="n">Point</span><span class="o">.</span><span class="vm">__dict__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># c&#39;est la méthode</span>
+<span class="c1"># qu&#39;on a définie</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">Point</span><span class="o">.</span><span class="fm">__init__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>function
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># par contre elle ne possède</span>
+<span class="c1"># pas d&#39;attribut x</span>
+<span class="s1">&#39;x&#39;</span> <span class="ow">in</span> <span class="n">Point</span><span class="o">.</span><span class="vm">__dict__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># l&#39;attribut x se trouve</span>
+<span class="c1"># bien dans l&#39;espace de nom</span>
+<span class="c1"># de l&#39;instance</span>
+<span class="s1">&#39;x&#39;</span> <span class="ow">in</span> <span class="n">point</span><span class="o">.</span><span class="vm">__dict__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="recherche-de-bas-en-haut">
+<h3>recherche de bas en haut<a class="headerlink" href="#recherche-de-bas-en-haut" title="Permalink to this headline">¶</a></h3>
+<p><strong>pour la lecture :</strong><br />
+la règle pour chercher un attribut en partant d’un objet consiste à</p>
+<ul class="simple">
+<li><p>le chercher dans l’espace de nom de l’objet lui-même</p></li>
+<li><p>sinon dans l’espace de nom de sa classe</p></li>
+<li><p>sinon dans les super-classes</p></li>
+<li><p>on verra les détails plus loin</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="ex-de-resolution-d-attribut">
+<h2>ex. de résolution d’attribut<a class="headerlink" href="#ex-de-resolution-d-attribut" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cas simple sans héritage</span>
+<span class="c1"># appel d&#39;une méthode</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">class</span> <span class="nc">Vector</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># quand on cherche vector.length</span>
+<span class="c1"># on cherche</span>
+<span class="c1"># 1. dans vector - pas trouvé</span>
+<span class="c1"># 2. dans Vector - bingo</span>
+
+<span class="n">vector</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">vector</span><span class="o">.</span><span class="n">length</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>voyons ça en détail..</p>
+<div class="section" id="id1">
+<h3>espaces de nom<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>la classe <code class="docutils literal notranslate"><span class="pre">Vector</span></code> a les attributs</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">length</span></code></p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>l’objet <code class="docutils literal notranslate"><span class="pre">vector</span></code> a les attributs</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> et <code class="docutils literal notranslate"><span class="pre">y</span></code>,</p></li>
+<li><p>mais pas <code class="docutils literal notranslate"><span class="pre">length</span></code> !</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ipythontutor</span> width=1000 height=400 curInstr=7
+import math
+class Vector:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def length(self):
+        return math.sqrt(self.x**2 + self.y**2)
+
+vector = Vector(2, 2)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "ff85e5c4d2f64b9a98df50ac7f4b5163", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<p>pour visualiser la même chose à base d’introspection dans le code</p>
+<p>(rappel : tous les espaces de nom ont un attribut <code class="docutils literal notranslate"><span class="pre">__dict__</span></code>)</p>
+<div class="cell tag_level_intermediate docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># les attributs &#39;intéressants&#39; de Vector</span>
+<span class="p">[</span><span class="n">att</span> <span class="k">for</span> <span class="n">att</span> <span class="ow">in</span> <span class="n">Vector</span><span class="o">.</span><span class="vm">__dict__</span> <span class="k">if</span> <span class="s1">&#39;__&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">att</span> <span class="ow">or</span> <span class="n">att</span> <span class="o">==</span> <span class="s1">&#39;__init__&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__init__&#39;, &#39;length&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_level_intermediate docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># et dans l&#39;instance</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">vector</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;x&#39;, &#39;y&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exemple-avec-heritage">
+<h3>exemple avec héritage<a class="headerlink" href="#exemple-avec-heritage" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>jusqu’ici on n’a pas encore de l’héritage<br />
+puisque pour l’instant on n’a qu’une classe</p></li>
+<li><p>mais l’héritage<br />
+est une <strong>simple prolongation</strong> de cette logique</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># une classe fille sans aucun contenu</span>
+<span class="k">class</span> <span class="nc">SubVector</span><span class="p">(</span><span class="n">Vector</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="n">subvector</span> <span class="o">=</span> <span class="n">SubVector</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+
+<span class="c1"># comment fait-on pour trouver subvector.length ?</span>
+<span class="n">subvector</span><span class="o">.</span><span class="n">length</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ipythontutor</span> width=1000 height=400 curInstr=8
+import math
+class Vector:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def length(self):
+        return math.sqrt(self.x**2 + self.y**2)
+class SubVector(Vector):
+    pass
+
+subvector = SubVector(6, 8)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "d9bab769dd234d6f8a6118ff54d9353c", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<ul class="simple">
+<li><p>c’est exactement le même mécanisme qui est à l’oeuvre :</p></li>
+<li><p>quand on va vouloir appeler <code class="docutils literal notranslate"><span class="pre">subvector.length()</span></code></p>
+<ul>
+<li><p>on cherche l’attribut <code class="docutils literal notranslate"><span class="pre">length</span></code> dans l’instance : non</p></li>
+<li><p>dans la classe : non</p></li>
+<li><p>dans la super-classe : ok, on prend ça</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="remarque-importante-lecture-ecriture">
+<h2><strong>remarque importante</strong> : lecture ≠ écriture<a class="headerlink" href="#remarque-importante-lecture-ecriture" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>le mécanisme de recherche d’attribut qu’on vient de voir</p></li>
+<li><p>ne fonctionne que <strong>pour la lecture des attributs</strong></p></li>
+<li><p>quand on <strong>écrit</strong> un attribut dans un objet,<br />
+c’est un mécanisme différent (slide suivant)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># quand on évalue un attribut en lecture</span>
+<span class="c1"># on recherche en partant de l&#39;objet</span>
+<span class="c1"># et donc ici on trouve la méthode</span>
+<span class="c1"># dans l&#39;espace de noms de la super-classe</span>
+<span class="n">subvector</span><span class="o">.</span><span class="n">length</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mais quand on écrit un attribut</span>
+<span class="c1"># c&#39;est une autre histoire complètement</span>
+<span class="c1"># l&#39;attribut est créé directement dans l&#39;objet</span>
+<span class="n">subvector</span><span class="o">.</span><span class="n">foo</span> <span class="o">=</span> <span class="mi">12</span>
+
+<span class="s1">&#39;foo&#39;</span> <span class="ow">in</span> <span class="n">subvector</span><span class="o">.</span><span class="vm">__dict__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="lecture-ecriture-discussion">
+<h3>lecture ≠ écriture - discussion<a class="headerlink" href="#lecture-ecriture-discussion" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>mais attention lorsqu’on <strong>écrit</strong> un attribut</p>
+<ul>
+<li><p><em>i.e.</em> si l’expression <code class="docutils literal notranslate"><span class="pre">foo.bar</span></code> est <strong>à gauche</strong> d’une affectation</p></li>
+</ul>
+</li>
+<li><p>alors l’attribut <code class="docutils literal notranslate"><span class="pre">bar</span></code> est créé/écrit <strong>dans l’objet <code class="docutils literal notranslate"><span class="pre">foo</span></code></strong></p></li>
+<li><p>il n’y a <strong>pas de recherche</strong> dans ce cas !</p></li>
+<li><p>et heureusement d’ailleurs :<br />
+c’est le cas notamment à chaque fois qu’un constructeur fait<br />
+<code class="docutils literal notranslate"><span class="pre">self.name</span> <span class="pre">=</span> <span class="pre">name</span></code></p></li>
+</ul>
+<div class=smaller>
+<ul class="simple">
+<li><p>cela ne se remarque pas avec les méthodes</p>
+<ul>
+<li><p>car c’est très rare d’écrire <code class="docutils literal notranslate"><span class="pre">instance.methode</span> <span class="pre">=</span> <span class="pre">...</span></code></p></li>
+</ul>
+</li>
+<li><p>mais du coup, se souvenir que lire et écrire un attribut ne <strong>sont pas symétriques</strong></p></li>
+</ul>
+</div></div>
+<div class="section" id="lecture-vs-ecriture">
+<h3>lecture <em>vs</em> écriture<a class="headerlink" href="#lecture-vs-ecriture" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>il y a écriture si<br />
+et seulement si il y a <strong>affectation</strong></p></li>
+<li><p>dans 1. il y a</p>
+<ul>
+<li><p><strong>lecture</strong> de l’attribut <code class="docutils literal notranslate"><span class="pre">liste</span></code></p></li>
+<li><p>même si on modifie l’objet</p></li>
+</ul>
+</li>
+<li><p>dans 2. il y a</p>
+<ul>
+<li><p><strong>écriture de l’attribut</strong></p></li>
+<li><p>donc écrit dans (l’espace de nom) <code class="docutils literal notranslate"><span class="pre">obj</span></code></p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><ol class="simple">
+<li><p>lecture !</p></li>
+</ol>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">obj</span><span class="o">.</span><span class="n">liste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><ol class="simple">
+<li><p>écriture</p></li>
+</ol>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">obj</span><span class="o">.</span><span class="n">liste</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="heritage">
+<h2>héritage<a class="headerlink" href="#heritage" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>une classe peut hériter d’une (ou plusieurs) autre classes</p></li>
+<li><p>si A hérite de B</p>
+<ul>
+<li><p>on dit que A est la sous-classe de B</p></li>
+<li><p>et B est la super-classe de A</p></li>
+</ul>
+</li>
+<li><p>la sous-classe hérite des attributs de sa super-classe</p></li>
+<li><p>l’instance hérite de la classe qui la crée</p></li>
+</ul>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># la syntaxe est</span>
+<span class="k">class</span> <span class="nc">Class</span><span class="p">(</span><span class="n">Super</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="c1"># ou </span>
+<span class="k">class</span> <span class="nc">Class</span><span class="p">(</span><span class="n">Super1</span><span class="p">,</span> <span class="n">Super2</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2855</span><span class="o">/</span><span class="mf">2005943242.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># la syntaxe est</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">class</span> <span class="nc">Class</span><span class="p">(</span><span class="n">Super</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="k">pass</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># ou</span>
+
+<span class="ne">NameError</span>: name &#39;Super&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="graphe-d-heritage">
+<h3>graphe d’héritage<a class="headerlink" href="#graphe-d-heritage" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>on peut donc construire un graphe d’héritage</p></li>
+<li><p>allant des super-classes aux instances</p></li>
+</ul>
+<p><img alt="arbre de classes" src="_images/classes.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">C1</span><span class="p">:</span>
+    <span class="k">pass</span>
+<span class="k">class</span> <span class="nc">C2</span><span class="p">:</span>
+    <span class="k">pass</span>
+<span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">C1</span><span class="p">,</span> <span class="n">C2</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">o1</span> <span class="o">=</span> <span class="n">C</span><span class="p">()</span>
+<span class="n">o2</span> <span class="o">=</span> <span class="n">C</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="recherche-dans-larbre-dheritage">
+<h3>recherche dans l’arbre d’héritage<a class="headerlink" href="#recherche-dans-larbre-dheritage" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>MRO : method resolution order</p></li>
+<li><p>l’algorithme est le suivant</p>
+<ul>
+<li><p>liste toutes les super-classes en utilisant<br />
+un algorithme DFLR (depth first, left to right)</p></li>
+<li><p>si classe dupliquée,<br />
+<strong>ne garder que la dernière</strong> occurrence</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="MRO" src="_images/mro.png" /></p>
+<div class="cell tag_level_intermediate docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span> <span class="k">pass</span>
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span> <span class="k">pass</span>
+<span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">A</span><span class="p">):</span> <span class="k">pass</span>
+<span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">):</span> <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>parcours DFLR: <code class="docutils literal notranslate"><span class="pre">D</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code>, <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">object</span></code>, <code class="docutils literal notranslate"><span class="pre">C</span></code>, <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">object</span></code></p></li>
+<li><p>suppressions : <code class="docutils literal notranslate"><span class="pre">D</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code>, ~~<code class="docutils literal notranslate"><span class="pre">A</span></code>~~, ~~<code class="docutils literal notranslate"><span class="pre">object</span></code>~~, <code class="docutils literal notranslate"><span class="pre">C</span></code>, <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">object</span></code></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="isinstance-et-issubclass">
+<h2><code class="docutils literal notranslate"><span class="pre">isinstance()</span></code> et <code class="docutils literal notranslate"><span class="pre">issubclass()</span></code><a class="headerlink" href="#isinstance-et-issubclass" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">isinstance(x,</span> <span class="pre">class1)</span></code> retourne <code class="docutils literal notranslate"><span class="pre">True</span></code> si <code class="docutils literal notranslate"><span class="pre">x</span></code> est une instance de <code class="docutils literal notranslate"><span class="pre">class1</span></code> ou d’une super classe</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">issubclass(class1,</span> <span class="pre">class2)</span></code> retourne <code class="docutils literal notranslate"><span class="pre">True</span></code> si <code class="docutils literal notranslate"><span class="pre">class1</span></code> est une sous-classe de <code class="docutils literal notranslate"><span class="pre">class2</span></code></p></li>
+<li><p>ces fonctions <em>builtin</em> sont à privilégier par rapport à l’utilisation de <code class="docutils literal notranslate"><span class="pre">type()</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A est la superclasse de B</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">A</span><span class="p">(),</span> <span class="n">B</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">A</span><span class="p">),</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(True, True)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># bien sûr NON</span>
+<span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># OUI, et NON</span>
+<span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">A</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="ow">is</span> <span class="n">A</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(True, False)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">issubclass</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="attributs-de-classe">
+<h2>attributs de classe<a class="headerlink" href="#attributs-de-classe" title="Permalink to this headline">¶</a></h2>
+<p>dans (l’espace de nom d’)une classe, on peut mettre</p>
+<ul class="simple">
+<li><p>des méthodes (on le savait)</p></li>
+<li><p>et aussi attributs <em>normaux</em> - qui référencent des données</p></li>
+</ul>
+<p>rien de nouveau point de vue syntaxe :</p>
+<ul class="simple">
+<li><p>on écrit juste la déclaration dans la classe,</p></li>
+<li><p>au même niveau d’imbrication que les méthodes</p></li>
+</ul>
+<p>voyons cela sur un exemple</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Factory</span><span class="p">:</span>
+    <span class="c1"># un compteur global à la classe</span>
+    <span class="c1"># dans lequel on va pouvoir mémoriser </span>
+    <span class="c1"># tous les labels de toutes les instances</span>
+    <span class="n">all_labels</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">label</span>
+        <span class="n">Factory</span><span class="o">.</span><span class="n">all_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+        <span class="c1"># on aurait pu écrire</span>
+        <span class="c1"># self.all_labels.append(label)</span>
+        <span class="c1"># mais c&#39;est dangereux (voir suite)</span>
+
+
+<span class="n">Factory</span><span class="o">.</span><span class="n">all_labels</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f1</span> <span class="o">=</span> <span class="n">Factory</span><span class="p">(</span><span class="s1">&#39;premier&#39;</span><span class="p">)</span>
+<span class="n">Factory</span><span class="o">.</span><span class="n">all_labels</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;premier&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f2</span> <span class="o">=</span> <span class="n">Factory</span><span class="p">(</span><span class="s1">&#39;second&#39;</span><span class="p">)</span>
+<span class="n">Factory</span><span class="o">.</span><span class="n">all_labels</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;premier&#39;, &#39;second&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># on trouve le même objet quel que soit l&#39;endroit d&#39;où on part</span>
+<span class="n">f1</span><span class="o">.</span><span class="n">all_labels</span> <span class="ow">is</span> <span class="n">f2</span><span class="o">.</span><span class="n">all_labels</span> <span class="ow">is</span> <span class="n">Factory</span><span class="o">.</span><span class="n">all_labels</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_level_advanced docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ipythontutor</span> width=1000 height=400
+class Factory:
+    all_labels = []
+    def __init__(self, label):
+        self.label = label
+        # ça marche aussi, mais ATTENTION
+        self.all_labels.append(label)
+f1 = Factory(&#39;premier&#39;)
+f2 = Factory(&#39;second&#39;)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "5b483166d3cb44b9b676c517b065023b", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<div class="cell tag_level_advanced docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ipythontutor</span> width=1000 height=400 curInstr=1
+class Factory:
+    all_labels = []
+
+    def __init__(self, label):
+        self.label = label
+        # cette forme ne fonctionne pas comme attendu
+        # parce que à droite d&#39;une affectation
+        self.all_labels = self.all_labels + [label]
+
+f1 = Factory(&#39;premier&#39;)
+f2 = Factory(&#39;second&#39;)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "fc62a79b309644458f55e7537f8d7144", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+</div>
+<div class="section" id="super">
+<h2><code class="docutils literal notranslate"><span class="pre">super()</span></code><a class="headerlink" href="#super" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>utile lorsque la spécialisation<br />
+consiste à ajouter ou modifier<br />
+par rapport à la classe mère</p></li>
+<li><p>le cas typique est d’ailleurs le constructeur<br />
+dès qu’on ajoute un attribut de donnée</p></li>
+<li><p>permet de ne pas mentionner explicitement
+le nom de la classe mère (code + générique)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># illustration de super() </span>
+<span class="c1"># dans le constructeur</span>
+
+<span class="k">class</span> <span class="nc">C</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;init x par superclasse&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+
+<span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">C</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="c1"># initialiser : la classe C</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;init y par classe&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">C</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>init x par superclasse
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">D</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>init x par superclasse
+init y par classe
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># super() est souvent rencontrée</span>
+<span class="c1"># dans __init__ mais s&#39;applique</span>
+<span class="c1"># partout</span>
+<span class="k">class</span> <span class="nc">C</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;spam&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">C</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># remarquez l&#39;absence</span>
+        <span class="c1"># de self !</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;beans&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">C</span><span class="p">();</span> <span class="n">c</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>spam
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">D</span><span class="p">();</span> <span class="n">d</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>spam
+beans
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="resume">
+<h2>résumé<a class="headerlink" href="#resume" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>les instances et classes sont des objets mutables (sauf classes <em>builtin</em>)</p></li>
+<li><p>on utilise <code class="docutils literal notranslate"><span class="pre">isinstance()</span></code> pour tester le type d’un objet</p></li>
+<li><p>chaque instance et chaque classe est un espace de nom</p></li>
+<li><p>lorsqu’on écrit un attribut, on écrit directement dans l’espace de nom de cet objet</p></li>
+<li><p>en lecture, on résoud la référence d’un attribut de bas en haut</p></li>
+<li><p>en général</p>
+<ul>
+<li><p>les classes ont des attributs de type méthode</p></li>
+<li><p>les objets ont des attributs de type donnée</p></li>
+<li><p>mais le modèle est flexible</p></li>
+</ul>
+</li>
+<li><p>une méthode peut faire référence à la super-classe avec <code class="docutils literal notranslate"><span class="pre">super()</span></code></p></li>
+</ul>
+</div>
+</div>
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"3d45b6453cc24cbdb26b2c41a2577451": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "5776f0a13ae94568bd69094841b8ee25": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "58015ebf997446148e32603c3087c1a2": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "5b483166d3cb44b9b676c517b065023b": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_ea8982b1443c4b0387db1ae153a9be03", "placeholder": "\u200b", "style": "IPY_MODEL_69ed8827fe644d8691dcda616c5b1790", "value": "<style>#ipythontutor7 </style><style>#ipythontutor8 { max-width:1000px; max-height:400px; box-sizing:border-box; }</style><div id=ipythontutor8><iframe id=\"ipythontutor7\" class=\"pythontutor\" width=\"1000.0\" height=\"400.0\" src=\"https://pythontutor.com/iframe-embed.html#code=class+Factory%3A%0A++++all_labels+%3D+%5B%5D%0A++++def+__init__%28self%2C+label%29%3A%0A++++++++self.label+%3D+label%0A++++++++%23+%C3%A7a+marche+aussi%2C+mais+ATTENTION%0A++++++++self.all_labels.append%28label%29%0Af1+%3D+Factory%28%27premier%27%29%0Af2+%3D+Factory%28%27second%27%29%0A&mode=display&origin=opt-frontend.js&textReferences=false&py=3&curInstr=0&verticalStack=&heapPrimitives=false\"></div>"}}, "69ed8827fe644d8691dcda616c5b1790": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "726fefeaebba4682a11069896435ea40": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "a4989601f50b47cd88a2e7cef5ec8338": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "b2879a61ec0e429fa8e57b19b565a2ae": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "c4c02311c69b4e3ea16b6bda9718f115": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "d3dbf4cc308f4f7283d9e1a7e606d88e": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d9bab769dd234d6f8a6118ff54d9353c": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_58015ebf997446148e32603c3087c1a2", "placeholder": "\u200b", "style": "IPY_MODEL_726fefeaebba4682a11069896435ea40", "value": "<style>#ipythontutor5 </style><style>#ipythontutor6 { max-width:1000px; max-height:400px; box-sizing:border-box; }</style><div id=ipythontutor6><iframe id=\"ipythontutor5\" class=\"pythontutor\" width=\"1000.0\" height=\"400.0\" src=\"https://pythontutor.com/iframe-embed.html#code=import+math%0Aclass+Vector%3A%0A++++def+__init__%28self%2C+x%2C+y%29%3A%0A++++++++self.x+%3D+x%0A++++++++self.y+%3D+y%0A++++def+length%28self%29%3A%0A++++++++return+math.sqrt%28self.x%2A%2A2+%2B+self.y%2A%2A2%29%0Aclass+SubVector%28Vector%29%3A%0A++++pass%0A%0Asubvector+%3D+SubVector%286%2C+8%29%0A&mode=display&origin=opt-frontend.js&textReferences=false&py=3&curInstr=8&verticalStack=&heapPrimitives=false\"></div>"}}, "de7f2201c8e1428295298662d4f4973f": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_d3dbf4cc308f4f7283d9e1a7e606d88e", "placeholder": "\u200b", "style": "IPY_MODEL_b2879a61ec0e429fa8e57b19b565a2ae", "value": "<style>#ipythontutor1 </style><style>#ipythontutor2 { max-width:1000px; max-height:450px; box-sizing:border-box; }</style><div id=ipythontutor2><iframe id=\"ipythontutor1\" class=\"pythontutor\" width=\"1000.0\" height=\"450.0\" src=\"https://pythontutor.com/iframe-embed.html#code=%0Aclass+Point%3A%0A++++def+__init__%28self%2C+x%2C+y%29%3A%0A++++++++self.x+%3D+x%0A++++++++self.y+%3D+y%0A%0Apoint+%3D+Point%282%2C+3%29%0A&mode=display&origin=opt-frontend.js&textReferences=false&py=3&curInstr=0&verticalStack=&heapPrimitives=false\"></div>"}}, "ea8982b1443c4b0387db1ae153a9be03": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "fc62a79b309644458f55e7537f8d7144": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_5776f0a13ae94568bd69094841b8ee25", "placeholder": "\u200b", "style": "IPY_MODEL_c4c02311c69b4e3ea16b6bda9718f115", "value": "<style>#ipythontutor9 </style><style>#ipythontutor10 { max-width:1000px; max-height:400px; box-sizing:border-box; }</style><div id=ipythontutor10><iframe id=\"ipythontutor9\" class=\"pythontutor\" width=\"1000.0\" height=\"400.0\" src=\"https://pythontutor.com/iframe-embed.html#code=class+Factory%3A%0A++++all_labels+%3D+%5B%5D%0A%0A++++def+__init__%28self%2C+label%29%3A%0A++++++++self.label+%3D+label%0A++++++++%23+cette+forme+ne+fonctionne+pas+comme+attendu%0A++++++++%23+parce+que+%C3%A0+droite+d%27une+affectation%0A++++++++self.all_labels+%3D+self.all_labels+%2B+%5Blabel%5D%0A%0Af1+%3D+Factory%28%27premier%27%29%0Af2+%3D+Factory%28%27second%27%29%0A&mode=display&origin=opt-frontend.js&textReferences=false&py=3&curInstr=1&verticalStack=&heapPrimitives=false\"></div>"}}, "ff85e5c4d2f64b9a98df50ac7f4b5163": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_a4989601f50b47cd88a2e7cef5ec8338", "placeholder": "\u200b", "style": "IPY_MODEL_3d45b6453cc24cbdb26b2c41a2577451", "value": "<style>#ipythontutor3 </style><style>#ipythontutor4 { max-width:1000px; max-height:400px; box-sizing:border-box; }</style><div id=ipythontutor4><iframe id=\"ipythontutor3\" class=\"pythontutor\" width=\"1000.0\" height=\"400.0\" src=\"https://pythontutor.com/iframe-embed.html#code=import+math%0Aclass+Vector%3A%0A++++def+__init__%28self%2C+x%2C+y%29%3A%0A++++++++self.x+%3D+x%0A++++++++self.y+%3D+y%0A++++def+length%28self%29%3A%0A++++++++return+math.sqrt%28self.x%2A%2A2+%2B+self.y%2A%2A2%29%0A%0Avector+%3D+Vector%282%2C+2%29%0A&mode=display&origin=opt-frontend.js&textReferences=false&py=3&curInstr=7&verticalStack=&heapPrimitives=false\"></div>"}}}, "version_major": 2, "version_minor": 0}
+</script>
+
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="7-20-generators.html" title="previous page">les générateurs</a>
+    <a class='right-next' id="next-link" href="8-10-imports-sources.html" title="next page">Imports et organisation du code</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thierry Parmentelat<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

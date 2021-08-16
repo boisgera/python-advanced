@@ -1,0 +1,1436 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imports et organisation du code &#8212; Python Avancé</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="écrire un lanceur / point d’entrée" href="9-10-argparse.html" />
+    <link rel="prev" title="POO &amp; héritage" href="7-30-inheritance.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Avancé</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-01-snake.html">
+   UE12 - Python avancé
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  types de base
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-01-numbers.html">
+   les nombres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-02-containers-1.html">
+   les containers (1/2)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-03-strings.html">
+   chaines et binaire (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     str
+    </span>
+   </code>
+   et
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     bytes
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-04-files.html">
+   les fichiers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-05-containers-2.html">
+   les containers (2/2)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  présentation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-11-pep008.html">
+   présentation du code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  itérations
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-11-iterations-1.html">
+   les itérations en Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-12-iterations-2.html">
+   les itérations - suite
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  classes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-11-classes.html">
+   classes : rappels (1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-12-dunder-specials.html">
+   classes : rappels (2)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  fonctions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-00-intro.html">
+   cours 6/9 : fonctions
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  regexps
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-10-regexps.html">
+   expressions régulières
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  générateurs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-20-generators.html">
+   les générateurs
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  héritage
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-30-inheritance.html">
+   POO &amp; héritage
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  organisation des sources
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Imports et organisation du code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  divers
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-10-argparse.html">
+   écrire un lanceur / point d’entrée
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-11-properties.html">
+   properties
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  notebooks interactifs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-a1-profiling.html">
+   étude de performances
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-b1-linting.html">
+   Qualité du code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c3-notebooks-interactifs.html">
+   Notebooks interactifs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c4-animations-matplotlib.html">
+   Animations interactives avec
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c5-bokeh-et-al.html">
+   Autres bibliothèques de visualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c6-fourier-k3d.html">
+   Application à la transformée de Fourier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x1-taylor.html">
+   Le théorème de Taylor illustré
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x2-coronavirus.html">
+   Coronavirus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x3-potentials.html">
+   Tracés de champs de vitesses
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python asynchrone
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-01-os-basics.html">
+   rappels
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s1-programmation-asynchrone.html">
+   programmation asynchrone
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s1-z1-thread-safety.html">
+   Pourquoi les
+   <em>
+    threads
+   </em>
+   c’est délicat ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s2-examples.html">
+   premiers exemples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s3-ecosysteme.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     asyncio
+    </span>
+   </code>
+   : historique et écosystème
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s4-async-with-for.html">
+   extensions asynchrones du langage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s6-av-event-loops.html">
+   boucle d’événements
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     asyncio
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s7-libraries.html">
+   les librairies disponibles
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/8-10-imports-sources.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/8-10-imports-sources.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ue12/python-advanced"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ue12/python-advanced/issues/new?title=Issue%20on%20page%20%2F8-10-imports-sources.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ue12/python-advanced/edit/main/notebooks/8-10-imports-sources.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ue12/python-advanced/main?urlpath=tree/notebooks/8-10-imports-sources.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modules-et-packages">
+   Modules et packages
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple">
+     Exemple
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#init-py">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       __init__.py
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#les-imports">
+   Les imports
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comment-sont-cherches-les-modules-et-packages">
+   Comment sont cherchés les modules et packages ?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#le-point-d-entree">
+     Le point d’entrée
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pythonpath">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       PYTHONPATH
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pip-install">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pip
+      </span>
+      <span class="pre">
+       install
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comment-organiser-les-sources-de-votre-projet-python">
+   Comment organiser les sources de votre projet Python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#contexte">
+     Contexte
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#les-infrastructures">
+     Les infrastructures
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#le-commencement-creer-un-package">
+     Le commencement : créer un package
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#choisir-le-nom-du-package">
+     Choisir le nom du package
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adapter-son-code">
+     Adapter son code
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#remarque-imports-relatifs">
+       Remarque : imports relatifs
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#c-est-tout-casse">
+     C’est tout cassé
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#le-mauvais-reflexe">
+     Le mauvais réflexe
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#le-bon-reflexe-setup-py">
+     Le bon réflexe :
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       setup.py
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#installation-en-mode-developpeur-pip-install-e">
+       Installation en mode developpeur :
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         pip
+        </span>
+        <span class="pre">
+         install
+        </span>
+        <span class="pre">
+         -e
+        </span>
+        <span class="pre">
+         .
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#un-setup-py-plus-raisonnable">
+       Un
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         setup.py
+        </span>
+       </code>
+       plus raisonnable
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#packager-un-point-d-entree">
+       Packager un point d’entrée
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#publier-sur-pypi">
+     Publier sur PyPI
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#utiliser-pip-pour-installer">
+     Utiliser
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pip
+      </span>
+     </code>
+     pour installer
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#environnements-virtuels">
+     Environnements virtuels
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#les-outils">
+       Les outils
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#la-liste-de-mes-environnements">
+         La liste de mes environnements
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#j-en-cree-un-nouveau-avec-python-3-8">
+         j’en crée un nouveau avec Python-3.8
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#on-le-voit">
+         on le voit
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#pour-entrer-dans-le-nouvel-environnement">
+         pour entrer dans le nouvel environnement
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#les-packages-installes">
+         les packages installés
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#on-y-installe-ce-qu-on-veut">
+         on y installe ce qu’on veut
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#la-version-de-python">
+         la version de python
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#sortir">
+         sortir
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id1">
+         la version de python
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#on-n-a-pas-perturbe-l-environnement-de-depart">
+         on n’a pas perturbé l’environnement de départ
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#pour-detruire-l-environnement-en-question">
+         pour détruire l’environnement en question
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="licence">
+<span>Licence CC BY-NC-ND</span>
+<span>Thierry Parmentelat</span>
+</div>
+<style>
+.smaller {font-size: smaller}
+</style><div class="section" id="imports-et-organisation-du-code">
+<h1>Imports et organisation du code<a class="headerlink" href="#imports-et-organisation-du-code" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="modules-et-packages">
+<h2>Modules et packages<a class="headerlink" href="#modules-et-packages" title="Permalink to this headline">¶</a></h2>
+<p>La notion de <em><strong>package</strong></em> est une extension de la notion de <em>module</em></p>
+<ul class="simple">
+<li><p>de même qu’un <strong>module</strong> usuel correspond - en général - à un <strong>fichier</strong> .py</p></li>
+<li><p>le <strong>package</strong> correspond à un <strong>dossier</strong></p></li>
+</ul>
+<p>Et de même qu’un dossier est un cas particulier de fichier, un package est un cas particulier de module.</p>
+<p>C’est-à-dire notamment que</p>
+<ul class="simple">
+<li><p><strong>un package est aussi un module</strong></p></li>
+<li><p>simplement, alors que dans un module usuel, les <strong>attributs</strong> sont des objets de type code (fonctions et classes typiquement)</p></li>
+<li><p>dans un package on va trouver des attributs qui sont <strong>aussi des modules</strong></p></li>
+</ul>
+<div class="section" id="exemple">
+<h3>Exemple<a class="headerlink" href="#exemple" title="Permalink to this headline">¶</a></h3>
+<p>Voici un un programme Python réparti sur 3 fichiers, qui ne sont pas dans le même dossier</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">mainimport</span><span class="o">.</span><span class="n">py</span>
+<span class="o">./</span><span class="n">folder</span><span class="o">/</span>
+    <span class="n">foo</span><span class="o">.</span><span class="n">py</span>
+    <span class="n">bar</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># le programme principal est dans le dossier racine</span>
+<span class="o">%</span><span class="k">cat</span> mainimport.py
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># pour importer une fonction
+# qui se trouve dans folder/foo.py
+from folder.foo import function
+
+function(&quot;hello&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># le premier fichier utilisé est dans le dossier &#39;folder&#39;</span>
+<span class="o">%</span><span class="k">cat</span> folder/foo.py
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># le module bar se trouve dans le même dossier
+# le plus simple du coup c&#39;est d&#39;utiliser
+# ce qu&#39;on appelle un import relatif comme ceci
+
+from .bar import Bar
+
+# maintenant je peux utiliser la variable Bar
+
+def function(x):
+    print(Bar(x))
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># a son tour, foo.py utilise un troisième fichier, dans le même dossier folder</span>
+<span class="o">%</span><span class="k">cat</span> folder/bar.py
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># aucun import ici, juste une simple classe
+
+class Bar:
+
+    def __init__(self, value):
+        self.value = value
+
+    def __repr__(self):
+        return f&quot;Bar({self.value})&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>On peut exécuter le programme comme d’habitude</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># avec le ! on fait comme si cette commande était tapée dans le terminal</span>
+<span class="o">!</span>python mainimport.py
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bar(hello)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Et donc pour bien préciser le vocabulaire, dans <code class="docutils literal notranslate"><span class="pre">mainimport.py</span></code> :</p>
+<ul class="simple">
+<li><p>l’objet <code class="docutils literal notranslate"><span class="pre">folder</span></code> dénote un <strong>package</strong></p></li>
+<li><p>et <code class="docutils literal notranslate"><span class="pre">folder.foo</span></code> dénote un <strong>module</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">folder.foo</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># un package est un module</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>module
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dans lequel se trouvent</span>
+<span class="c1"># d&#39;autres modules</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">folder</span><span class="o">.</span><span class="n">foo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>module
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="init-py">
+<h3><code class="docutils literal notranslate"><span class="pre">__init__.py</span></code><a class="headerlink" href="#init-py" title="Permalink to this headline">¶</a></h3>
+<p>Dans ce premier exemple, si je fais simplement</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">folder</span>
+</pre></div>
+</div>
+<p>il ne va .. rien se passer de particulier; on va bien créer un objet module, mais celui-ci sera vide !</p>
+<p>Pourquoi ? eh bien le fait d’importer un module ça revient à exécuter le code qui est dedans; mais dans le dossier lui-même, il n’y a pas de code !</p>
+<p>Si on voulait changer ce comportement, on pourrait créer un fichier qui s’appelle <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> dans le dossier; et dans ce cas-là le fait d’importer le module-package va bien exécuter le code dans <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code></p>
+<p>Pour illustrer cela, on va créer un second dossier <code class="docutils literal notranslate"><span class="pre">folder2</span></code> qui a exactement le même contenu que <code class="docutils literal notranslate"><span class="pre">folder</span></code> sauf qu’on y a ajouté un <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> qui contient ceci :</p>
+<div class="cell tag_level_intermediate docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">cat</span> folder2/__init__.py
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># le code dans un __init__.py
+# est exécuté lors du chargement du package
+
+# avec cet import, on force le chargement de folder2.foo
+# si l&#39;appelant fais simplement &#39;import folder2&#39;
+
+from .foo import function
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_level_intermediate docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ce qui fait que maintenant si j&#39;importe juste le package</span>
+
+<span class="kn">import</span> <span class="nn">folder2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_level_intermediate docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">folder2</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="s1">&#39;Hi&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bar(Hi)
+</pre></div>
+</div>
+</div>
+</div>
+<p>De cette façon, j’ai pris la fonction dont le nom canonique est<br />
+<code class="docutils literal notranslate"><span class="pre">folder2.foo.function</span></code><br />
+et je l’ai en quelque sorte <em>promue</em> pour qu’elle soit accessible aussi comme<br />
+<code class="docutils literal notranslate"><span class="pre">folder2.function</span></code></p>
+</div>
+</div>
+<div class="section" id="les-imports">
+<h2>Les imports<a class="headerlink" href="#les-imports" title="Permalink to this headline">¶</a></h2>
+<p>Pour résumer rapidement les différentes formes :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">module</span></code><br />
+définit la variable <code class="docutils literal notranslate"><span class="pre">module</span></code> (qui désigne un objet de type module)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">package.module</span></code><br />
+importe le package, et le module, et définit la variable <code class="docutils literal notranslate"><span class="pre">module</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">module</span> <span class="pre">as</span> <span class="pre">othername</span></code><br />
+pareil, mais la variable locale qui désigne le module est <code class="docutils literal notranslate"><span class="pre">othername</span></code> et pas <code class="docutils literal notranslate"><span class="pre">module</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">module</span> <span class="pre">import</span> <span class="pre">attribute</span></code><br />
+le module est chargé entièrement, mais cette forme définit seulement la variable <code class="docutils literal notranslate"><span class="pre">attribute</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">module</span> <span class="pre">import</span> <span class="pre">attribute</span> <span class="pre">as</span> <span class="pre">othername</span></code><br />
+pareil, mais on définit la variable <code class="docutils literal notranslate"><span class="pre">othername</span></code> et non pas <code class="docutils literal notranslate"><span class="pre">attribute</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">module</span> <span class="pre">import</span> <span class="pre">att1,</span> <span class="pre">att2</span> <span class="pre">as</span> <span class="pre">newname</span></code><br />
+on peut importer plusieurs attributs d’un coup</p></li>
+</ul>
+<p>Notez aussi, c’est important pour les performances :</p>
+<ul class="simple">
+<li><p>c’est relativement coûteux de charger un module</p></li>
+<li><p>aussi, l’interpréteur se “souvient” des modules déja chargés</p></li>
+<li><p>et donc on peut importer de manière répétitive sans impact notoire sur les performances</p></li>
+</ul>
+</div>
+<div class="section" id="comment-sont-cherches-les-modules-et-packages">
+<h2>Comment sont cherchés les modules et packages ?<a class="headerlink" href="#comment-sont-cherches-les-modules-et-packages" title="Permalink to this headline">¶</a></h2>
+<p>Pour faire le plus simple possible, lorsque vous écrivez <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">tutu</span></code>,
+on cherche un dossier <code class="docutils literal notranslate"><span class="pre">tutu</span></code>, ou un fichier <code class="docutils literal notranslate"><span class="pre">tutu.py</span></code>, selon les règles suivantes :</p>
+<ul class="simple">
+<li><p>d’abord dans le dossier où se trouve le point d’entrée</p></li>
+<li><p>puis dans la variable d’environnement <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code></p></li>
+<li><p>puis à l’endroit où sont installés les <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">...</span></code></p></li>
+</ul>
+<div class="section" id="le-point-d-entree">
+<h3>Le point d’entrée<a class="headerlink" href="#le-point-d-entree" title="Permalink to this headline">¶</a></h3>
+<p>Le point d’entrée, c’est le fichier que vous passez à l’interpréteur Python; dans l’exemple plus haut avec <code class="docutils literal notranslate"><span class="pre">mainimport.py</span></code>, on lance</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">mainimport</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>et donc le point d’entrée est <code class="docutils literal notranslate"><span class="pre">mainimport.py</span></code>, son dossier c’est le dossier où on est - le dossier courant - et donc c’est là qu’on à chercher; c’est comme ça qu’on a pu faire <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">folder</span></code>, car <code class="docutils literal notranslate"><span class="pre">folder</span></code> est bien dans le répertoire courant</p>
+</div>
+<div class="section" id="pythonpath">
+<h3><code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code><a class="headerlink" href="#pythonpath" title="Permalink to this headline">¶</a></h3>
+<p>Le fait qu’on puisse configurer l’algorithme de recherche des modules, au travers de cette variable d’environnement, est pratique dans certains cas très spécifiques; mais pour votre usage, retenez simplement ceci : <strong>il ne faut pas s’en servir</strong> !!</p>
+</div>
+<div class="section" id="pip-install">
+<h3><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code><a class="headerlink" href="#pip-install" title="Permalink to this headline">¶</a></h3>
+<p>Naturellement, vous l’avez déja constaté par vous même, les librairies installées avec <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> sont bien entendu trouvées lorsque Python essaie d’importer.</p>
+<p>C’est intéressant parce que notamment, - modulo une contrainte très légère - <strong>on peut utiliser <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> pour installer notre propre code</strong>.</p>
+<p>On va voir ça en détail plus bas dans cet exposé.</p>
+</div>
+</div>
+<div class="section" id="comment-organiser-les-sources-de-votre-projet-python">
+<h2>Comment organiser les sources de votre projet Python<a class="headerlink" href="#comment-organiser-les-sources-de-votre-projet-python" title="Permalink to this headline">¶</a></h2>
+<p>Où on va voir que :</p>
+<ul class="simple">
+<li><p>c’est bien de grouper son code dans un package</p></li>
+<li><p>mais à première vue ça casse tout, cependant pas de panique !</p></li>
+<li><p>il ne <strong>FAUT PAS</strong> tripoter la variable <strong><code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code></strong></p></li>
+<li><p>il faut au contraire créer un <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>, et ensuite lancer une fois<br />
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code><br />
+pour pouvoir utiliser le code en mode développeur</p></li>
+</ul>
+<div class="section" id="contexte">
+<h3>Contexte<a class="headerlink" href="#contexte" title="Permalink to this headline">¶</a></h3>
+<p>Vous venez d’écrire un super algorithme qui simule le climat de l’an 2100, et vous voulez le publier ? Nous allons voir ici comment organiser les sources de votre projet, pour que ce soit à la fois</p>
+<ul class="simple">
+<li><p>pratique pour vous de tester votre travail pendant le développement</p></li>
+<li><p>facile de publier le code pour que d’autres puissent l’installer et l’utiliser</p></li>
+<li><p>et éventuellement facile pour d’autres de contribuer à votre projet.</p></li>
+</ul>
+</div>
+<div class="section" id="les-infrastructures">
+<h3>Les infrastructures<a class="headerlink" href="#les-infrastructures" title="Permalink to this headline">¶</a></h3>
+<p>En 2020 on ne travaille plus tout seul dans son coin ; il est à la portée de tous d’utiliser et de tirer profit d’infrastructures, ouvertes et gratuites (pour les usages de base au moins) :</p>
+<p>Pour ce qui nous concerne ici, voici celles qui vont nous être utiles :</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pypi.org">PyPI</a> - (prononcer “paille - pis - ail”) pour <strong>Py</strong>thon <strong>P</strong>ackage <strong>I</strong>ndex, est l’endroit où chacun peut publier ses librairies</p></li>
+<li><p><a class="reference external" href="https://github.com">github</a> - ainsi que ses concurrents <a class="reference external" href="https://gitlab.com">gitlab</a> et <a class="reference external" href="https://bitbucket.org">bitbucket</a> - sont bien sûr des endroits où l’on peut déposer ses sources pour partage, sous la forme de  dépôt <code class="docutils literal notranslate"><span class="pre">git</span></code></p></li>
+</ul>
+<p>Optionnellement, sachez qu’il existe également des infrastructures pour les deux grandes tâches que sont la documentation et le test, souvent considérées - à tort - comme annexes :</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://readthedocs.io">readthedocs</a> est une infra qui permet d’exposer la documentation</p></li>
+<li><p><a class="reference external" href="https://travis-ci.com">travis</a> est - parmi plein d’autres - une infrastructure permettant d’exécuter une suite de tests</p></li>
+</ul>
+<p>S’agissant de ces deux derniers points : souvent on s’arrange pour que tout soit <strong>automatique</strong> ; quand tout est en place, il <strong>suffit de pousser un nouveau commit</strong> auprès de github (par exemple) pour que</p>
+<ul class="simple">
+<li><p>tous les <strong>tests</strong> soient <strong>repassés</strong> (d’où le terme de <strong>CI</strong>* = <em>Continuous Integration</em>) ; du coup on sait en permanence si tel ou tel commit a cassé ou non l’intégrité du code ;</p></li>
+<li><p>la <strong>documentation</strong> soit <strong>mise à jour</strong>, exposée à tout le monde, et navigable par numéro de version.</p></li>
+</ul>
+<p>Alors bon bien sûr ça c’est le monde idéal ; on ne passe pas d’un seul coup, d’un bout de code qui tient dans un seul module <code class="docutils literal notranslate"><span class="pre">bidule.py</span></code>, à un projet qui utilise tout ceci ; on on n’a <strong>pas forcément besoin</strong> non plus d’utiliser <strong>toutes</strong> ces ressources (et bien entendu, aucun de ces trucs n’est obligatoire).</p>
+<p>Aussi nous allons commencer par le commencement.</p>
+</div>
+<div class="section" id="le-commencement-creer-un-package">
+<h3>Le commencement : créer un package<a class="headerlink" href="#le-commencement-creer-un-package" title="Permalink to this headline">¶</a></h3>
+<p>Le commencement, ça consiste à se <strong>préparer à coexister</strong> avec d’autres librairies.</p>
+<p>Si votre code expose disons une classe <code class="docutils literal notranslate"><span class="pre">Machine</span></code> dans le fichier/module <code class="docutils literal notranslate"><span class="pre">machine.py</span></code>, la première chose consiste à  trouver un nom unique ; rien ne vous permet de penser qu’il n’y a pas une autre bibliothèque qui expose un module qui s’appelle aussi <code class="docutils literal notranslate"><span class="pre">machine</span></code> (il y a même fort à parier qu’il y en a plein !).<br />
+Aussi ce qu’on va commencer par faire c’est d’installer tout notre code <strong>dans un package</strong>.</p>
+<p>Concrètement ça va signifier se mettre dans un sous-dossier, mais surtout d’un point de vue des utilisateurs potentiels de la classe, ça veut dire qu’au lieu de faire juste :</p>
+<p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">machine</span> <span class="pre">import</span> <span class="pre">Machine</span></code></p>
+<p>on va décider qu’à partir de maintenant il faut toujours faire</p>
+<p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">bidule.machine</span> <span class="pre">import</span> <span class="pre">Machine</span></code></p>
+<p>et de cette façon tous les noms qui sont propres à notre code ne sont accessibles que via l’espace de noms <code class="docutils literal notranslate"><span class="pre">bidule</span></code>, et on évite les conflits avec d’autres bibliothèques.</p>
+</div>
+<div class="section" id="choisir-le-nom-du-package">
+<h3>Choisir le nom du package<a class="headerlink" href="#choisir-le-nom-du-package" title="Permalink to this headline">¶</a></h3>
+<p>Bien sûr ceci ne fonctionne que si je peux <strong>être sûr que <code class="docutils literal notranslate"><span class="pre">bidule</span></code> est à moi</strong>, de sorte que <strong>personne</strong> demain ne publie une librairie qui utilise <strong>le même nom</strong>.</p>
+<p>C’est pourquoi je <strong>recommande</strong>, à ce stade, de s’assurer de prendre un nom qui n’est <strong>pas déjà pris</strong> ; en toute rigueur c’est optionnel, tant que vous ne prévoyez pas de publier votre appli sur pypi (car bien sûr c’est optionnel de publier sur pypi), mais ça coûte moins cher de le faire très tôt, ça évite des renommages fastidieux plus tard.</p>
+<p>Donc pour s’assurer de cela, on va tout simplement demander à <code class="docutils literal notranslate"><span class="pre">pypi</span></code>, qui va jouer le rôle de <em>registrar</em>, et nous garantir l’exclusivité de ce nom. Vous pouvez soit chercher votre nom <a class="reference external" href="https://pypi.org/search/?q=bidule">directement dans le site pypi</a>, ou bien utiliser <code class="docutils literal notranslate"><span class="pre">pip</span></code></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip search bidule
+</pre></div>
+</div>
+<p>Le nom est libre, pour toute la suite <strong>je choisis <code class="docutils literal notranslate"><span class="pre">bidule</span></code> comme mon nom de package</strong>.<br />
+Vous trouverez dans ce repo git <a class="reference external" href="https://github.com/flotpython/bidule">https://github.com/flotpython/bidule</a> un microscopique petit projet qui illustre notre propos.</p>
+</div>
+<div class="section" id="adapter-son-code">
+<h3>Adapter son code<a class="headerlink" href="#adapter-son-code" title="Permalink to this headline">¶</a></h3>
+<p>Une fois que j’ai choisi mon nom de package, donc ici <code class="docutils literal notranslate"><span class="pre">bidule</span></code>, je dois :</p>
+<ol class="simple">
+<li><p>mettre tout mon code dans un répertoire qui s’appelle <code class="docutils literal notranslate"><span class="pre">bidule</span></code>,</p></li>
+<li><p>et modifier mes importations ; maintenant j’importe tout au travers du seul package <code class="docutils literal notranslate"><span class="pre">bidule</span></code>.</p></li>
+</ol>
+<p>Donc je remplace les importations partout ; ce qui avant aurait été simplement</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from machine import Machine
+</pre></div>
+</div>
+<p>devient</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from bidule.machine import Machine
+</pre></div>
+</div>
+<div class="section" id="remarque-imports-relatifs">
+<h4>Remarque : imports relatifs<a class="headerlink" href="#remarque-imports-relatifs" title="Permalink to this headline">¶</a></h4>
+<p>Lorsqu’un fichier a besoin d’en importer <strong>dans le même package</strong>, on a le choix ; par exemple ici, <code class="docutils literal notranslate"><span class="pre">machine.py</span></code> a besoin d’importer la fonction <code class="docutils literal notranslate"><span class="pre">helper</span></code> du fichier <code class="docutils literal notranslate"><span class="pre">helpers.py</span></code>, il peut faire</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from bidule.helpers import helper
+</pre></div>
+</div>
+<p>mais aussi plus simplement avec un <strong>import relatif</strong> :</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from .helpers import helper
+</pre></div>
+</div>
+<p>remarquez le <code class="docutils literal notranslate"><span class="pre">.</span></code> dans <code class="docutils literal notranslate"><span class="pre">.helpers</span></code>, qui signifie <em>dans le même package que moi</em>.</p>
+<p>Je recommande toutefois de ne pas se précipiter avec ces imports relatifs, et notamment de <strong>ne pas les utiliser dans un point d’entrée</strong> (le fichier qu’on passe à l’interpréteur Python) car ça ne fonctionne pas dans ce cas.</p>
+</div>
+</div>
+<div class="section" id="c-est-tout-casse">
+<h3>C’est tout cassé<a class="headerlink" href="#c-est-tout-casse" title="Permalink to this headline">¶</a></h3>
+<p>À ce stade précisément, vous constatez .. que <strong>plus rien ne marche</strong> !</p>
+<p>En effet, comme on l’a vu dans le complément sur le chargement des modules, Python recherche vos modules dans l’ordre</p>
+<ul class="simple">
+<li><p>le dossier du point d’entrée</p></li>
+<li><p>la variable d’environnement <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code></p></li>
+<li><p>les dossiers système</p></li>
+</ul>
+<p>Et donc si vous m’avez suivi, vous devez avoir quelque chose comme</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mon-repo-git/
+             bidule/
+                    main.py
+                    machine.py
+                    helpers.py
+</pre></div>
+</div>
+<p>mais alors quand vous faites</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python bidule/main.py
+Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+  File <span class="s2">&quot;bidule/main.py&quot;</span>, line <span class="m">1</span>, <span class="k">in</span> &lt;module&gt;
+    from bidule.machine import Machine
+ModuleNotFoundError: No module named <span class="s1">&#39;bidule&#39;</span>
+</pre></div>
+</div>
+<p>on va chercher du coup un module <code class="docutils literal notranslate"><span class="pre">bidule</span></code> à partir du répertoire du point d’entrée qui est le dossier <code class="docutils literal notranslate"><span class="pre">bidule/</span></code>, donc on ne trouve pas.</p>
+</div>
+<div class="section" id="le-mauvais-reflexe">
+<h3>Le mauvais réflexe<a class="headerlink" href="#le-mauvais-reflexe" title="Permalink to this headline">¶</a></h3>
+<p>Du coup naturellement, on se dit, ça n’est pas grave, je vais tirer profit de la variable <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>.<br />
+Alors disons-le tout net : <strong>Ce n’est pas une bonne idée</strong>, ce n’est pas du tout pour ce genre de cas qu’elle a été prévue.</p>
+<p>Le fait de modifier une variable d’environnement est un processus tarabiscoté, même sans parler de Windows, et cette approche est une bonne façon de se tirer une balle dans le pied ; un jour ou l’autre la variable ne sera pas positionnée comme il faut, c’est sûr.</p>
+<p>Bref, il ne <strong>faut pas faire comme ça !!</strong></p>
+</div>
+<div class="section" id="le-bon-reflexe-setup-py">
+<h3>Le bon réflexe : <code class="docutils literal notranslate"><span class="pre">setup.py</span></code><a class="headerlink" href="#le-bon-reflexe-setup-py" title="Permalink to this headline">¶</a></h3>
+<p>Non, le bon reflexe ici c’est d’écrire un fichier <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>, et de l’utiliser pour faire ce qu’on pourrait une <em>installation en mode développeur</em>. Voyons cela :</p>
+<p>Je commence donc par créer un fichier <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> à la racine de mon repo git, dans lequel je mets, pour commencer, le minimum :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># minimal setup.py to install in develop mode</span>
+
+<span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">find_packages</span>
+
+<span class="n">setup</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;bidule&quot;</span><span class="p">,</span>
+    <span class="n">packages</span><span class="o">=</span><span class="n">find_packages</span><span class="p">(),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Attention</strong> : nous sommes en 2020 et il faut utiliser le package <code class="docutils literal notranslate"><span class="pre">setuptools</span></code>, qui ne fait pas partie de la librairie standard (<strong>et non pas</strong> le module <code class="docutils literal notranslate"><span class="pre">distutils</span></code> qui, lui, en fait pourtant partie) ; donc comme d’habitude si c’est nécessaire, faites dans le terminal :</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install setuptools
+</pre></div>
+</div>
+<div class="section" id="installation-en-mode-developpeur-pip-install-e">
+<h4>Installation en mode developpeur : <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code><a class="headerlink" href="#installation-en-mode-developpeur-pip-install-e" title="Permalink to this headline">¶</a></h4>
+<p>Avec ce fichier en place, et toujours à la racine de mon repo, je peux maintenant faire la formule magique (toujours dans le terminal)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install -e .
+Obtaining file:///Users/tparment/git/flotpython-course/w6/mon-repo-git
+Installing collected packages: bidule
+  Attempting uninstall: bidule
+    Found existing installation: bidule <span class="m">0</span>.0.0
+    Uninstalling bidule-0.0.0:
+      Successfully uninstalled bidule-0.0.0
+  Running setup.py develop <span class="k">for</span> bidule
+Successfully installed bidule
+</pre></div>
+</div>
+<p>L’effet de cette commande est de modifier mon environnement pour que le répertoire courant
+(le <code class="docutils literal notranslate"><span class="pre">.</span></code> dans <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code>) soit utilisé pour la recherche des modules. Ça signifie que
+je peux maintenant lancer mon programme sans souci :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python bidule/main.py
+... déroulement normal
+</pre></div>
+</div>
+<p>Grâce à l’option <code class="docutils literal notranslate"><span class="pre">-e</span></code>, je <strong>peux modifier mon code</strong> dans le répertoire courant, ce sera bien ce code-là qui sera utilisé ; cette précision pour ceux qui penseraient que, comme on fait une installation, cela pourrait être fait par copie, mais ce n’est pas le cas, donc sauf gros changement dans le contenu, on n’a <strong>plus besoin de refaire</strong> le <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code></p>
+</div>
+<div class="section" id="un-setup-py-plus-raisonnable">
+<h4>Un <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> plus raisonnable<a class="headerlink" href="#un-setup-py-plus-raisonnable" title="Permalink to this headline">¶</a></h4>
+<p>Au delà de cette première utilité, <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> sert à configurer plein d’aspects de votre application ; lorsque votre projet va gagner en maturité, il sera exécuté lorsque vous préparez le packaging, lorsque vous uploadez le package, et au moment d’installer (comme on vient de le voir).</p>
+<p>Du coup en pratique, les besoins s’accumulent au fur et à mesure de l’avancement du projet, et on met de plus en plus d’informations dans le <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>; voici, que j’essaie de mettre dans l’ordre chronologique, quelques ajouts très fréquents <a class="reference external" href="https://setuptools.readthedocs.io/en/latest/setuptools.html#developer-s-guide">reportez-vous à la doc pour une liste complète</a> :</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> est le nom sous lequel votre projet sera rangé dans PyPI</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">packages</span></code> est une liste de noms de packages ; tel qu’on l’a écrit, cela sera calculé à partir du contenu de votre dépôt ; dans notre cas on aurait pu aussi bien écrire en dur <code class="docutils literal notranslate"><span class="pre">['bidule']</span></code>;<br />
+dans les cas les plus simples on a <code class="docutils literal notranslate"><span class="pre">packages</span> <span class="pre">==</span> <span class="pre">[</span> <span class="pre">name</span> <span class="pre">]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">version</span></code> est bien entendu important dès que vous commencez à publier sur PyPI (et même avant) pour que PyPI puisse servir la version la plus récente, et/ou satisfaire des exigences précises (les applis qui vous utilisent peuvent par exemple préciser une version minimale, etc…)<br />
+Cette chaine devrait être <a class="reference external" href="https://semver.org/">compatible avec semver (semantic versioning)</a><br />
+i.e. qu’un numéro de version usuel contient 3 parties (major, minor, patch), comme par ex. “2.1.3”<br />
+le terme <code class="docutils literal notranslate"><span class="pre">semantic</span></code> signifie ici que <strong>toute rupture de compatibilité</strong> doit se traduire par une incrémentation du numéro majeur (sauf s’il vaut <code class="docutils literal notranslate"><span class="pre">0</span></code>, on a le droit de tâtonner avec une 0.x; d’où l’importance de la version 1.0)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">install_requires</span></code> : si votre package a besoin d’une librairie non-standard, disons par exemple <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, il est <strong>très utile</strong> de le préciser ici ; de cette façon, lorsqu’un de vos utilisateurs installera votre appli avec <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">bidule</span></code>, <code class="docutils literal notranslate"><span class="pre">pip</span></code> pourra <strong>gérer les dépendances</strong> et s’assurer que <code class="docutils literal notranslate"><span class="pre">numpy</span></code> est installé également ;
+bien sûr on n’en est pas là, mais je vous recommande de maintenir <strong>dès le début</strong> la liste de vos dépendances ici</p></li>
+<li><p>informatifs : <code class="docutils literal notranslate"><span class="pre">author</span></code>, <code class="docutils literal notranslate"><span class="pre">author_email</span></code>, <code class="docutils literal notranslate"><span class="pre">description</span></code>, <code class="docutils literal notranslate"><span class="pre">keywords</span></code>, <code class="docutils literal notranslate"><span class="pre">url</span></code>, <code class="docutils literal notranslate"><span class="pre">license</span></code>,  pour affichage sur PyPI ;<br />
+une mention spéciale à propos de <code class="docutils literal notranslate"><span class="pre">description_long</span></code>, qu’en général on veut afficher à partir de <code class="docutils literal notranslate"><span class="pre">README.md</span></code>, d’où l’idiome fréquent :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">setup</span><span class="p">(</span>
+   <span class="o">...</span>
+   <span class="n">long_description</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;README.md&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">(),</span>
+   <span class="n">long_description_content_type</span> <span class="o">=</span> <span class="s2">&quot;text/markdown&quot;</span><span class="p">,</span>
+   <span class="o">...</span>
+</pre></div>
+</div>
+</li>
+<li><p>etc… beaucoup d’autres réglages et subtilités autour de <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> ; je conseille de prendre les choses comme elles viennent : commencez avec la liste qui est ici, et n’ajoutez d’autres trucs que lorsque ça correspond à un besoin pour vous !</p></li>
+</ul>
+</div>
+<div class="section" id="packager-un-point-d-entree">
+<h4>Packager un point d’entrée<a class="headerlink" href="#packager-un-point-d-entree" title="Permalink to this headline">¶</a></h4>
+<p>Assez fréquemment on package des <strong>librairies</strong>; dans ce cas on se soucie d’installer uniquement des modules Python.</p>
+<p>Mais imaginez maintenant que votre package contient aussi un <strong>point d’entrée</strong> - c’est-à-dire en fin de compte une <strong>commande</strong> que vos utilisateurs vont vouloir lancer <strong>depuis le terminal</strong>. Ce cas de figure change un peu la donne; il faut maintenant installer des choses à d’autres endroits du système (pensez par exemple, sur linux/macos, à quelque chose comme <code class="docutils literal notranslate"><span class="pre">/usr/bin</span></code>).</p>
+<p>Dans ce cas <strong>surtout n’essayez pas de le faire vous-même</strong>; c’est beaucoup trop compliqué à faire correctement !</p>
+<p>Pour illustrer la bonne façon de faire dans ce cas, je vous renvoie pour les détails à un exemple réel, mais pour l’essentiel :</p>
+<ul class="simple">
+<li><p>je vous conseille d’écrire tout le code en question dans une classe habituelle, que vous rangez normalement avec les autres ;</p></li>
+<li><p>cette classe expose typiquement une méthode <code class="docutils literal notranslate"><span class="pre">main()</span></code>, qui retourne, pour suivre les conventions usuelles :</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> si tout s’est bien passé</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> sinon</p></li>
+</ul>
+</li>
+<li><p>vous créez un module <code class="docutils literal notranslate"><span class="pre">__main__.py</span></code> qui se contente de créer une instance et de lui envoyer la méthode <code class="docutils literal notranslate"><span class="pre">main</span></code> - voir l’exemple</p></li>
+<li><p>vous déclarez cela dans <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> qui se chargera de tout :-)</p></li>
+</ul>
+<p>Voici tout ceci illustré sur un exemple réel.
+Dans  cet exemple, le package (PyPI) s’appelle <code class="docutils literal notranslate"><span class="pre">apssh</span></code>, la commande qu’on veut exposer s’appelle <code class="docutils literal notranslate"><span class="pre">apssh</span></code>, du coup on a</p>
+<ul class="simple">
+<li><p>un dossier <code class="docutils literal notranslate"><span class="pre">apssh</span></code> pour matérialiser le package</p></li>
+<li><p>un module <code class="docutils literal notranslate"><span class="pre">apssh/apssh.py</span></code>, qui définit</p></li>
+<li><p>une classe <code class="docutils literal notranslate"><span class="pre">Apssh</span></code>, qui expose une méthode <code class="docutils literal notranslate"><span class="pre">main()</span></code></p></li>
+</ul>
+<p>Voici les différents codes; le détail de la classe elle-même n’est pas pertinent (c’est très long), c’est pour vous montrer un système de nommage, disons habituel :</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/parmentelat/apssh/blob/a97cccd8eb6286a81c68b3c6953fce8a643fe8e9/setup.py#L52-L55">la définition de <code class="docutils literal notranslate"><span class="pre">entry_points</span></code> dans <code class="docutils literal notranslate"><span class="pre">setup.py</span></code></a><br />
+ici après installation avec <code class="docutils literal notranslate"><span class="pre">pip</span></code>, nos utilisateurs pourront utiliser la commande <code class="docutils literal notranslate"><span class="pre">apssh</span></code>,<br />
+qui est de cette façon associée au module <code class="docutils literal notranslate"><span class="pre">__main__.py</span></code><br />
+(les termes <code class="docutils literal notranslate"><span class="pre">entry_points</span></code> et <code class="docutils literal notranslate"><span class="pre">console_scripts</span></code> ne doivent pas être modifiés);</p></li>
+<li><p><a class="reference external" href="https://github.com/parmentelat/apssh/blob/a97cccd8eb6286a81c68b3c6953fce8a643fe8e9/apssh/__main__.py"> le module <code class="docutils literal notranslate"><span class="pre">__main__.py</span></code></a>;</p></li>
+<li><p>la classe <code class="docutils literal notranslate"><span class="pre">Apssh</span></code> qui fait le travail se trouve <a class="reference external" href="https://github.com/parmentelat/apssh/blob/a97cccd8eb6286a81c68b3c6953fce8a643fe8e9/apssh/apssh.py"> dans un module usuel, ici <code class="docutils literal notranslate"><span class="pre">apssh.py</span></code></a>.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="publier-sur-pypi">
+<h3>Publier sur PyPI<a class="headerlink" href="#publier-sur-pypi" title="Permalink to this headline">¶</a></h3>
+<p>Pour publier votre application sur PyPI, rien de plus simple :</p>
+<ul class="simple">
+<li><p>il faut naturellement obtenir un login/password</p></li>
+<li><p>avant de pouvoir utiliser le nom <code class="docutils literal notranslate"><span class="pre">bidule</span></code>, il faut l’enregistrer :<br />
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">register</span></code></p></li>
+<li><p>aussi il vous faudra installer <code class="docutils literal notranslate"><span class="pre">twine</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">twine</span></code></p></li>
+</ul>
+<p>Ensuite à chaque version, une fois que les tests sont passés et tout :</p>
+<ul class="simple">
+<li><p>préparer le packaging<br />
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">sdist</span> <span class="pre">bdist_wheel</span></code></p></li>
+<li><p>pousser sur PyPI<br />
+<code class="docutils literal notranslate"><span class="pre">twine</span> <span class="pre">upload</span> <span class="pre">dist/*</span></code></p></li>
+</ul>
+<p>Signalons enfin qu’il existe une infra PyPI “de test” sur <code class="docutils literal notranslate"><span class="pre">https://test.pypi.org</span></code> utile quand on ne veut pas polluer l’index officiel.</p>
+</div>
+<div class="section" id="utiliser-pip-pour-installer">
+<h3>Utiliser <code class="docutils literal notranslate"><span class="pre">pip</span></code> pour installer<a class="headerlink" href="#utiliser-pip-pour-installer" title="Permalink to this headline">¶</a></h3>
+<p>Ensuite une fois que c’est fait, le monde entier peut profiter de votre magnifique contribution en faisant bien sûr<br />
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">bidule</span></code></p>
+<p>Remarquez que l’on conseille parfois, pour éviter d’éventuels soucis de divergence entre les commandes <code class="docutils literal notranslate"><span class="pre">python</span></code>/<code class="docutils literal notranslate"><span class="pre">python3</span></code> et <code class="docutils literal notranslate"><span class="pre">pip</span></code>/<code class="docutils literal notranslate"><span class="pre">pip3</span></code>,</p>
+<ul class="simple">
+<li><p>de remplacer tous les appels à <code class="docutils literal notranslate"><span class="pre">pip</span></code></p></li>
+<li><p>par plutôt <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span></code>, qui permet d’être sûr qu’on installe dans le bon environnement.</p></li>
+</ul>
+<p>D’autres formes utiles de <code class="docutils literal notranslate"><span class="pre">pip</span></code> :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">show</span> <span class="pre">bidule</span></code> : pour avoir des détails sur un module précis</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">freeze</span></code> : pour une liste complète des modules installés dans l’environnement, avec leur numéro de version</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">list</span></code> : sans grand intérêt, si ce n’est dans sa forme<br />
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">list</span> <span class="pre">-o</span></code> qui permet de lister les modules qui pourraient être mis à jour</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code> : pour installer les modules dont la liste est dans le fichier <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="environnements-virtuels">
+<h3>Environnements virtuels<a class="headerlink" href="#environnements-virtuels" title="Permalink to this headline">¶</a></h3>
+<p>Terminons ce tour d’horizon pour dire un mot des environnements virtuels.</p>
+<p>Par le passé, on installait python une seule fois dans le système ; en 2020, c’est une approche qui n’a que des inconvénients :</p>
+<ul class="simple">
+<li><p>quand on travaille sur plusieurs projets, on peut avoir besoin de Python-3.6 sur l’un et Python-3.8 sur un autre ;</p></li>
+<li><p>ou alors on peut avoir un projet qui a besoin de <code class="docutils literal notranslate"><span class="pre">Django==2.2</span></code> et un autre qui ne marche qu’avec <code class="docutils literal notranslate"><span class="pre">Django&gt;=3.0</span></code> ;</p></li>
+<li><p>en plus par dessus le marché, dans certains cas il faut être super utilisateur pour modifier l’installation ; typiquement on passe son temps à faire <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pip</span></code> au lieu de <code class="docutils literal notranslate"><span class="pre">pip</span></code>…</p></li>
+</ul>
+<p>et le seul avantage, c’est que tous les utilisateurs de l’ordi peuvent partager l’installation ; sauf que, plus de 99 fois sur 100, il n’y a qu’un utilisateur pour un ordi ! Bref, c’est une pratique totalement dépassée.</p>
+<p>La création et la gestion d’environnements virtuels sont <strong>très facilee</strong> aujourd’hui. Aussi c’est une <strong>pratique recommandée</strong> de se créer <strong>un virtualenv par projet</strong>. C’est tellement pratique qu’on n’hésite pas une seconde à repartir d’un environnement vide à la moindre occasion, par exemple lorsqu’on a un doute sur les dépendances.</p>
+<p>Le seul point sur lequel il faut être attentif, c’est de trouver un moyen de <strong>savoir en permanence</strong> dans quel environnement on se trouve. Notamment :</p>
+<ul class="simple">
+<li><p>une pratique très répandue consiste à s’arranger pour que <strong>le prompt dans le terminal</strong> indique cela,</p></li>
+<li><p>dans vs-code, dans la bannière inférieure, on nous montre toujours l’environnement courant.</p></li>
+</ul>
+<p><img alt="" src="_images/venv-terminal.png" /></p>
+<p><strong>figure :</strong> le prompt dans le terminal nous montre le venv courant</p>
+<p><img alt="" src="_images/venv-vscode.png" /></p>
+<p><strong>figure :</strong> vs-code nous montre le venv courant et nous permet de le changer</p>
+<div class="section" id="les-outils">
+<h4>Les outils<a class="headerlink" href="#les-outils" title="Permalink to this headline">¶</a></h4>
+<p>Par contre il reste le choix entre plusieurs outils, que j’essaie de lister ici :</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/venv.html"><code class="docutils literal notranslate"><span class="pre">venv</span></code></a> un module de la librairie standard</p></li>
+<li><p><a class="reference external" href="https://virtualenv.pypa.io/en/latest/"><code class="docutils literal notranslate"><span class="pre">virtualenv</span></code></a> un module externe, qui préexistait à <code class="docutils literal notranslate"><span class="pre">venv</span></code> et qui a fourni la base des fonctionnalités de <code class="docutils literal notranslate"><span class="pre">venv</span></code></p></li>
+<li><p><a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html"><code class="docutils literal notranslate"><span class="pre">miniconda</span></code></a> un sous-produit de anaconda</p></li>
+</ul>
+<p>Actuellement j’utilise quant à moi <code class="docutils literal notranslate"><span class="pre">miniconda</span></code>.<br />
+Voici à titre indicatif une session sous MacOS en guise de rapide introduction.<br />
+Vous remarquerez comme le <em>prompt</em> reflète <strong>l’environnement dans lequel on se trouve</strong>, ça semble relativement impératif si on ne veut pas s’emmêler les pinceaux.</p>
+<div class="section" id="la-liste-de-mes-environnements">
+<h5>La liste de mes environnements<a class="headerlink" href="#la-liste-de-mes-environnements" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[base] ~ $ conda env list
+# conda environments:
+#
+base                  *  /Users/tparment/miniconda3
+&lt;snip ...&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="j-en-cree-un-nouveau-avec-python-3-8">
+<h5>j’en crée un nouveau avec Python-3.8<a class="headerlink" href="#j-en-cree-un-nouveau-avec-python-3-8" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[base] ~ $ conda create -n demo-py38 python=3.8
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+&lt;snip ...&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="on-le-voit">
+<h5>on le voit<a class="headerlink" href="#on-le-voit" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[base] ~ $ conda env list
+# conda environments:
+#
+base                  *  /Users/tparment/miniconda3
+demo-py38                /Users/tparment/miniconda3/envs/demo-py38
+&lt;snip...&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="pour-entrer-dans-le-nouvel-environnement">
+<h5>pour entrer dans le nouvel environnement<a class="headerlink" href="#pour-entrer-dans-le-nouvel-environnement" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[base] ~ $ conda activate demo-py38
+[demo-py38] ~ $
+</pre></div>
+</div>
+</div>
+<div class="section" id="les-packages-installes">
+<h5>les packages installés<a class="headerlink" href="#les-packages-installes" title="Permalink to this headline">¶</a></h5>
+<p>très peu de choses</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[demo-py38] ~ $ pip list
+Package    Version
+---------- -------------------
+certifi    2020.4.5.1
+pip        20.0.2
+setuptools 46.2.0.post20200511
+wheel      0.34.2
+</pre></div>
+</div>
+</div>
+<div class="section" id="on-y-installe-ce-qu-on-veut">
+<h5>on y installe ce qu’on veut<a class="headerlink" href="#on-y-installe-ce-qu-on-veut" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[demo-py38] ~ $ pip install numpy==1.15.3
+</pre></div>
+</div>
+</div>
+<div class="section" id="la-version-de-python">
+<h5>la version de python<a class="headerlink" href="#la-version-de-python" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[demo-py38] ~ $ python --version
+Python 3.8.2
+</pre></div>
+</div>
+</div>
+<div class="section" id="sortir">
+<h5>sortir<a class="headerlink" href="#sortir" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[demo-py38] ~ $ conda deactivate
+[base] ~ $
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h5>la version de python<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[base] ~ $ python --version
+Python 3.7.6
+</pre></div>
+</div>
+</div>
+<div class="section" id="on-n-a-pas-perturbe-l-environnement-de-depart">
+<h5>on n’a pas perturbé l’environnement de départ<a class="headerlink" href="#on-n-a-pas-perturbe-l-environnement-de-depart" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[base] ~ $ pip show numpy
+Name: numpy
+Version: 1.18.1
+</pre></div>
+</div>
+</div>
+<div class="section" id="pour-detruire-l-environnement-en-question">
+<h5>pour détruire l’environnement en question<a class="headerlink" href="#pour-detruire-l-environnement-en-question" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[base] ~ $ conda env remove -n demo-py38
+
+Remove all packages in environment /Users/tparment/miniconda3/envs/demo-py38:
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="7-30-inheritance.html" title="previous page">POO &amp; héritage</a>
+    <a class='right-next' id="next-link" href="9-10-argparse.html" title="next page">écrire un lanceur / point d’entrée</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thierry Parmentelat<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

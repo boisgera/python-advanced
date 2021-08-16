@@ -1,0 +1,2063 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>chaines et binaire (str et bytes) &#8212; Python Avancé</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="les fichiers" href="2-04-files.html" />
+    <link rel="prev" title="les containers (1/2)" href="2-02-containers-1.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Avancé</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-01-snake.html">
+   UE12 - Python avancé
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  types de base
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-01-numbers.html">
+   les nombres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-02-containers-1.html">
+   les containers (1/2)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   chaines et binaire (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     str
+    </span>
+   </code>
+   et
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     bytes
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-04-files.html">
+   les fichiers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-05-containers-2.html">
+   les containers (2/2)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  présentation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-11-pep008.html">
+   présentation du code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  itérations
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-11-iterations-1.html">
+   les itérations en Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-12-iterations-2.html">
+   les itérations - suite
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  classes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-11-classes.html">
+   classes : rappels (1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-12-dunder-specials.html">
+   classes : rappels (2)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  fonctions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-00-intro.html">
+   cours 6/9 : fonctions
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  regexps
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-10-regexps.html">
+   expressions régulières
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  générateurs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-20-generators.html">
+   les générateurs
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  héritage
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-30-inheritance.html">
+   POO &amp; héritage
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  organisation des sources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="8-10-imports-sources.html">
+   Imports et organisation du code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  divers
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-10-argparse.html">
+   écrire un lanceur / point d’entrée
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-11-properties.html">
+   properties
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  notebooks interactifs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-a1-profiling.html">
+   étude de performances
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-b1-linting.html">
+   Qualité du code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c3-notebooks-interactifs.html">
+   Notebooks interactifs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c4-animations-matplotlib.html">
+   Animations interactives avec
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c5-bokeh-et-al.html">
+   Autres bibliothèques de visualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c6-fourier-k3d.html">
+   Application à la transformée de Fourier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x1-taylor.html">
+   Le théorème de Taylor illustré
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x2-coronavirus.html">
+   Coronavirus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x3-potentials.html">
+   Tracés de champs de vitesses
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python asynchrone
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-01-os-basics.html">
+   rappels
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s1-programmation-asynchrone.html">
+   programmation asynchrone
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s1-z1-thread-safety.html">
+   Pourquoi les
+   <em>
+    threads
+   </em>
+   c’est délicat ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s2-examples.html">
+   premiers exemples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s3-ecosysteme.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     asyncio
+    </span>
+   </code>
+   : historique et écosystème
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s4-async-with-for.html">
+   extensions asynchrones du langage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s6-av-event-loops.html">
+   boucle d’événements
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     asyncio
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s7-libraries.html">
+   les librairies disponibles
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/2-03-strings.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/2-03-strings.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ue12/python-advanced"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ue12/python-advanced/issues/new?title=Issue%20on%20page%20%2F2-03-strings.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ue12/python-advanced/edit/main/notebooks/2-03-strings.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ue12/python-advanced/main?urlpath=tree/notebooks/2-03-strings.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rappels">
+   rappels
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#les-sequences">
+     les séquences
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mutable-et-immutable">
+     mutable et immutable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operations-sur-toutes-les-sequences">
+     opérations sur (toutes) les séquences
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#operations-sur-les-sequences">
+       opérations sur les séquences…
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#slicing">
+     slicing
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       <em>
+        slicing
+       </em>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#les-bornes">
+       les bornes
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#le-pas">
+       le pas
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pas-d-exception">
+       pas d’exception
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#slicing-formes-idiomatiques">
+       slicing, formes idiomatiques
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#str-et-bytes">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     str
+    </span>
+   </code>
+   et
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     bytes
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chaines-de-caracteres-str">
+   chaînes de caractères
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     str
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#construire-une-chaine">
+     construire une chaîne
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operations-sur-les-str">
+     opérations sur les
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       str
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       opérations sur les
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         str
+        </span>
+       </code>
+       …
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       opérations sur les
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         str
+        </span>
+       </code>
+       …
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formatage-des-chaines-f-strings">
+     formatage des chaînes : f-strings
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#formatage-des-chaines-de-caracteres">
+       formatage des chaînes de caractères
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#formats-scientifiques">
+       formats - scientifiques
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#formats-pour-f-string-justification">
+       formats pour f-string : justification
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methodes-sur-les-str">
+     méthodes sur les
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       str
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sur-les-str-split-et-join">
+       sur les
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         str
+        </span>
+       </code>
+       :
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         split()
+        </span>
+       </code>
+       et
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         join()
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#str-vs-bytes">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     str
+    </span>
+   </code>
+   <em>
+    vs
+   </em>
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     bytes
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#contenus-binaires-et-textuels">
+     contenus binaires et textuels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#le-probleme">
+     le problème
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#codage-et-decodage-en-python">
+     codage et décodage en python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unicode">
+   Unicode
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#l-essentiel-sur-utf-8">
+     l’essentiel sur UTF-8
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#utf-8-illustre">
+     UTF-8 illustré
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#utf-8-le-codage">
+     UTF-8 - le codage
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#utf-8-et-python-encode-et-decode">
+   UTF-8 et Python:
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     encode
+    </span>
+   </code>
+   et
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     decode
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unicode-et-python-chr-et-ord">
+     Unicode et Python:
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       chr
+      </span>
+     </code>
+     et
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ord
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pourquoi-lencodage-cest-souvent-un-souci">
+   pourquoi l’encodage c’est souvent un souci ?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     pourquoi l’encodage c’est souvent un souci ?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="licence">
+<span>Licence CC BY-NC-ND</span>
+<span>Thierry Parmentelat</span>
+<span><img src="media/inria-25-alpha.png" /></span>
+</div><div class="section" id="chaines-et-binaire-str-et-bytes">
+<h1>chaines et binaire (<code class="docutils literal notranslate"><span class="pre">str</span></code> et <code class="docutils literal notranslate"><span class="pre">bytes</span></code>)<a class="headerlink" href="#chaines-et-binaire-str-et-bytes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="rappels">
+<h2>rappels<a class="headerlink" href="#rappels" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="les-sequences">
+<h3>les séquences<a class="headerlink" href="#les-sequences" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>suite finie et ordonnée d’objets</p></li>
+<li><p>du coup indexable <code class="docutils literal notranslate"><span class="pre">seq[n]</span></code></p></li>
+<li><p>indices <strong>commencent à 0</strong></p></li>
+<li><p>peuvent contenir des duplications</p></li>
+</ul>
+</div>
+<div class="section" id="mutable-et-immutable">
+<h3>mutable et immutable<a class="headerlink" href="#mutable-et-immutable" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>mutable</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">bytearray</span></code></p></li>
+</ul>
+</li>
+<li><p>immutable</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">bytes</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">range</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>un chaine - de type <code class="docutils literal notranslate"><span class="pre">str</span></code> - est une <strong>séquence immutable</strong></p>
+</div>
+<div class="section" id="operations-sur-toutes-les-sequences">
+<h3>opérations sur (toutes) les séquences<a class="headerlink" href="#operations-sur-toutes-les-sequences" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">S[i]</span></code></p>
+<ul>
+<li><p>retourne l’élément d’indice i</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">len(S)</span></code></p>
+<ul>
+<li><p>donne la taille en nombre d’éléments</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">S</span> <span class="pre">+</span> <span class="pre">T</span></code></p></li>
+<li><p>retourne une nouvelle séquence qui est la concaténation de S et T</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">S*n</span></code> ou <code class="docutils literal notranslate"><span class="pre">n*S</span></code></p>
+<ul>
+<li><p>retourne une nouvelle séquence qui est la concaténation de n <em>shallow</em> copies de S</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="operations-sur-les-sequences">
+<h4>opérations sur les séquences…<a class="headerlink" href="#operations-sur-les-sequences" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">in</span> <span class="pre">S</span></code>; selon les types:</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code> si un élément de S est égal à x (e.g. <code class="docutils literal notranslate"><span class="pre">list</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code> si S contient x (e.g. <code class="docutils literal notranslate"><span class="pre">str</span></code>)</p></li>
+</ul>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">S.index(a)</span></code></p>
+<ul>
+<li><p>retourne l’indice de la première occurrence de a dans S</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">S.count(a)</span></code></p>
+<ul>
+<li><p>retourne le nombre d’occurrences de a dans S</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="slicing">
+<h3>slicing<a class="headerlink" href="#slicing" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">S[i:j]</span></code> retourne</p>
+<ul>
+<li><p>une nouvelle séquence de même type</p></li>
+<li><p>contenant tous les éléments de l’indice i à l’indice j-1</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">S[i:j:k]</span></code> retourne</p>
+<ul>
+<li><p>une nouvelle séquence de même type</p></li>
+<li><p>prenant tous les éléments de l’indice i à l’indice j-1, par sauts de k éléments</p></li>
+</ul>
+</li>
+</ul>
+<img alt="_images/egg-bacon.png" src="_images/egg-bacon.png" />
+<div class="section" id="id1">
+<h4><em>slicing</em><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>on peut compter du début ou de la fin</p></li>
+<li><p>on peut omettre les bornes</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;egg, bacon&quot;</span>
+<span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;egg&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># si on omet une borne </span>
+<span class="c1"># ce sera le début ..</span>
+<span class="n">s</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;egg&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ... ou la fin:</span>
+<span class="n">s</span><span class="p">[</span><span class="mi">5</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;bacon&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># les indices peuvent être négatifs</span>
+<span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;con&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tout entier: une shallow-copy</span>
+<span class="n">s</span><span class="p">[:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;egg, bacon&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<img alt="_images/egg-bacon-bornes.png" src="_images/egg-bacon-bornes.png" />
+</div>
+<div class="section" id="les-bornes">
+<h4>les bornes<a class="headerlink" href="#les-bornes" title="Permalink to this headline">¶</a></h4>
+<p>La convention est choisie pour pouvoir facilement encastrer les slices:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;egg&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;, b&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="mi">6</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;acon&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="mi">6</span><span class="p">:]</span> <span class="o">==</span> <span class="n">s</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<img alt="_images/egg-bacon.png" src="_images/egg-bacon.png" />
+</div>
+<div class="section" id="le-pas">
+<h4>le pas<a class="headerlink" href="#le-pas" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>on peut préciser un pas</p></li>
+<li><p>peut aussi être négatif</p></li>
+<li><p>ou omis (défaut 1)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;eg ao&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;eg ao&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[:</span><span class="mi">8</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;e,a&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">::</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;obg&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<img alt="_images/egg-bacon.png" src="_images/egg-bacon.png" />
+</div>
+<div class="section" id="pas-d-exception">
+<h4>pas d’exception<a class="headerlink" href="#pas-d-exception" title="Permalink to this headline">¶</a></h4>
+<p>les slices ont un comportement plus permissif que l’indexation</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Si j&#39;essaie d&#39;utiliser un index inexistant</span>
+<span class="k">try</span><span class="p">:</span> <span class="n">s</span><span class="p">[</span><span class="mi">100</span><span class="p">]</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;OOPS&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OOPS string index out of range
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># par contre avec un slice, pas de souci</span>
+<span class="n">s</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">100</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;bacon&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># vraiment..</span>
+<span class="n">s</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">200</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<img alt="_images/egg-bacon.png" src="_images/egg-bacon.png" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;co&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;egg, ba&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;nocab ,gge&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># le 2 est inclus et le 0 exclus</span>
+<span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;gg&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;gge&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="slicing-formes-idiomatiques">
+<h4>slicing, formes idiomatiques<a class="headerlink" href="#slicing-formes-idiomatiques" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># une copie simple</span>
+<span class="n">s</span><span class="p">[:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># copie renversée</span>
+<span class="n">s</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 2, 1]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="str-et-bytes">
+<h2><code class="docutils literal notranslate"><span class="pre">str</span></code> et <code class="docutils literal notranslate"><span class="pre">bytes</span></code><a class="headerlink" href="#str-et-bytes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>deux cas particuliers de <strong>séquences</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">str</span></code> pour manipuler <strong>du texte</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bytes</span></code> pour manipuler <strong>de la donnée brute</strong> (des octets)</p></li>
+</ul>
+</li>
+<li><p><strong>ATTENTION</strong></p>
+<ul>
+<li><p>les caractères alphanumériques (sans accent)<br />
+et la ponctuation tiennent sur 1 octet</p></li>
+<li><p>mais <strong>ce n’est pas le cas</strong> en général</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="chaines-de-caracteres-str">
+<h2>chaînes de caractères <code class="docutils literal notranslate"><span class="pre">str</span></code><a class="headerlink" href="#chaines-de-caracteres-str" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>un cas particulier de séquence</p></li>
+<li><p>une chaîne de caractères est définie de manière équivalente par des simples ou doubles guillemets (<code class="docutils literal notranslate"><span class="pre">'</span></code> ou <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>)</p></li>
+<li><p>on peut ainsi facilement inclure un guillemet</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># une chaine entre double quotes</span>
+<span class="c1"># pas de souci pour les accents </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;c&#39;est l&#39;été&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c&#39;est l&#39;été
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># entre simple quotes</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;on se dit &quot;pourquoi pas&quot;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>on se dit &quot;pourquoi pas&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="construire-une-chaine">
+<h3>construire une chaîne<a class="headerlink" href="#construire-une-chaine" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;l&#39;hôtel&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>l&#39;hôtel
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;une &quot;bonne&quot; idée&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>une &quot;bonne&quot; idée
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;une très longue phrase</span>
+<span class="s2">avec saut de ligne&quot;&quot;&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>une très longue phrase
+avec saut de ligne
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;  un backslash </span><span class="se">\\</span><span class="s1"> un quote </span><span class="se">\&#39;</span><span class="s1"> &#39;</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  un backslash \ un quote &#39; 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="operations-sur-les-str">
+<h3>opérations sur les <code class="docutils literal notranslate"><span class="pre">str</span></code><a class="headerlink" href="#operations-sur-les-str" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>toutes les opérations des séquences</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;abcdéfg&#39;</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s1">&#39;bob&#39;</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># concaténation</span>
+<span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span>
+<span class="s1">&#39;abcdefbob&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;abcdefbob&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">::</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;géca&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;=&#39;</span> <span class="o">*</span> <span class="mi">30</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;==============================&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h4>opérations sur les <code class="docutils literal notranslate"><span class="pre">str</span></code> …<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;abcdéfg&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;x&#39;</span> <span class="ow">in</span> <span class="n">s1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;cdé&#39;</span> <span class="ow">in</span> <span class="n">s1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;cdé&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h4>opérations sur les <code class="docutils literal notranslate"><span class="pre">str</span></code> …<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>par contre <strong>ATTENTION</strong> un <code class="docutils literal notranslate"><span class="pre">str</span></code> n’est <strong>pas mutable</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span> 
+    <span class="n">s1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;x&#39;</span>
+<span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;OOPS&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OOPS &#39;str&#39; object does not support item assignment &lt;class &#39;TypeError&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="formatage-des-chaines-f-strings">
+<h3>formatage des chaînes : f-strings<a class="headerlink" href="#formatage-des-chaines-f-strings" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>depuis Python-3.6</p></li>
+<li><p>utilisez les <em><strong>f-strings</strong></em></p></li>
+<li><p>qui évitent les répétitions fastidieuses</p></li>
+</ul>
+<ul class="simple">
+<li><p>entre <code class="docutils literal notranslate"><span class="pre">{</span></code> et <code class="docutils literal notranslate"><span class="pre">}</span></code> : <strong>du code</strong></p></li>
+<li><p>embarqué directement dans le format</p></li>
+<li><p>n’importe quelle expression</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nom</span><span class="p">,</span> <span class="n">age</span> <span class="o">=</span> <span class="s2">&quot;Pierre&quot;</span><span class="p">,</span> <span class="mi">42</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">nom</span><span class="si">}</span><span class="s2"> a </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> ans&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Pierre a 42 ans&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sa">f</span><span class="s2">&quot;360° = </span><span class="si">{</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="si">}</span><span class="s2"> radians&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;360° = 6.283185307179586 radians&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="formatage-des-chaines-de-caracteres">
+<h4>formatage des chaînes de caractères<a class="headerlink" href="#formatage-des-chaines-de-caracteres" title="Permalink to this headline">¶</a></h4>
+<p><img alt="" src="_images/f-string.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ᴨ arrondi à deux décimales = </span><span class="si">{</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ᴨ arrondi à deux décimales = 3.14
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="formats-scientifiques">
+<h4>formats - scientifiques<a class="headerlink" href="#formats-scientifiques" title="Permalink to this headline">¶</a></h4>
+<p>formats scientifiques usuels: <code class="docutils literal notranslate"><span class="pre">e</span></code> <code class="docutils literal notranslate"><span class="pre">f</span></code> et <code class="docutils literal notranslate"><span class="pre">g</span></code>, cf. <code class="docutils literal notranslate"><span class="pre">printf</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">23451.23423536563</span>
+<span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s1">e</span><span class="si">}</span><span class="s1"> | </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s1">f</span><span class="si">}</span><span class="s1"> | </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s1">g</span><span class="si">}</span><span class="s1"> | </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s1">010.1f</span><span class="si">}</span><span class="s1"> | </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2.345123e+04 | 23451.234235 | 23451.2 | 00023451.2 | 23451.23&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mf">769876.11434</span>
+<span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s1">e</span><span class="si">}</span><span class="s1"> | </span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s1">f</span><span class="si">}</span><span class="s1"> | </span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s1">g</span><span class="si">}</span><span class="s1"> | </span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s1">010.2f</span><span class="si">}</span><span class="s1"> | </span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;7.698761e+05 | 769876.114340 | 769876 | 0769876.11 | 769876.11&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Voir aussi pour plus de détails:<br />
+https://mkaz.blog/code/python-string-format-cookbook/</p>
+</div>
+<div class="section" id="formats-pour-f-string-justification">
+<h4>formats pour f-string : justification<a class="headerlink" href="#formats-pour-f-string-justification" title="Permalink to this headline">¶</a></h4>
+<p>justification: formats <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> <code class="docutils literal notranslate"><span class="pre">ˆ</span></code> et <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sa">f</span><span class="s2">&quot;|</span><span class="si">{</span><span class="n">nom</span><span class="si">:</span><span class="s2">&lt;12</span><span class="si">}</span><span class="s2">|</span><span class="si">{</span><span class="n">nom</span><span class="si">:</span><span class="s2">^12</span><span class="si">}</span><span class="s2">|</span><span class="si">{</span><span class="n">nom</span><span class="si">:</span><span class="s2">&gt;12</span><span class="si">}</span><span class="s2">|&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;|Pierre      |   Pierre   |      Pierre|&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># on peut aussi préciser avec quel caractère remplir</span>
+<span class="n">num</span> <span class="o">=</span> <span class="mi">123</span>
+<span class="sa">f</span><span class="s2">&quot;|</span><span class="si">{</span><span class="n">num</span><span class="si">:</span><span class="s2">&lt;12</span><span class="si">}</span><span class="s2">|</span><span class="si">{</span><span class="n">num</span><span class="si">:</span><span class="s2">-^12</span><span class="si">}</span><span class="s2">|</span><span class="si">{</span><span class="n">num</span><span class="si">:</span><span class="s2">0&gt;12</span><span class="si">}</span><span class="s2">|&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;|123         |----123-----|000000000123|&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="methodes-sur-les-str">
+<h3>méthodes sur les <code class="docutils literal notranslate"><span class="pre">str</span></code><a class="headerlink" href="#methodes-sur-les-str" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>de nombreuses méthodes disponibles</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;une petite phrase&quot;</span>
+<span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;petite&#39;</span><span class="p">,</span> <span class="s1">&#39;grande&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;une grande phrase&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;hra&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">liste</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;une&#39;, &#39;petite&#39;, &#39;phrase&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="sur-les-str-split-et-join">
+<h4>sur les <code class="docutils literal notranslate"><span class="pre">str</span></code> : <code class="docutils literal notranslate"><span class="pre">split()</span></code> et <code class="docutils literal notranslate"><span class="pre">join()</span></code><a class="headerlink" href="#sur-les-str-split-et-join" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;une&#39;, &#39;petite&#39;, &#39;phrase&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;unepetitephrase&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;une petite phrase&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;_&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;une_petite_phrase&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s2</span> <span class="o">=</span> <span class="s2">&quot;_&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
+<span class="n">s2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;une_petite_phrase&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s2</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;une&#39;, &#39;petite&#39;, &#39;phrase&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="str-vs-bytes">
+<h2><code class="docutils literal notranslate"><span class="pre">str</span></code> <em>vs</em> <code class="docutils literal notranslate"><span class="pre">bytes</span></code><a class="headerlink" href="#str-vs-bytes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="contenus-binaires-et-textuels">
+<h3>contenus binaires et textuels<a class="headerlink" href="#contenus-binaires-et-textuels" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>toutes les données ne sont pas textuelles</p>
+<ul>
+<li><p>exemple: fichiers exécutables comme <code class="docutils literal notranslate"><span class="pre">cmd.exe</span></code></p></li>
+<li><p>stockage de données propriétaires (.doc, .xls, …)</p></li>
+</ul>
+</li>
+<li><p>dès qu’on utilise des données textuelles,</p>
+<ul>
+<li><p>on décode une suite de bits</p></li>
+<li><p>il faut leur <strong>donner un sens</strong></p></li>
+<li><p>c’est l’encodage</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="le-probleme">
+<h3>le problème<a class="headerlink" href="#le-probleme" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>dès que vous échangez avec l’extérieur, i.e.</p>
+<ul>
+<li><p>Internet (Web, mail, etc.)</p></li>
+<li><p>stockage (disque dur, clef USB)</p></li>
+<li><p>terminal ou GUI, etc..</p></li>
+</ul>
+</li>
+<li><p>vous traitez en fait des flux <strong>binaires</strong></p>
+<ul>
+<li><p>et donc vous êtes confrontés à l’encodage des chaines</p></li>
+<li><p>et notamment en présence d’accents</p></li>
+<li><p>ou autres caractères non-ASCII</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="codage-et-decodage-en-python">
+<h3>codage et décodage en python<a class="headerlink" href="#codage-et-decodage-en-python" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>le type <code class="docutils literal notranslate"><span class="pre">bytes</span></code> correspond,<br />
+comme son nom l’indique,<br />
+à une suite d’<strong>octets</strong></p>
+<ul>
+<li><p>dont la signification<br />
+(le décodage) est à la<br />
+charge du programmeur</p></li>
+</ul>
+</li>
+<li><p>ce qui <strong>n’est pas du tout</strong><br />
+le cas du type <code class="docutils literal notranslate"><span class="pre">str</span></code></p>
+<ul>
+<li><p>décodage fait par Python</p></li>
+<li><p>le programmeur choisit un<br />
+encodage (défaut UTF-8)</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="_images/str-bytes.png" /></p>
+</div>
+</div>
+<div class="section" id="unicode">
+<h2>Unicode<a class="headerlink" href="#unicode" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><em><strong>une</strong></em> liste des caractères</p>
+<ul>
+<li><p>avec <strong>chacun un <em>codepoint</em></strong> - un nombre entier unique</p></li>
+<li><p>de l’ordre de 137.000 + en Juin 2018 (<em>and counting</em>)</p></li>
+<li><p>limite théorique 1,114,112 caractères</p></li>
+</ul>
+</li>
+<li><p><em><strong>trois</strong></em> encodages:</p>
+<ul>
+<li><p><strong>UTF-8</strong>: taille variable 1 à 4 octets, <strong>compatible ASCII</strong></p></li>
+<li><p>UTF-32: taille fixe, 4 octets par caractère</p></li>
+<li><p>UTF-16: taile variable, 2 ou 4 octets</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="l-essentiel-sur-utf-8">
+<h3>l’essentiel sur UTF-8<a class="headerlink" href="#l-essentiel-sur-utf-8" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>c’est l’encodage le plus répandu aujourd’hui</p>
+<ul>
+<li><p>la famille des ISO-latin et autres cp1252 sont à proscrire absolument</p></li>
+<li><p>en 2020, c’est de moins en moins un souci</p></li>
+</ul>
+</li>
+<li><p>avec UTF-8, les caractères usuels (dits ASCII),<br />
+sans accent, <strong>sont codés sur 1 octet</strong></p></li>
+<li><p>mais ce n’est pas le cas en général :</p>
+<ul>
+<li><p>les caractères <strong>accentués</strong> européens<br />
+sont codés sur <strong>2 octets</strong></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="utf-8-illustre">
+<h3>UTF-8 illustré<a class="headerlink" href="#utf-8-illustre" title="Permalink to this headline">¶</a></h3>
+<p>le codepoint du caractère <code class="docutils literal notranslate"><span class="pre">é</span></code> est <code class="docutils literal notranslate"><span class="pre">0xe8</span></code> c’est-à-dire <code class="docutils literal notranslate"><span class="pre">232</span></code></p>
+<p><img alt="" src="_images/unicode-table.png" /></p>
+<p>voici le flux binaire correspondant à la chaine <code class="docutils literal notranslate"><span class="pre">&quot;été\n&quot;</span></code></p>
+<p><img alt="" src="_images/unicode-decode-example.png" /></p>
+</div>
+<div class="section" id="utf-8-le-codage">
+<h3>UTF-8 - le codage<a class="headerlink" href="#utf-8-le-codage" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>le nombre d’octets utilisé pour encoder un caractère dépend</p>
+<ul>
+<li><p>du caractère et de l’encodage</p></li>
+<li><p>texte ASCII : identique en UTF-8</p></li>
+<li><p>en particulier, ne prennent qu’un octet</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="_images/unicode-utf8-areas.png" /></p>
+</div>
+</div>
+<div class="section" id="utf-8-et-python-encode-et-decode">
+<h2>UTF-8 et Python: <code class="docutils literal notranslate"><span class="pre">encode</span></code> et <code class="docutils literal notranslate"><span class="pre">decode</span></code><a class="headerlink" href="#utf-8-et-python-encode-et-decode" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;été</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># on compte les </span>
+<span class="c1"># caractères </span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">octets</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">octets</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s2">02x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c3 a9 74 c3 a9 0a 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ici par contre on</span>
+<span class="c1"># compte les octets</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">octets</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="unicode-et-python-chr-et-ord">
+<h3>Unicode et Python: <code class="docutils literal notranslate"><span class="pre">chr</span></code> et <code class="docutils literal notranslate"><span class="pre">ord</span></code><a class="headerlink" href="#unicode-et-python-chr-et-ord" title="Permalink to this headline">¶</a></h3>
+<p><img alt="" src="media/unicode-e-accent.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># le codepoint du é accent aigu</span>
+<span class="n">codepoint</span> <span class="o">=</span> <span class="mh">0xe9</span>
+<span class="n">codepoint</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>233
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">chr</span><span class="p">(</span><span class="n">codepoint</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;é&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;é&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>233
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="pourquoi-lencodage-cest-souvent-un-souci">
+<h2>pourquoi l’encodage c’est souvent un souci ?<a class="headerlink" href="#pourquoi-lencodage-cest-souvent-un-souci" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>chaque fois qu’une application écrit du texte dans un fichier</p>
+<ul>
+<li><p>elle utilise un encodage</p></li>
+</ul>
+</li>
+<li><p>cette information (quel encodage?) est <strong>parfois</strong> disponible</p>
+<ul>
+<li><p>dans ou avec le fichier</p></li>
+<li><p>ex. <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">-*-</span> <span class="pre">coding:</span> <span class="pre">utf-8</span> <span class="pre">-*-</span></code></p></li>
+<li><p>HTTP headers</p></li>
+</ul>
+</li>
+<li><p>mais le plus souvent on ne peut pas sauver cette information</p>
+<ul>
+<li><p>pas prévu dans le format</p></li>
+<li><p>il faudrait des <strong>métadata</strong></p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="id4">
+<h3>pourquoi l’encodage c’est souvent un souci ?<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>du coup on utilise le plus souvent des heuristiques</p>
+<ul>
+<li><p>ex: un ordinateur (OS) configuré pour <code class="docutils literal notranslate"><span class="pre">cp-1252</span></code></p></li>
+<li><p>applications qui utilisent l’encodage défini pour tout l’ordi</p></li>
+</ul>
+</li>
+<li><p>c’est comme ça qu’on reçoit des mails comme</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">j'ai</span> <span class="pre">Ã©tÃ©</span> <span class="pre">reÃ§u</span> <span class="pre">Ã\xa0</span> <span class="pre">l'Ã©cole</span></code></p></li>
+<li><p>au lieu de</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">j'ai</span> <span class="pre">été</span> <span class="pre">reçu</span> <span class="pre">à</span> <span class="pre">l'école</span></code></p></li>
+</ul>
+</li>
+<li><p>sans parler des polices de caractères..</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Jean écrit un mail</span>
+<span class="n">envoyé</span> <span class="o">=</span> <span class="s2">&quot;j&#39;ai été reçu à l&#39;école&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># son OS l&#39;encode pour le faire passer sur le réseau</span>
+<span class="n">binaire</span> <span class="o">=</span> <span class="n">envoyé</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pierre reçoit le binaire</span>
+<span class="c1"># mais se trompe d&#39;encodage</span>
+<span class="n">reçu</span> <span class="o">=</span> <span class="n">binaire</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;cp1252&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pierre voit ceci dans son mailer</span>
+<span class="n">reçu</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;j&#39;ai Ã©tÃ© reÃ§u Ã\xa0 l&#39;Ã©cole&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="2-02-containers-1.html" title="previous page">les containers (1/2)</a>
+    <a class='right-next' id="next-link" href="2-04-files.html" title="next page">les fichiers</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thierry Parmentelat<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

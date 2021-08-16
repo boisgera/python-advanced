@@ -1,0 +1,1005 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>présentation du code &#8212; Python Avancé</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="les itérations en Python" href="4-11-iterations-1.html" />
+    <link rel="prev" title="les containers (2/2)" href="2-05-containers-2.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Avancé</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-01-snake.html">
+   UE12 - Python avancé
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  types de base
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-01-numbers.html">
+   les nombres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-02-containers-1.html">
+   les containers (1/2)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-03-strings.html">
+   chaines et binaire (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     str
+    </span>
+   </code>
+   et
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     bytes
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-04-files.html">
+   les fichiers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-05-containers-2.html">
+   les containers (2/2)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  présentation
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   présentation du code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  itérations
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-11-iterations-1.html">
+   les itérations en Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-12-iterations-2.html">
+   les itérations - suite
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  classes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-11-classes.html">
+   classes : rappels (1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-12-dunder-specials.html">
+   classes : rappels (2)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  fonctions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-00-intro.html">
+   cours 6/9 : fonctions
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  regexps
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-10-regexps.html">
+   expressions régulières
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  générateurs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-20-generators.html">
+   les générateurs
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  héritage
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-30-inheritance.html">
+   POO &amp; héritage
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  organisation des sources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="8-10-imports-sources.html">
+   Imports et organisation du code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  divers
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-10-argparse.html">
+   écrire un lanceur / point d’entrée
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-11-properties.html">
+   properties
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  notebooks interactifs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-a1-profiling.html">
+   étude de performances
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-b1-linting.html">
+   Qualité du code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c3-notebooks-interactifs.html">
+   Notebooks interactifs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c4-animations-matplotlib.html">
+   Animations interactives avec
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c5-bokeh-et-al.html">
+   Autres bibliothèques de visualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c6-fourier-k3d.html">
+   Application à la transformée de Fourier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x1-taylor.html">
+   Le théorème de Taylor illustré
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x2-coronavirus.html">
+   Coronavirus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x3-potentials.html">
+   Tracés de champs de vitesses
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python asynchrone
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-01-os-basics.html">
+   rappels
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s1-programmation-asynchrone.html">
+   programmation asynchrone
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s1-z1-thread-safety.html">
+   Pourquoi les
+   <em>
+    threads
+   </em>
+   c’est délicat ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s2-examples.html">
+   premiers exemples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s3-ecosysteme.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     asyncio
+    </span>
+   </code>
+   : historique et écosystème
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s4-async-with-for.html">
+   extensions asynchrones du langage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s6-av-event-loops.html">
+   boucle d’événements
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     asyncio
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s7-libraries.html">
+   les librairies disponibles
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/3-11-pep008.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/3-11-pep008.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ue12/python-advanced"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ue12/python-advanced/issues/new?title=Issue%20on%20page%20%2F3-11-pep008.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ue12/python-advanced/edit/main/notebooks/3-11-pep008.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ue12/python-advanced/main?urlpath=tree/notebooks/3-11-pep008.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#style-de-presentation-du-code">
+   style de présentation du code
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pep-008">
+   PEP-008
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#les-espaces">
+   les espaces
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     les espaces…
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#les-noms-de-variables">
+   les noms de variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#le-docstring">
+   le docstring
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#type-hints">
+   type hints
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#largeur-de-la-page">
+   largeur de la page
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#longueur-des-lignes">
+     longueur des lignes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#longueur-des-lignes-et-parentheses">
+     longueur des lignes et parenthèses
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#longueur-des-lignes-et-chaines-litterales">
+     longueur des lignes et chaines littérales
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#longueur-des-lignes-eviter-le">
+     longueur des lignes : éviter le
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       \
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fait-partie-des-attendus">
+   fait partie des attendus
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#de-nombreux-outils">
+   de nombreux outils
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#command-line">
+     command line
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vs-code">
+     vs-code
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="licence">
+<span>Licence CC BY-NC-ND</span>
+<span>Thierry Parmentelat</span>
+<span><img src="media/inria-25-alpha.png" /></span>
+</div><div class="section" id="presentation-du-code">
+<h1>présentation du code<a class="headerlink" href="#presentation-du-code" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="style-de-presentation-du-code">
+<h2>style de présentation du code<a class="headerlink" href="#style-de-presentation-du-code" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>tout le code de la librairie standard obéit à des règles de présentation</p></li>
+<li><p>elles ne sont pas imposées par le langage, <strong>MAIS</strong></p></li>
+<li><p>elles sont très largement appliquées</p></li>
+<li><p>autant prendre de bonnes habitudes</p></li>
+<li><p>survol rapide ici des traits les plus marquants</p></li>
+</ul>
+</div>
+<div class="section" id="pep-008">
+<h2>PEP-008<a class="headerlink" href="#pep-008" title="Permalink to this headline">¶</a></h2>
+<p>ces règles de présentation sont explicitées dans <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">la note dite <em>PEP-008</em></a></p>
+<p>OUI:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fonction(a,</span> <span class="pre">b,</span> <span class="pre">c)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GLOBALE</span> <span class="pre">=</span> <span class="pre">1000</span></code></p></li>
+<li><p>lignes de longueur &lt;= 80 caractères</p></li>
+</ul>
+<p>NON:</p>
+<ul class="simple">
+<li><p>~~<code class="docutils literal notranslate"><span class="pre">fonction</span> <span class="pre">(a,b,c)</span></code>~~</p></li>
+<li><p>~~<code class="docutils literal notranslate"><span class="pre">globale=1000</span></code>~~</p></li>
+<li><p>lignes très longues</p></li>
+</ul>
+<p>on va voir tout ça un peu plus en détail</p>
+</div>
+<div class="section" id="les-espaces">
+<h2>les espaces<a class="headerlink" href="#les-espaces" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>OUI</p></th>
+<th class="head"><p>NON</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">10</span></code></p></td>
+<td><p>~~<code class="docutils literal notranslate"><span class="pre">a=10</span></code>~~</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">L</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4]</span></code></p></td>
+<td><p>~~<code class="docutils literal notranslate"><span class="pre">L</span> <span class="pre">=</span> <span class="pre">[1,2,3,4]</span></code>~~</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">D</span> <span class="pre">=</span> <span class="pre">['k1':</span> <span class="pre">'v1',</span> <span class="pre">'k2':</span> <span class="pre">'v2'}</span></code></p></td>
+<td><p>~~<code class="docutils literal notranslate"><span class="pre">D</span> <span class="pre">=</span> <span class="pre">['k1':'v1',</span> <span class="pre">'k2'</span> <span class="pre">:</span> <span class="pre">'v2'}</span></code>~~</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>OUI</p></th>
+<th class="head"><p>NON</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">foo(a,</span> <span class="pre">b,</span> <span class="pre">c):</span></code></p></td>
+<td><p>~~<code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">foo</span> <span class="pre">(a,</span> <span class="pre">b,</span> <span class="pre">c):</span></code>~~</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>~~<code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">foo(a,b,c):</span></code>~~</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">res</span> <span class="pre">=</span> <span class="pre">foo(a,</span> <span class="pre">b,</span> <span class="pre">c)</span></code></p></td>
+<td><p>~~<code class="docutils literal notranslate"><span class="pre">res</span> <span class="pre">=</span> <span class="pre">foo</span> <span class="pre">(a,</span> <span class="pre">b,</span> <span class="pre">c)</span></code>~~</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id1">
+<h3>les espaces…<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>OUI</strong></p></th>
+<th class="head"><p><strong>NON</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>d = {1: ‘un’, 2: ‘deux’}</p></td>
+<td><p>~~<code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">{1:'un',2:'deux'}</span></code>~~</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                       | ~~`d = { 1 : &#39;un&#39;, 2 : &#39;deux&#39; }`~~ |
+</pre></div>
+</div>
+<p>| s = {‘a’, ‘b’, ‘c’, ‘d’} | ~~<code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">=</span> <span class="pre">{'a','b','c','d'}</span></code>~~ |
+| ~~<code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">=</span> <span class="pre">{</span> <span class="pre">'a'</span> <span class="pre">,</span> <span class="pre">'b'</span> <span class="pre">,</span> <span class="pre">'c'</span> <span class="pre">,</span> <span class="pre">'d'</span> <span class="pre">}</span></code>~~ |</p>
+</div>
+</div>
+<div class="section" id="les-noms-de-variables">
+<h2>les noms de variables<a class="headerlink" href="#les-noms-de-variables" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>type d’objet</p></th>
+<th class="head"><p>catégorie</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>variable usuelle</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>fonction</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>module</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>classe</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>catégorie</p></th>
+<th class="head"><p>OUI</p></th>
+<th class="head"><p>NON</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">minuscule</span></code></p></td>
+<td><p>~~<code class="docutils literal notranslate"><span class="pre">MAJUSCULE</span></code>~~</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deux_mots</span></code></p></td>
+<td><p>~~<code class="docutils literal notranslate"><span class="pre">DeuxMots</span></code>~~</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Mixte</span></code></p></td>
+<td><p>~~<code class="docutils literal notranslate"><span class="pre">minuscule</span></code>~~ (sauf types prédéfinis)</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DeuxMots</span></code></p></td>
+<td><p>~~<code class="docutils literal notranslate"><span class="pre">MAJUSCULE</span></code>~~</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="le-docstring">
+<h2>le docstring<a class="headerlink" href="#le-docstring" title="Permalink to this headline">¶</a></h2>
+<p>lorsqu’on écrit une fonction (ou une classe, ou un module) on la documente comme ceci</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    returns the greatest common divisor</span>
+<span class="sd">    of both inputs</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">while</span> <span class="n">b</span><span class="p">:</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">a</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">gcd</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function gcd in module __main__:
+
+gcd(a, b)
+    returns the greatest common divisor
+    of both inputs
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>le docstring est une simple chaine<br />
+qui apparaît en premier</p></li>
+<li><p>permet de ranger de la documentation
+directement dans l’objet fonction</p></li>
+<li><p>pas indispensable pour les fonctions internes<br />
+mais nécessaire pour celles qui sont exposées aux utilisateurs</p></li>
+</ul>
+</div>
+<div class="section" id="type-hints">
+<h2>type hints<a class="headerlink" href="#type-hints" title="Permalink to this headline">¶</a></h2>
+<p>de manière optionnelle, on peut indiquer les types des arguments et le type de retour</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gcd2</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    returns the greatest common divisor</span>
+<span class="sd">    of both inputs</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">while</span> <span class="n">b</span><span class="p">:</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">a</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">gcd2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function gcd2 in module __main__:
+
+gcd2(a: int, b: int) -&gt; int
+    returns the greatest common divisor
+    of both inputs
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>annotations de type (<em>type hints</em>) totalement optionnelles et ignorées par l’interpréteur</p></li>
+<li><p>mais utiles pour une meilleure documentation</p></li>
+<li><p>et aussi pour détecter des erreurs de type par <strong>analyse statique</strong> i.e. avant l’exécution, avec des outils dédiés <a class="reference external" href="http://mypy-lang.org/">comme par exemple <code class="docutils literal notranslate"><span class="pre">mypy</span></code></a></p></li>
+</ul>
+</div>
+<div class="section" id="largeur-de-la-page">
+<h2>largeur de la page<a class="headerlink" href="#largeur-de-la-page" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>dans sa version orthodoxe, la largeur de la page est limitée à 80 caractères
+en pratique aujourd’hui on peut être un peu plus souple,<br />
+mais <strong>jamais &gt; 100 caractères de large</strong></p></li>
+<li><p>l’idée est de pouvoir juxtaposer plusieurs codes (3 voire 4 )<br />
+dans la largeur d’un écran moderne</p></li>
+<li><p>on a parfois besoin de recourir à des astuces pour y arriver</p></li>
+</ul>
+<div class="section" id="longueur-des-lignes">
+<h3>longueur des lignes<a class="headerlink" href="#longueur-des-lignes" title="Permalink to this headline">¶</a></h3>
+<p>plusieurs astuces pour respecter une largeur fixe :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. utiliser les parenthèses</span>
+
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">expression</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">le_resultat</span><span class="p">()</span> <span class="ow">and</span> <span class="n">de_l_expression</span><span class="p">()</span> 
+                <span class="ow">and</span> <span class="n">est_susceptible</span><span class="p">()</span> <span class="ow">and</span> <span class="n">de_prendre</span><span class="p">()</span>
+                <span class="ow">and</span> <span class="n">beaucoup_de_place</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="longueur-des-lignes-et-parentheses">
+<h3>longueur des lignes et parenthèses<a class="headerlink" href="#longueur-des-lignes-et-parentheses" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2. ça marche aussi avec les {} et [] </span>
+
+<span class="n">GLOBAL_MAP</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s1">&#39;shortcut&#39;</span><span class="p">:</span> <span class="s1">&#39;ctrl-w&#39;</span><span class="p">,</span> <span class="s1">&#39;function&#39;</span><span class="p">:</span> <span class="s1">&#39;RISE:render-all-cells&#39;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">&#39;shortcut&#39;</span><span class="p">:</span> <span class="s1">&#39;ctrl-q&#39;</span><span class="p">,</span> <span class="s1">&#39;function&#39;</span><span class="p">:</span> <span class="s1">&#39;RISE:edit-all-cells&#39;</span><span class="p">},</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="longueur-des-lignes-et-chaines-litterales">
+<h3>longueur des lignes et chaines littérales<a class="headerlink" href="#longueur-des-lignes-et-chaines-litterales" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. lorsqu&#39;on a besoin de retourner des chaines de caractères très longues</span>
+<span class="c1"># on peut utiliser un conjonction de</span>
+<span class="c1"># * parenthèses</span>
+<span class="c1"># * concaténation des chaines dans le source</span>
+
+<span class="k">def</span> <span class="nf">longue_chaine</span><span class="p">(</span><span class="n">nom</span><span class="p">,</span> <span class="n">prenom</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Nom&lt;/th&gt;&lt;th&gt;Prénom&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;</span><span class="si">{</span><span class="n">nom</span><span class="si">}</span><span class="s2">&lt;/td&gt;&lt;td&gt;</span><span class="si">{</span><span class="n">prenom</span><span class="si">}</span><span class="s2">&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;&lt;/table&gt;&quot;</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># astuce</span>
+<span class="c1"># là on a produit du HTML, pour le voir rendu </span>
+<span class="c1"># dans le notebook</span>
+
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="n">HTML</span><span class="p">(</span><span class="n">longue_chaine</span><span class="p">(</span><span class="s2">&quot;Jean&quot;</span><span class="p">,</span> <span class="s2">&quot;Dupont&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table><thead><tr><th>Nom</th><th>Prénom</th></tr></thead><tbody><tr><td>Jean</td><td>Dupont</td></tr></tbody></table></div></div>
+</div>
+</div>
+<div class="section" id="longueur-des-lignes-eviter-le">
+<h3>longueur des lignes : éviter le <code class="docutils literal notranslate"><span class="pre">\</span></code><a class="headerlink" href="#longueur-des-lignes-eviter-le" title="Permalink to this headline">¶</a></h3>
+<p>enfin il peut être utile de savoir qu’on peut ‘échapper’ les fins de ligne</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># on **pourrait** écrire ça (sachez le lire) </span>
+<span class="c1"># mais je vous recommande de **ne pas faire comme ça**</span>
+<span class="c1"># essayez par exemple d&#39;ajouter un espace juste après un \ </span>
+<span class="c1"># ça ne se voit pas et pourtant ça fait tout planter</span>
+
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">expression</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">le_resultat</span><span class="p">()</span> <span class="ow">and</span> <span class="n">de_l_expression</span><span class="p">()</span> \
+                <span class="ow">and</span> <span class="n">est_susceptible</span><span class="p">()</span> <span class="ow">and</span> <span class="n">de_prendre</span><span class="p">()</span> \
+                <span class="ow">and</span> <span class="n">beaucoup_de_place</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>les parenthèses, c’est mieux</strong><br />
+dans l’exemple 1. on a le même code, mais avec les parenthèses on n’a pas cette fragilité</p>
+</div>
+</div>
+<div class="section" id="fait-partie-des-attendus">
+<h2>fait partie des attendus<a class="headerlink" href="#fait-partie-des-attendus" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>ne pas parler le PEP008, c’est un peu<br />
+comme faire plein de fautes d’orthographe</p></li>
+<li><p>ça n’empêche pas d’avoir de bonnes idées<br />
+mais ça donne mauvaise impression</p></li>
+<li><p>faites-y attention à partir de maintenant</p></li>
+<li><p>fait partie des critères pour l’évaluation</p></li>
+</ul>
+</div>
+<div class="section" id="de-nombreux-outils">
+<h2>de nombreux outils<a class="headerlink" href="#de-nombreux-outils" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>très grand nombre d’outils de vérification de code Python</p></li>
+<li><p>du plus simple qui vérifie seulement <em>PEP008</em> - par exemple <code class="docutils literal notranslate"><span class="pre">flake8</span></code></p></li>
+<li><p>au plus compliqué - genre <code class="docutils literal notranslate"><span class="pre">pylint</span></code> - qui peut trouver</p>
+<ul>
+<li><p>les erreurs de frappe dans les noms de variable</p></li>
+<li><p>les imports inutiles</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="command-line">
+<h3>command line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h3>
+<p>regardez du coté de</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">autopep8</span></code> (sait <em>réparer</em> avec l’option <code class="docutils literal notranslate"><span class="pre">-i</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">black</span></code> (sait réparer)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">flake8</span></code> (affiche les erreurs)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pylint</span></code> (affiche les erreurs pep8
+et bien d’autres d’ailleurs)</p></li>
+</ul>
+</div>
+<div class="section" id="vs-code">
+<h3>vs-code<a class="headerlink" href="#vs-code" title="Permalink to this headline">¶</a></h3>
+<p><img alt="" src="_images/vscode-problems.png" /></p>
+<p>← <span style="font-size:small;">par exemple avec flake8</span></p>
+<p>et pour naviguer entre les erreurs</p>
+<p><img alt="" src="_images/vscode-next-problem.png" /></p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="2-05-containers-2.html" title="previous page">les containers (2/2)</a>
+    <a class='right-next' id="next-link" href="4-11-iterations-1.html" title="next page">les itérations en Python</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thierry Parmentelat<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

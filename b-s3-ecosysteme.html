@@ -1,0 +1,802 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>asyncio : historique et écosystème &#8212; Python Avancé</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="extensions asynchrones du langage" href="b-s4-async-with-for.html" />
+    <link rel="prev" title="premiers exemples" href="b-s2-examples.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Avancé</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-01-snake.html">
+   UE12 - Python avancé
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  types de base
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-01-numbers.html">
+   les nombres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-02-containers-1.html">
+   les containers (1/2)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-03-strings.html">
+   chaines et binaire (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     str
+    </span>
+   </code>
+   et
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     bytes
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-04-files.html">
+   les fichiers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-05-containers-2.html">
+   les containers (2/2)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  présentation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-11-pep008.html">
+   présentation du code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  itérations
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-11-iterations-1.html">
+   les itérations en Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-12-iterations-2.html">
+   les itérations - suite
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  classes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-11-classes.html">
+   classes : rappels (1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-12-dunder-specials.html">
+   classes : rappels (2)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  fonctions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-00-intro.html">
+   cours 6/9 : fonctions
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  regexps
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-10-regexps.html">
+   expressions régulières
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  générateurs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-20-generators.html">
+   les générateurs
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  héritage
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-30-inheritance.html">
+   POO &amp; héritage
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  organisation des sources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="8-10-imports-sources.html">
+   Imports et organisation du code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  divers
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-10-argparse.html">
+   écrire un lanceur / point d’entrée
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-11-properties.html">
+   properties
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  notebooks interactifs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-a1-profiling.html">
+   étude de performances
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-b1-linting.html">
+   Qualité du code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c3-notebooks-interactifs.html">
+   Notebooks interactifs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c4-animations-matplotlib.html">
+   Animations interactives avec
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c5-bokeh-et-al.html">
+   Autres bibliothèques de visualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-c6-fourier-k3d.html">
+   Application à la transformée de Fourier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x1-taylor.html">
+   Le théorème de Taylor illustré
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x2-coronavirus.html">
+   Coronavirus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a-x3-potentials.html">
+   Tracés de champs de vitesses
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python asynchrone
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-01-os-basics.html">
+   rappels
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s1-programmation-asynchrone.html">
+   programmation asynchrone
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s1-z1-thread-safety.html">
+   Pourquoi les
+   <em>
+    threads
+   </em>
+   c’est délicat ?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s2-examples.html">
+   premiers exemples
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     asyncio
+    </span>
+   </code>
+   : historique et écosystème
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s4-async-with-for.html">
+   extensions asynchrones du langage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s6-av-event-loops.html">
+   boucle d’événements
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     asyncio
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="b-s7-libraries.html">
+   les librairies disponibles
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/b-s3-ecosysteme.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/b-s3-ecosysteme.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ue12/python-advanced"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ue12/python-advanced/issues/new?title=Issue%20on%20page%20%2Fb-s3-ecosysteme.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ue12/python-advanced/edit/main/notebooks/b-s3-ecosysteme.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ue12/python-advanced/main?urlpath=tree/notebooks/b-s3-ecosysteme.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#historique-python3">
+   historique - python3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#historique-python2">
+   historique - python2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inspire-de-pre-asyncio">
+   inspiré de (pre-asyncio)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#langage-vs-librairie-1-langage">
+   langage
+   <em>
+    vs
+   </em>
+   librairie (1) : langage
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#langage-vs-librairie-2-librairie">
+   langage
+   <em>
+    vs
+   </em>
+   librairie (2) : librairie
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#est-ce-que-c-est-utilisable-en-production">
+   est-ce que c’est utilisable en production ?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mais">
+   mais ..
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><span style="float:left;">Licence CC BY-NC-ND</span><span style="float:right;">Thierry Parmentelat<img alt="_images/inria-25-alpha.png" src="_images/inria-25-alpha.png" /></span><br/></p>
+<div class="section" id="asyncio-historique-et-ecosysteme">
+<h1><code class="docutils literal notranslate"><span class="pre">asyncio</span></code> : historique et écosystème<a class="headerlink" href="#asyncio-historique-et-ecosysteme" title="Permalink to this headline">¶</a></h1>
+<p>Nous avons vu quelques exemples simples
+de programmation asynchrone avec
+asyncio. Dans cette séquence, après un
+rapide historique nous allons
+voir quelles sont les librairies
+disponibles pour tirer profit de ce
+nouveau paradigme</p>
+<div class="section" id="historique-python3">
+<h2>historique - python3<a class="headerlink" href="#historique-python3" title="Permalink to this headline">¶</a></h2>
+<p>Dans sa forme actuelle avec ‘async def’
+et ‘await’, la syntaxe date de
+python-3.5, en 2015 donc.</p>
+<ul class="simple">
+<li><p>python-3.5</p>
+<ul>
+<li><p>syntaxe moderne <code class="docutils literal notranslate"><span class="pre">async</span></code> / <code class="docutils literal notranslate"><span class="pre">await</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>Je vous
+signale rapidement que asyncio avait en
+fait été introduite un an plus tôt dans
+python-3.4,mais avec une syntaxe différente, que je
+vous montre ici rapidement, il se peut
+que vous trouviez du code avec cette
+ancienne syntaxe.</p>
+<ul class="simple">
+<li><p>python-3.4 : première introduction de <code class="docutils literal notranslate"><span class="pre">asyncio</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">def</span></code> → <code class="docutils literal notranslate"><span class="pre">&#64;asyncio.coroutine</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">await</span></code> → <code class="docutils literal notranslate"><span class="pre">yield</span> <span class="pre">from</span></code></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="historique-python2">
+<h2>historique - python2<a class="headerlink" href="#historique-python2" title="Permalink to this headline">¶</a></h2>
+<p>enfin il faut savoir que les mécanismes
+dont on a besoin pour implémenter une
+boucle d’événements sont présents dans
+le langage depuis déjà python-2.5 c’est
+à dire 2006 !</p>
+<ul class="simple">
+<li><p>python-2.5 (2006 !)</p>
+<ul>
+<li><p>générateurs avec <code class="docutils literal notranslate"><span class="pre">send()</span></code></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="inspire-de-pre-asyncio">
+<h2>inspiré de (pre-asyncio)<a class="headerlink" href="#inspire-de-pre-asyncio" title="Permalink to this headline">¶</a></h2>
+<p>je vous signale d’ailleurs plusieurs
+projets qui ont tiré profit de cette
+possibilité, qui sont ces trois-ci</p>
+<ul class="simple">
+<li><p>gevent : http://www.gevent.org/</p></li>
+<li><p>tornado : http://www.tornadoweb.org/en/stable/</p></li>
+<li><p>twisted : https://twistedmatrix.com/trac/</p></li>
+</ul>
+<p>qui
+utilisent une technologie similaire
+depuis bien avant asyncio, et qui
+d’ailleurs l’ont largement inspiré.</p>
+<p>à cet égard, s’il est fréquent de
+résumer ce style de programmation sous
+le simple nom de <code class="docutils literal notranslate"><span class="pre">asyncio</span></code>, il faut bien distinguer
+entre les traits qui appartiennent au
+langage - qui sont donc par définition
+peu flexibles - de ceux qui sont
+implémentées dans la librairie.</p>
+</div>
+<div class="section" id="langage-vs-librairie-1-langage">
+<h2>langage <em>vs</em> librairie (1) : langage<a class="headerlink" href="#langage-vs-librairie-1-langage" title="Permalink to this headline">¶</a></h2>
+<p>La distinction est assez nette, le
+langage contient principalement</p>
+<ul class="simple">
+<li><p>la notion de coroutine, qui se
+matérialise avec les mots clés <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">def</span></code> et <code class="docutils literal notranslate"><span class="pre">await</span></code>,</p></li>
+<li><p>et quelques produits dérivés comme
+<code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">for</span></code> et <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">with</span></code> que l’on
+aura l’occasion de voir plus tard :</p></li>
+</ul>
+<ul class="simple">
+<li><p>itérateurs asynchrones - <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">for</span></code> - compréhensions asynchrones</p></li>
+</ul>
+<ul class="simple">
+<li><p>context managers asynchrones - <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">with</span></code></p></li>
+</ul>
+<p>Notez que la notion de coroutine est assez voisine donc de la notion de générateur, on y reviendra</p>
+</div>
+<div class="section" id="langage-vs-librairie-2-librairie">
+<h2>langage <em>vs</em> librairie (2) : librairie<a class="headerlink" href="#langage-vs-librairie-2-librairie" title="Permalink to this headline">¶</a></h2>
+<p>La librairie quant à elle implémente
+principalement la boucle d’événements.</p>
+<p>C’est important de comprendre la
+distinction, car cela signifie qu’il est
+tout à fait possible d’envisager
+d’autres librairies asynchrones qui
+partagent toutes le même modèle de
+coroutines, et qui coexistent.</p>
+<p>Outre la boucle d’événements, on trouve
+aussi dans asyncio, un peu en vrac:</p>
+<ul class="simple">
+<li><p>des objets de base pour la
+synchronisation, comme les classes
+<code class="docutils literal notranslate"><span class="pre">Queue</span></code>, <code class="docutils literal notranslate"><span class="pre">Lock</span></code> et <code class="docutils literal notranslate"><span class="pre">Semaphore</span></code></p></li>
+<li><p>un package <code class="docutils literal notranslate"><span class="pre">Subprocess</span></code> pour l’interaction
+avec les processus, la version
+asynchrone de la librairie standard
+<code class="docutils literal notranslate"><span class="pre">subprocess</span></code></p></li>
+</ul>
+<p>et des abstractions, qu’on peut
+voir si on veut comme des frameworks -
+ou des design patterns - pour
+l’implémentation de comportements plus
+évolués, comme les notions de transport
+et de protocole, pour l’implémentation
+par exemple d’une pile http; pour faire simple
+il y a deux grandes influences qui sont</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Transport</span></code> et <code class="docutils literal notranslate"><span class="pre">Protocol</span></code> / plutôt orienté callback</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Streams</span></code> / API orientées coroutine</p></li>
+</ul>
+<p>Nous avons déjà un peu rencontré les
+coroutines, et la boucle d’événements
+pour faire tourner nos premiers exemples
+dans la précédente vidéo. Pour le reste,
+à nouveau, il ne sera pas question de
+couvrir exhaustivement tous ces sujets,
+mais nous verrons d’autres exemples de
+tout ça dans les prochaines vidéos.</p>
+<p>Pour l’instant, je voudrais vous donner
+quelques généralités à propos de ce
+paradigme.</p>
+</div>
+<div class="section" id="est-ce-que-c-est-utilisable-en-production">
+<h2>est-ce que c’est utilisable en production ?<a class="headerlink" href="#est-ce-que-c-est-utilisable-en-production" title="Permalink to this headline">¶</a></h2>
+<p>On a pu se poser la question en 2015 quand les premières versions sont sorties, tout cela avait un petit coté improbable.
+En 2021, la réponse à cette question est très clairement OUI, l’API est classée comme stable et sera supportée dans la durée avec le reste de Python.</p>
+<p>En terme de performance et de passage à l’échelle, il est admis qu’à ressources
+constantes, on peut heberger avec de paradigme plus
+d’acteurs concurrents qu’avec des
+threads, et donc à priori qu’avec des
+processus, dans un rapport <strong>de plusieurs
+ordres de grandeur</strong> - au moins 100.</p>
+<p>À savoir également, il y a aujourd’hui
+une offre très complète, notamment tous les protocoles réseau les
+plus populaires, les drivers de base de
+données, essentiellement tout est
+disponible dans une forme compatible
+avec ce paradigme.</p>
+<ul class="simple">
+<li><p>nombreux protocoles réseau disponibles</p>
+<ul>
+<li><p>HTTP <code class="docutils literal notranslate"><span class="pre">aiohttp</span></code></p></li>
+<li><p>ssh <code class="docutils literal notranslate"><span class="pre">asyncssh</span></code></p></li>
+<li><p>telnet <code class="docutils literal notranslate"><span class="pre">telnetlib3</span></code></p></li>
+</ul>
+</li>
+<li><p>drivers bases de données</p>
+<ul>
+<li><p>postgres <code class="docutils literal notranslate"><span class="pre">asyncpg</span></code></p></li>
+<li><p>…</p></li>
+</ul>
+</li>
+<li><p>…</p></li>
+</ul>
+</div>
+<div class="section" id="mais">
+<h2>mais ..<a class="headerlink" href="#mais" title="Permalink to this headline">¶</a></h2>
+<p>une fois qu’on a dit ça, il n’y a pas que des avantages naturellement</p>
+<p>le principal reproche qu’on fait a ce modèle est le coté très contagieux des
+coroutines; dès qu’on se met à utiliser
+<code class="docutils literal notranslate"><span class="pre">asyncio</span></code>, on se retrouve à avoir envie
+d’une version asynchrone pour .. à peu
+près tout.</p>
+<p>Et comme on a fait le choix que les
+changements de contexte sont explicites
+avec <code class="docutils literal notranslate"><span class="pre">await</span></code> - il faut récrire le code
+pour tirer profit de ce modèle de
+programmation. Mais bon, comme on vient
+de le voir, cela n’est pas un souci,
+l’écosystème est très complet.</p>
+<p>L’autre incertitude que je voulais
+signaler pour terminer, c’est que le
+consensus n’est pas total sur les choix
+faits dans la librairie asyncio. Tout
+le monde est d’accord sur le concept de
+coroutine, mais je signale tout de même
+quelques travaux très intéressants
+qui visent à en tirer un meilleur
+profit, et qui pourraient bien
+influencer une version 2 de asyncio dans
+le futur:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">uvloop</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">curio</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">trio</span></code></p></li>
+</ul>
+<p>Bon même si ça devait arriver,
+rassurez-vous, ce qu’on
+va apprendre sur la syntaxe, les coroutines, les
+awaitables, et de façon plus générale le
+modèle mental, tout cela restera valable.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="b-s2-examples.html" title="previous page">premiers exemples</a>
+    <a class='right-next' id="next-link" href="b-s4-async-with-for.html" title="next page">extensions asynchrones du langage</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thierry Parmentelat<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

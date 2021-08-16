@@ -22,7 +22,7 @@ line_profiler
 git+https://github.com/codewars/python-test-framework.git
 coverage
 #parsimonious
-chess
+python-chess
 
 # jupyter extensions
 #

@@ -19,6 +19,9 @@ bokeh
 k3d
 autograd
 line_profiler
+git+https://github.com/codewars/python-test-framework.git
+coverage
+parsimonious
 
 # jupyter extensions
 #
